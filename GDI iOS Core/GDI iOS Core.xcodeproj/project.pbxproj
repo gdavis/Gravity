@@ -113,7 +113,7 @@
 		777F8A81152B629E00AF038D = {
 			isa = PBXGroup;
 			children = (
-				777F8A96152B629F00AF038D /* GDI iOS Core */,
+				777F8A96152B629F00AF038D /* GDICore */,
 				777F8B2C152B67D400AF038D /* GDICoreTests */,
 				777F8A8F152B629F00AF038D /* Frameworks */,
 				777F8A8D152B629F00AF038D /* Products */,
@@ -141,7 +141,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		777F8A96152B629F00AF038D /* GDI iOS Core */ = {
+		777F8A96152B629F00AF038D /* GDICore */ = {
 			isa = PBXGroup;
 			children = (
 				777F8B1D152B67D300AF038D /* GDICore.h */,
@@ -150,6 +150,7 @@
 				777F8B70152B748E00AF038D /* Utility */,
 				777F8A97152B629F00AF038D /* Supporting Files */,
 			);
+			name = GDICore;
 			path = "GDI iOS Core";
 			sourceTree = "<group>";
 		};
