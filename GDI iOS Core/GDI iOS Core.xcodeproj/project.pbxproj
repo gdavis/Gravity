@@ -35,6 +35,8 @@
 		777F8B50152B6A0100AF038D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8AEB152B648F00AF038D /* QuartzCore.framework */; };
 		777F8B67152B6E9C00AF038D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8A90152B629F00AF038D /* UIKit.framework */; };
 		777F8B6D152B725500AF038D /* GDICore.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8B1D152B67D300AF038D /* GDICore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		777F8B99152B7F5D00AF038D /* CAAnimation+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8B97152B7F5B00AF038D /* CAAnimation+Blocks.h */; };
+		777F8B9A152B7F5D00AF038D /* CAAnimation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8B98152B7F5C00AF038D /* CAAnimation+Blocks.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		777F8B30152B67D400AF038D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		777F8B32152B67D400AF038D /* GDICoreTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDICoreTests.h; sourceTree = "<group>"; };
 		777F8B33152B67D400AF038D /* GDICoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDICoreTests.m; sourceTree = "<group>"; };
+		777F8B97152B7F5B00AF038D /* CAAnimation+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+Blocks.h"; sourceTree = "<group>"; };
+		777F8B98152B7F5C00AF038D /* CAAnimation+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+Blocks.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,8 @@
 		777F8ABF152B62D500AF038D /* UIKit Categories */ = {
 			isa = PBXGroup;
 			children = (
+				777F8B97152B7F5B00AF038D /* CAAnimation+Blocks.h */,
+				777F8B98152B7F5C00AF038D /* CAAnimation+Blocks.m */,
 				777F8AE8152B63CF00AF038D /* UISearchBar+GDIAdditions.h */,
 				777F8AE9152B63CF00AF038D /* UISearchBar+GDIAdditions.m */,
 				777F8AC0152B634400AF038D /* CoreGraphics+GDIAdditions.h */,
@@ -232,6 +238,7 @@
 				777F8B4A152B694600AF038D /* UILabel+GDIAdditions.h in Headers */,
 				777F8B4B152B694600AF038D /* NSString+GDIAdditions.h in Headers */,
 				777F8B4C152B694600AF038D /* GDIMath.h in Headers */,
+				777F8B99152B7F5D00AF038D /* CAAnimation+Blocks.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +350,7 @@
 				777F8B41152B693100AF038D /* UILabel+GDIAdditions.m in Sources */,
 				777F8B42152B693100AF038D /* NSString+GDIAdditions.m in Sources */,
 				777F8B43152B693100AF038D /* GDIMath.m in Sources */,
+				777F8B9A152B7F5D00AF038D /* CAAnimation+Blocks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
