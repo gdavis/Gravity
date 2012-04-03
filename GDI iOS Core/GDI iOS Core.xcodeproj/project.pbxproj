@@ -23,15 +23,16 @@
 		777F8B41152B693100AF038D /* UILabel+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AC9152B634400AF038D /* UILabel+GDIAdditions.m */; };
 		777F8B42152B693100AF038D /* NSString+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8ACB152B634400AF038D /* NSString+GDIAdditions.m */; };
 		777F8B43152B693100AF038D /* GDIMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AD9152B635400AF038D /* GDIMath.m */; };
-		777F8B44152B694600AF038D /* GDITouchProxyView.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AE5152B63C000AF038D /* GDITouchProxyView.h */; };
-		777F8B45152B694600AF038D /* UISearchBar+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AE8152B63CF00AF038D /* UISearchBar+GDIAdditions.h */; };
-		777F8B46152B694600AF038D /* CoreGraphics+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC0152B634400AF038D /* CoreGraphics+GDIAdditions.h */; };
-		777F8B47152B694600AF038D /* UIView+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC2152B634400AF038D /* UIView+GDIAdditions.h */; };
-		777F8B48152B694600AF038D /* UIImage+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC4152B634400AF038D /* UIImage+GDIAdditions.h */; };
-		777F8B49152B694600AF038D /* UIColor+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC6152B634400AF038D /* UIColor+GDIAdditions.h */; };
-		777F8B4A152B694600AF038D /* UILabel+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC8152B634400AF038D /* UILabel+GDIAdditions.h */; };
-		777F8B4B152B694600AF038D /* NSString+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8ACA152B634400AF038D /* NSString+GDIAdditions.h */; };
-		777F8B4C152B694600AF038D /* GDIMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AD8152B635400AF038D /* GDIMath.h */; };
+		777F8B44152B694600AF038D /* GDITouchProxyView.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AE5152B63C000AF038D /* GDITouchProxyView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		777F8B45152B694600AF038D /* UISearchBar+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AE8152B63CF00AF038D /* UISearchBar+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		777F8B46152B694600AF038D /* CoreGraphics+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC0152B634400AF038D /* CoreGraphics+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		777F8B47152B694600AF038D /* UIView+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC2152B634400AF038D /* UIView+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		777F8B48152B694600AF038D /* UIImage+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC4152B634400AF038D /* UIImage+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		777F8B49152B694600AF038D /* UIColor+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC6152B634400AF038D /* UIColor+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		777F8B4A152B694600AF038D /* UILabel+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC8152B634400AF038D /* UILabel+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		777F8B4B152B694600AF038D /* NSString+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8ACA152B634400AF038D /* NSString+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		777F8B4C152B694600AF038D /* GDIMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AD8152B635400AF038D /* GDIMath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		777F8B50152B6A0100AF038D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8AEB152B648F00AF038D /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				777F8B50152B6A0100AF038D /* QuartzCore.framework in Frameworks */,
 				777F8B19152B67D300AF038D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -550,6 +552,7 @@
 				777F8B37152B67D400AF038D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		777F8B38152B67D400AF038D /* Build configuration list for PBXNativeTarget "GDICoreTests" */ = {
 			isa = XCConfigurationList;
@@ -558,6 +561,7 @@
 				777F8B3A152B67D400AF038D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
