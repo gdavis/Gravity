@@ -32,12 +32,6 @@ void CGContextDrawInnerShadowWithPath(CGContextRef context, CGPathRef shapePath,
     // create offset for a shaper larger than the viewable path
     CGFloat outsideOffset = 10.f;
     
-    // Fill this path
-    UIColor *aColor = [UIColor clearColor];
-    [aColor setFill];
-    CGContextAddPath(context, shapePath);
-    CGContextFillPath(context);
-    
     // Now create a larger rectangle, which we're going to subtract the visible path from
     // and apply a shadow 
     CGMutablePathRef path = CGPathCreateMutable();
@@ -50,7 +44,7 @@ void CGContextDrawInnerShadowWithPath(CGContextRef context, CGPathRef shapePath,
     // Add the visible path (so that it gets subtracted for the shadow)
     CGPathAddPath(path, NULL, shapePath);
     CGPathCloseSubpath(path);
-    
+    CGContextSaveGState(context);
     
     // Add the visible paths as the clipping path to the context
     CGContextAddPath(context, shapePath); 
@@ -61,11 +55,11 @@ void CGContextDrawInnerShadowWithPath(CGContextRef context, CGPathRef shapePath,
     CGContextSetShadowWithColor(context, offset, radius, [color CGColor]); 
     
     // Now fill the rectangle, so the shadow gets drawn
-    aColor = [UIColor colorWithWhite:1.f alpha:1.f];
+    UIColor *aColor = [UIColor colorWithWhite:1.f alpha:1.f];
     [aColor setFill]; 
     CGContextSaveGState(context); 
     CGContextAddPath(context, path);
-    CGContextFillPath(context);
+    CGContextEOFillPath(context);
     
     // Release the paths
     CGPathRelease(path); 
