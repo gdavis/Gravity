@@ -33,6 +33,7 @@
 #import "UIColor+GDIAdditions.h"
 #import "UILabel+GDIAdditions.h"
 #import "NSString+GDIAdditions.h"
+#import "CAAnimation+Blocks.h"
 
 // utility
 #import "GDIMath.h"
