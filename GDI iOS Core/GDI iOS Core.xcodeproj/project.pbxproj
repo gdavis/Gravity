@@ -7,49 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		777F8A91152B629F00AF038D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8A90152B629F00AF038D /* UIKit.framework */; };
-		777F8A93152B629F00AF038D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8A92152B629F00AF038D /* Foundation.framework */; };
-		777F8A95152B629F00AF038D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8A94152B629F00AF038D /* CoreGraphics.framework */; };
-		777F8A9B152B629F00AF038D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 777F8A99152B629F00AF038D /* InfoPlist.strings */; };
-		777F8A9D152B629F00AF038D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8A9C152B629F00AF038D /* main.m */; };
-		777F8AA1152B629F00AF038D /* GDIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AA0152B629F00AF038D /* GDIAppDelegate.m */; };
-		777F8AA9152B629F00AF038D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8AA8152B629F00AF038D /* SenTestingKit.framework */; };
-		777F8AAA152B629F00AF038D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8A90152B629F00AF038D /* UIKit.framework */; };
-		777F8AAB152B629F00AF038D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8A92152B629F00AF038D /* Foundation.framework */; };
-		777F8AB3152B629F00AF038D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 777F8AB1152B629F00AF038D /* InfoPlist.strings */; };
-		777F8AB6152B629F00AF038D /* GDI_iOS_CoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AB5152B629F00AF038D /* GDI_iOS_CoreTests.m */; };
-		777F8ACC152B634400AF038D /* CoreGraphics+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AC1152B634400AF038D /* CoreGraphics+GDIAdditions.m */; };
-		777F8ACD152B634400AF038D /* CoreGraphics+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AC1152B634400AF038D /* CoreGraphics+GDIAdditions.m */; };
-		777F8ACE152B634400AF038D /* UIView+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AC3152B634400AF038D /* UIView+GDIAdditions.m */; };
-		777F8ACF152B634400AF038D /* UIView+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AC3152B634400AF038D /* UIView+GDIAdditions.m */; };
-		777F8AD0152B634400AF038D /* UIImage+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AC5152B634400AF038D /* UIImage+GDIAdditions.m */; };
-		777F8AD1152B634400AF038D /* UIImage+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AC5152B634400AF038D /* UIImage+GDIAdditions.m */; };
-		777F8AD2152B634400AF038D /* UIColor+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AC7152B634400AF038D /* UIColor+GDIAdditions.m */; };
-		777F8AD3152B634400AF038D /* UIColor+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AC7152B634400AF038D /* UIColor+GDIAdditions.m */; };
-		777F8AD4152B634400AF038D /* UILabel+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AC9152B634400AF038D /* UILabel+GDIAdditions.m */; };
-		777F8AD5152B634400AF038D /* UILabel+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AC9152B634400AF038D /* UILabel+GDIAdditions.m */; };
-		777F8AD6152B634400AF038D /* NSString+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8ACB152B634400AF038D /* NSString+GDIAdditions.m */; };
-		777F8AD7152B634400AF038D /* NSString+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8ACB152B634400AF038D /* NSString+GDIAdditions.m */; };
-		777F8ADA152B635400AF038D /* GDIMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AD9152B635400AF038D /* GDIMath.m */; };
-		777F8ADB152B635400AF038D /* GDIMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AD9152B635400AF038D /* GDIMath.m */; };
-		777F8AE7152B63C000AF038D /* GDITouchProxyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AE6152B63C000AF038D /* GDITouchProxyView.m */; };
-		777F8AEA152B63CF00AF038D /* UISearchBar+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AE9152B63CF00AF038D /* UISearchBar+GDIAdditions.m */; };
-		777F8AEC152B648F00AF038D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8AEB152B648F00AF038D /* QuartzCore.framework */; };
-		777F8AF7152B64B500AF038D /* GDIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AA0152B629F00AF038D /* GDIAppDelegate.m */; };
+		777F8B19152B67D300AF038D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8A92152B629F00AF038D /* Foundation.framework */; };
+		777F8B26152B67D400AF038D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8AA8152B629F00AF038D /* SenTestingKit.framework */; };
+		777F8B27152B67D400AF038D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8A90152B629F00AF038D /* UIKit.framework */; };
+		777F8B28152B67D400AF038D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8A92152B629F00AF038D /* Foundation.framework */; };
+		777F8B2B152B67D400AF038D /* libGDICore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8B18152B67D300AF038D /* libGDICore.a */; };
+		777F8B31152B67D400AF038D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 777F8B2F152B67D400AF038D /* InfoPlist.strings */; };
+		777F8B34152B67D400AF038D /* GDICoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8B33152B67D400AF038D /* GDICoreTests.m */; };
+		777F8B3B152B693100AF038D /* GDITouchProxyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AE6152B63C000AF038D /* GDITouchProxyView.m */; };
+		777F8B3C152B693100AF038D /* UISearchBar+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AE9152B63CF00AF038D /* UISearchBar+GDIAdditions.m */; };
+		777F8B3D152B693100AF038D /* CoreGraphics+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AC1152B634400AF038D /* CoreGraphics+GDIAdditions.m */; };
+		777F8B3E152B693100AF038D /* UIView+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AC3152B634400AF038D /* UIView+GDIAdditions.m */; };
+		777F8B3F152B693100AF038D /* UIImage+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AC5152B634400AF038D /* UIImage+GDIAdditions.m */; };
+		777F8B40152B693100AF038D /* UIColor+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AC7152B634400AF038D /* UIColor+GDIAdditions.m */; };
+		777F8B41152B693100AF038D /* UILabel+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AC9152B634400AF038D /* UILabel+GDIAdditions.m */; };
+		777F8B42152B693100AF038D /* NSString+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8ACB152B634400AF038D /* NSString+GDIAdditions.m */; };
+		777F8B43152B693100AF038D /* GDIMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AD9152B635400AF038D /* GDIMath.m */; };
+		777F8B44152B694600AF038D /* GDITouchProxyView.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AE5152B63C000AF038D /* GDITouchProxyView.h */; };
+		777F8B45152B694600AF038D /* UISearchBar+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AE8152B63CF00AF038D /* UISearchBar+GDIAdditions.h */; };
+		777F8B46152B694600AF038D /* CoreGraphics+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC0152B634400AF038D /* CoreGraphics+GDIAdditions.h */; };
+		777F8B47152B694600AF038D /* UIView+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC2152B634400AF038D /* UIView+GDIAdditions.h */; };
+		777F8B48152B694600AF038D /* UIImage+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC4152B634400AF038D /* UIImage+GDIAdditions.h */; };
+		777F8B49152B694600AF038D /* UIColor+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC6152B634400AF038D /* UIColor+GDIAdditions.h */; };
+		777F8B4A152B694600AF038D /* UILabel+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC8152B634400AF038D /* UILabel+GDIAdditions.h */; };
+		777F8B4B152B694600AF038D /* NSString+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8ACA152B634400AF038D /* NSString+GDIAdditions.h */; };
+		777F8B4C152B694600AF038D /* GDIMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AD8152B635400AF038D /* GDIMath.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		777F8AAC152B629F00AF038D /* PBXContainerItemProxy */ = {
+		777F8B29152B67D400AF038D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 777F8A83152B629E00AF038D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 777F8A8B152B629F00AF038D;
-			remoteInfo = "GDI iOS Core";
+			remoteGlobalIDString = 777F8B17152B67D300AF038D;
+			remoteInfo = GDICore;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		777F8A8C152B629F00AF038D /* GDI iOS Core.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GDI iOS Core.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		777F8A90152B629F00AF038D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		777F8A92152B629F00AF038D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		777F8A94152B629F00AF038D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -59,7 +54,6 @@
 		777F8A9E152B629F00AF038D /* GDI iOS Core-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GDI iOS Core-Prefix.pch"; sourceTree = "<group>"; };
 		777F8A9F152B629F00AF038D /* GDIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDIAppDelegate.h; sourceTree = "<group>"; };
 		777F8AA0152B629F00AF038D /* GDIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDIAppDelegate.m; sourceTree = "<group>"; };
-		777F8AA7152B629F00AF038D /* GDI iOS CoreTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GDI iOS CoreTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		777F8AA8152B629F00AF038D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		777F8AB0152B629F00AF038D /* GDI iOS CoreTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GDI iOS CoreTests-Info.plist"; sourceTree = "<group>"; };
 		777F8AB2152B629F00AF038D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -84,27 +78,33 @@
 		777F8AE8152B63CF00AF038D /* UISearchBar+GDIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+GDIAdditions.h"; sourceTree = "<group>"; };
 		777F8AE9152B63CF00AF038D /* UISearchBar+GDIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+GDIAdditions.m"; sourceTree = "<group>"; };
 		777F8AEB152B648F00AF038D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		777F8B18152B67D300AF038D /* libGDICore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGDICore.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		777F8B1C152B67D300AF038D /* GDICore-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GDICore-Prefix.pch"; sourceTree = "<group>"; };
+		777F8B1D152B67D300AF038D /* GDICore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDICore.h; sourceTree = "<group>"; };
+		777F8B25152B67D400AF038D /* GDICoreTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GDICoreTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		777F8B2E152B67D400AF038D /* GDICoreTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GDICoreTests-Info.plist"; sourceTree = "<group>"; };
+		777F8B30152B67D400AF038D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		777F8B32152B67D400AF038D /* GDICoreTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDICoreTests.h; sourceTree = "<group>"; };
+		777F8B33152B67D400AF038D /* GDICoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDICoreTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		777F8A89152B629F00AF038D /* Frameworks */ = {
+		777F8B15152B67D300AF038D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				777F8A91152B629F00AF038D /* UIKit.framework in Frameworks */,
-				777F8A93152B629F00AF038D /* Foundation.framework in Frameworks */,
-				777F8A95152B629F00AF038D /* CoreGraphics.framework in Frameworks */,
+				777F8B19152B67D300AF038D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		777F8AA3152B629F00AF038D /* Frameworks */ = {
+		777F8B21152B67D400AF038D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				777F8AEC152B648F00AF038D /* QuartzCore.framework in Frameworks */,
-				777F8AA9152B629F00AF038D /* SenTestingKit.framework in Frameworks */,
-				777F8AAA152B629F00AF038D /* UIKit.framework in Frameworks */,
-				777F8AAB152B629F00AF038D /* Foundation.framework in Frameworks */,
+				777F8B26152B67D400AF038D /* SenTestingKit.framework in Frameworks */,
+				777F8B27152B67D400AF038D /* UIKit.framework in Frameworks */,
+				777F8B28152B67D400AF038D /* Foundation.framework in Frameworks */,
+				777F8B2B152B67D400AF038D /* libGDICore.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +116,8 @@
 			children = (
 				777F8A96152B629F00AF038D /* GDI iOS Core */,
 				777F8AAE152B629F00AF038D /* GDI iOS CoreTests */,
+				777F8B1A152B67D300AF038D /* GDICore */,
+				777F8B2C152B67D400AF038D /* GDICoreTests */,
 				777F8A8F152B629F00AF038D /* Frameworks */,
 				777F8A8D152B629F00AF038D /* Products */,
 			);
@@ -124,8 +126,8 @@
 		777F8A8D152B629F00AF038D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				777F8A8C152B629F00AF038D /* GDI iOS Core.app */,
-				777F8AA7152B629F00AF038D /* GDI iOS CoreTests.octest */,
+				777F8B18152B67D300AF038D /* libGDICore.a */,
+				777F8B25152B67D400AF038D /* GDICoreTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,9 +148,9 @@
 			isa = PBXGroup;
 			children = (
 				777F8ADC152B637900AF038D /* Components */,
+				777F8ABF152B62D500AF038D /* UIKit Categories */,
 				777F8AD8152B635400AF038D /* GDIMath.h */,
 				777F8AD9152B635400AF038D /* GDIMath.m */,
-				777F8ABF152B62D500AF038D /* UIKit Categories */,
 				777F8A9F152B629F00AF038D /* GDIAppDelegate.h */,
 				777F8AA0152B629F00AF038D /* GDIAppDelegate.m */,
 				777F8A97152B629F00AF038D /* Supporting Files */,
@@ -216,43 +218,98 @@
 			name = Components;
 			sourceTree = "<group>";
 		};
+		777F8B1A152B67D300AF038D /* GDICore */ = {
+			isa = PBXGroup;
+			children = (
+				777F8B1D152B67D300AF038D /* GDICore.h */,
+				777F8B1B152B67D300AF038D /* Supporting Files */,
+			);
+			path = GDICore;
+			sourceTree = "<group>";
+		};
+		777F8B1B152B67D300AF038D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				777F8B1C152B67D300AF038D /* GDICore-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		777F8B2C152B67D400AF038D /* GDICoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				777F8B32152B67D400AF038D /* GDICoreTests.h */,
+				777F8B33152B67D400AF038D /* GDICoreTests.m */,
+				777F8B2D152B67D400AF038D /* Supporting Files */,
+			);
+			path = GDICoreTests;
+			sourceTree = "<group>";
+		};
+		777F8B2D152B67D400AF038D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				777F8B2E152B67D400AF038D /* GDICoreTests-Info.plist */,
+				777F8B2F152B67D400AF038D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
-/* Begin PBXNativeTarget section */
-		777F8A8B152B629F00AF038D /* GDI iOS Core */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 777F8AB9152B629F00AF038D /* Build configuration list for PBXNativeTarget "GDI iOS Core" */;
-			buildPhases = (
-				777F8A88152B629F00AF038D /* Sources */,
-				777F8A89152B629F00AF038D /* Frameworks */,
-				777F8A8A152B629F00AF038D /* Resources */,
+/* Begin PBXHeadersBuildPhase section */
+		777F8B16152B67D300AF038D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				777F8B44152B694600AF038D /* GDITouchProxyView.h in Headers */,
+				777F8B45152B694600AF038D /* UISearchBar+GDIAdditions.h in Headers */,
+				777F8B46152B694600AF038D /* CoreGraphics+GDIAdditions.h in Headers */,
+				777F8B47152B694600AF038D /* UIView+GDIAdditions.h in Headers */,
+				777F8B48152B694600AF038D /* UIImage+GDIAdditions.h in Headers */,
+				777F8B49152B694600AF038D /* UIColor+GDIAdditions.h in Headers */,
+				777F8B4A152B694600AF038D /* UILabel+GDIAdditions.h in Headers */,
+				777F8B4B152B694600AF038D /* NSString+GDIAdditions.h in Headers */,
+				777F8B4C152B694600AF038D /* GDIMath.h in Headers */,
 			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "GDI iOS Core";
-			productName = "GDI iOS Core";
-			productReference = 777F8A8C152B629F00AF038D /* GDI iOS Core.app */;
-			productType = "com.apple.product-type.application";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-		777F8AA6152B629F00AF038D /* GDI iOS CoreTests */ = {
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		777F8B17152B67D300AF038D /* GDICore */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 777F8ABC152B629F00AF038D /* Build configuration list for PBXNativeTarget "GDI iOS CoreTests" */;
+			buildConfigurationList = 777F8B35152B67D400AF038D /* Build configuration list for PBXNativeTarget "GDICore" */;
 			buildPhases = (
-				777F8AA2152B629F00AF038D /* Sources */,
-				777F8AA3152B629F00AF038D /* Frameworks */,
-				777F8AA4152B629F00AF038D /* Resources */,
-				777F8AA5152B629F00AF038D /* ShellScript */,
+				777F8B14152B67D300AF038D /* Sources */,
+				777F8B15152B67D300AF038D /* Frameworks */,
+				777F8B16152B67D300AF038D /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				777F8AAD152B629F00AF038D /* PBXTargetDependency */,
 			);
-			name = "GDI iOS CoreTests";
-			productName = "GDI iOS CoreTests";
-			productReference = 777F8AA7152B629F00AF038D /* GDI iOS CoreTests.octest */;
+			name = GDICore;
+			productName = GDICore;
+			productReference = 777F8B18152B67D300AF038D /* libGDICore.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		777F8B24152B67D400AF038D /* GDICoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 777F8B38152B67D400AF038D /* Build configuration list for PBXNativeTarget "GDICoreTests" */;
+			buildPhases = (
+				777F8B20152B67D400AF038D /* Sources */,
+				777F8B21152B67D400AF038D /* Frameworks */,
+				777F8B22152B67D400AF038D /* Resources */,
+				777F8B23152B67D400AF038D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				777F8B2A152B67D400AF038D /* PBXTargetDependency */,
+			);
+			name = GDICoreTests;
+			productName = GDICoreTests;
+			productReference = 777F8B25152B67D400AF038D /* GDICoreTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -263,6 +320,7 @@
 			attributes = {
 				CLASSPREFIX = GDI;
 				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Grant Davis Interactive, LLC";
 			};
 			buildConfigurationList = 777F8A86152B629E00AF038D /* Build configuration list for PBXProject "GDI iOS Core" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -276,33 +334,25 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				777F8A8B152B629F00AF038D /* GDI iOS Core */,
-				777F8AA6152B629F00AF038D /* GDI iOS CoreTests */,
+				777F8B17152B67D300AF038D /* GDICore */,
+				777F8B24152B67D400AF038D /* GDICoreTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		777F8A8A152B629F00AF038D /* Resources */ = {
+		777F8B22152B67D400AF038D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				777F8A9B152B629F00AF038D /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		777F8AA4152B629F00AF038D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				777F8AB3152B629F00AF038D /* InfoPlist.strings in Resources */,
+				777F8B31152B67D400AF038D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		777F8AA5152B629F00AF038D /* ShellScript */ = {
+		777F8B23152B67D400AF038D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -318,47 +368,37 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		777F8A88152B629F00AF038D /* Sources */ = {
+		777F8B14152B67D300AF038D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				777F8A9D152B629F00AF038D /* main.m in Sources */,
-				777F8AA1152B629F00AF038D /* GDIAppDelegate.m in Sources */,
-				777F8ACC152B634400AF038D /* CoreGraphics+GDIAdditions.m in Sources */,
-				777F8ACE152B634400AF038D /* UIView+GDIAdditions.m in Sources */,
-				777F8AD0152B634400AF038D /* UIImage+GDIAdditions.m in Sources */,
-				777F8AD2152B634400AF038D /* UIColor+GDIAdditions.m in Sources */,
-				777F8AD4152B634400AF038D /* UILabel+GDIAdditions.m in Sources */,
-				777F8AD6152B634400AF038D /* NSString+GDIAdditions.m in Sources */,
-				777F8ADA152B635400AF038D /* GDIMath.m in Sources */,
+				777F8B3B152B693100AF038D /* GDITouchProxyView.m in Sources */,
+				777F8B3C152B693100AF038D /* UISearchBar+GDIAdditions.m in Sources */,
+				777F8B3D152B693100AF038D /* CoreGraphics+GDIAdditions.m in Sources */,
+				777F8B3E152B693100AF038D /* UIView+GDIAdditions.m in Sources */,
+				777F8B3F152B693100AF038D /* UIImage+GDIAdditions.m in Sources */,
+				777F8B40152B693100AF038D /* UIColor+GDIAdditions.m in Sources */,
+				777F8B41152B693100AF038D /* UILabel+GDIAdditions.m in Sources */,
+				777F8B42152B693100AF038D /* NSString+GDIAdditions.m in Sources */,
+				777F8B43152B693100AF038D /* GDIMath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		777F8AA2152B629F00AF038D /* Sources */ = {
+		777F8B20152B67D400AF038D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				777F8AF7152B64B500AF038D /* GDIAppDelegate.m in Sources */,
-				777F8AB6152B629F00AF038D /* GDI_iOS_CoreTests.m in Sources */,
-				777F8ACD152B634400AF038D /* CoreGraphics+GDIAdditions.m in Sources */,
-				777F8ACF152B634400AF038D /* UIView+GDIAdditions.m in Sources */,
-				777F8AD1152B634400AF038D /* UIImage+GDIAdditions.m in Sources */,
-				777F8AD3152B634400AF038D /* UIColor+GDIAdditions.m in Sources */,
-				777F8AD5152B634400AF038D /* UILabel+GDIAdditions.m in Sources */,
-				777F8AD7152B634400AF038D /* NSString+GDIAdditions.m in Sources */,
-				777F8ADB152B635400AF038D /* GDIMath.m in Sources */,
-				777F8AE7152B63C000AF038D /* GDITouchProxyView.m in Sources */,
-				777F8AEA152B63CF00AF038D /* UISearchBar+GDIAdditions.m in Sources */,
+				777F8B34152B67D400AF038D /* GDICoreTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		777F8AAD152B629F00AF038D /* PBXTargetDependency */ = {
+		777F8B2A152B67D400AF038D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 777F8A8B152B629F00AF038D /* GDI iOS Core */;
-			targetProxy = 777F8AAC152B629F00AF038D /* PBXContainerItemProxy */;
+			target = 777F8B17152B67D300AF038D /* GDICore */;
+			targetProxy = 777F8B29152B67D400AF038D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -375,6 +415,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				777F8AB2152B629F00AF038D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		777F8B2F152B67D400AF038D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				777F8B30152B67D400AF038D /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -429,60 +477,56 @@
 			};
 			name = Release;
 		};
-		777F8ABA152B629F00AF038D /* Debug */ = {
+		777F8B36152B67D400AF038D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DSTROOT = /tmp/GDICore.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GDI iOS Core/GDI iOS Core-Prefix.pch";
-				INFOPLIST_FILE = "GDI iOS Core/GDI iOS Core-Info.plist";
+				GCC_PREFIX_HEADER = "GDICore/GDICore-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				RUN_CLANG_STATIC_ANALYZER = YES;
-				WRAPPER_EXTENSION = app;
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		777F8ABB152B629F00AF038D /* Release */ = {
+		777F8B37152B67D400AF038D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DSTROOT = /tmp/GDICore.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GDI iOS Core/GDI iOS Core-Prefix.pch";
-				INFOPLIST_FILE = "GDI iOS Core/GDI iOS Core-Info.plist";
+				GCC_PREFIX_HEADER = "GDICore/GDICore-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				RUN_CLANG_STATIC_ANALYZER = YES;
-				WRAPPER_EXTENSION = app;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		777F8ABD152B629F00AF038D /* Debug */ = {
+		777F8B39152B67D400AF038D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GDI iOS Core.app/GDI iOS Core";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GDI iOS Core/GDI iOS Core-Prefix.pch";
-				INFOPLIST_FILE = "GDI iOS CoreTests/GDI iOS CoreTests-Info.plist";
+				GCC_PREFIX_HEADER = "GDICore/GDICore-Prefix.pch";
+				INFOPLIST_FILE = "GDICoreTests/GDICoreTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
-		777F8ABE152B629F00AF038D /* Release */ = {
+		777F8B3A152B67D400AF038D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GDI iOS Core.app/GDI iOS Core";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GDI iOS Core/GDI iOS Core-Prefix.pch";
-				INFOPLIST_FILE = "GDI iOS CoreTests/GDI iOS CoreTests-Info.plist";
+				GCC_PREFIX_HEADER = "GDICore/GDICore-Prefix.pch";
+				INFOPLIST_FILE = "GDICoreTests/GDICoreTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -499,19 +543,19 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		777F8AB9152B629F00AF038D /* Build configuration list for PBXNativeTarget "GDI iOS Core" */ = {
+		777F8B35152B67D400AF038D /* Build configuration list for PBXNativeTarget "GDICore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				777F8ABA152B629F00AF038D /* Debug */,
-				777F8ABB152B629F00AF038D /* Release */,
+				777F8B36152B67D400AF038D /* Debug */,
+				777F8B37152B67D400AF038D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		777F8ABC152B629F00AF038D /* Build configuration list for PBXNativeTarget "GDI iOS CoreTests" */ = {
+		777F8B38152B67D400AF038D /* Build configuration list for PBXNativeTarget "GDICoreTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				777F8ABD152B629F00AF038D /* Debug */,
-				777F8ABE152B629F00AF038D /* Release */,
+				777F8B39152B67D400AF038D /* Debug */,
+				777F8B3A152B67D400AF038D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
