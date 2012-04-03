@@ -5,7 +5,6 @@
 //  Created by Grant Davis on 4/3/12.
 //  Copyright (c) 2012 Grant Davis Interactive, LLC. All rights reserved.
 //
-
 // components
 #import "GDITouchProxyView.h"
 

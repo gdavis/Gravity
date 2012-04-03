@@ -33,6 +33,8 @@
 		777F8B4B152B694600AF038D /* NSString+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8ACA152B634400AF038D /* NSString+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		777F8B4C152B694600AF038D /* GDIMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AD8152B635400AF038D /* GDIMath.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		777F8B50152B6A0100AF038D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8AEB152B648F00AF038D /* QuartzCore.framework */; };
+		777F8B67152B6E9C00AF038D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8A90152B629F00AF038D /* UIKit.framework */; };
+		777F8B6D152B725500AF038D /* GDICore.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8B1D152B67D300AF038D /* GDICore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,17 +51,7 @@
 		777F8A90152B629F00AF038D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		777F8A92152B629F00AF038D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		777F8A94152B629F00AF038D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		777F8A98152B629F00AF038D /* GDI iOS Core-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GDI iOS Core-Info.plist"; sourceTree = "<group>"; };
-		777F8A9A152B629F00AF038D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		777F8A9C152B629F00AF038D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		777F8A9E152B629F00AF038D /* GDI iOS Core-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GDI iOS Core-Prefix.pch"; sourceTree = "<group>"; };
-		777F8A9F152B629F00AF038D /* GDIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDIAppDelegate.h; sourceTree = "<group>"; };
-		777F8AA0152B629F00AF038D /* GDIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDIAppDelegate.m; sourceTree = "<group>"; };
 		777F8AA8152B629F00AF038D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		777F8AB0152B629F00AF038D /* GDI iOS CoreTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GDI iOS CoreTests-Info.plist"; sourceTree = "<group>"; };
-		777F8AB2152B629F00AF038D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		777F8AB4152B629F00AF038D /* GDI_iOS_CoreTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDI_iOS_CoreTests.h; sourceTree = "<group>"; };
-		777F8AB5152B629F00AF038D /* GDI_iOS_CoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDI_iOS_CoreTests.m; sourceTree = "<group>"; };
 		777F8AC0152B634400AF038D /* CoreGraphics+GDIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreGraphics+GDIAdditions.h"; sourceTree = "<group>"; };
 		777F8AC1152B634400AF038D /* CoreGraphics+GDIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CoreGraphics+GDIAdditions.m"; sourceTree = "<group>"; };
 		777F8AC2152B634400AF038D /* UIView+GDIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GDIAdditions.h"; sourceTree = "<group>"; };
@@ -80,8 +72,8 @@
 		777F8AE9152B63CF00AF038D /* UISearchBar+GDIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+GDIAdditions.m"; sourceTree = "<group>"; };
 		777F8AEB152B648F00AF038D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		777F8B18152B67D300AF038D /* libGDICore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGDICore.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		777F8B1C152B67D300AF038D /* GDICore-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GDICore-Prefix.pch"; sourceTree = "<group>"; };
-		777F8B1D152B67D300AF038D /* GDICore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDICore.h; sourceTree = "<group>"; };
+		777F8B1C152B67D300AF038D /* GDICore-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "GDICore-Prefix.pch"; path = "../GDICore/GDICore-Prefix.pch"; sourceTree = "<group>"; };
+		777F8B1D152B67D300AF038D /* GDICore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GDICore.h; path = ../GDICore/GDICore.h; sourceTree = "<group>"; };
 		777F8B25152B67D400AF038D /* GDICoreTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GDICoreTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		777F8B2E152B67D400AF038D /* GDICoreTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GDICoreTests-Info.plist"; sourceTree = "<group>"; };
 		777F8B30152B67D400AF038D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -94,8 +86,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				777F8B50152B6A0100AF038D /* QuartzCore.framework in Frameworks */,
+				777F8B67152B6E9C00AF038D /* UIKit.framework in Frameworks */,
 				777F8B19152B67D300AF038D /* Foundation.framework in Frameworks */,
+				777F8B50152B6A0100AF038D /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,8 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				777F8A96152B629F00AF038D /* GDI iOS Core */,
-				777F8AAE152B629F00AF038D /* GDI iOS CoreTests */,
-				777F8B1A152B67D300AF038D /* GDICore */,
 				777F8B2C152B67D400AF038D /* GDICoreTests */,
 				777F8A8F152B629F00AF038D /* Frameworks */,
 				777F8A8D152B629F00AF038D /* Products */,
@@ -149,12 +140,10 @@
 		777F8A96152B629F00AF038D /* GDI iOS Core */ = {
 			isa = PBXGroup;
 			children = (
+				777F8B1D152B67D300AF038D /* GDICore.h */,
 				777F8ADC152B637900AF038D /* Components */,
 				777F8ABF152B62D500AF038D /* UIKit Categories */,
-				777F8AD8152B635400AF038D /* GDIMath.h */,
-				777F8AD9152B635400AF038D /* GDIMath.m */,
-				777F8A9F152B629F00AF038D /* GDIAppDelegate.h */,
-				777F8AA0152B629F00AF038D /* GDIAppDelegate.m */,
+				777F8B70152B748E00AF038D /* Utility */,
 				777F8A97152B629F00AF038D /* Supporting Files */,
 			);
 			path = "GDI iOS Core";
@@ -163,29 +152,7 @@
 		777F8A97152B629F00AF038D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				777F8A98152B629F00AF038D /* GDI iOS Core-Info.plist */,
-				777F8A99152B629F00AF038D /* InfoPlist.strings */,
-				777F8A9C152B629F00AF038D /* main.m */,
-				777F8A9E152B629F00AF038D /* GDI iOS Core-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		777F8AAE152B629F00AF038D /* GDI iOS CoreTests */ = {
-			isa = PBXGroup;
-			children = (
-				777F8AB4152B629F00AF038D /* GDI_iOS_CoreTests.h */,
-				777F8AB5152B629F00AF038D /* GDI_iOS_CoreTests.m */,
-				777F8AAF152B629F00AF038D /* Supporting Files */,
-			);
-			path = "GDI iOS CoreTests";
-			sourceTree = "<group>";
-		};
-		777F8AAF152B629F00AF038D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				777F8AB0152B629F00AF038D /* GDI iOS CoreTests-Info.plist */,
-				777F8AB1152B629F00AF038D /* InfoPlist.strings */,
+				777F8B1C152B67D300AF038D /* GDICore-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -220,23 +187,6 @@
 			name = Components;
 			sourceTree = "<group>";
 		};
-		777F8B1A152B67D300AF038D /* GDICore */ = {
-			isa = PBXGroup;
-			children = (
-				777F8B1D152B67D300AF038D /* GDICore.h */,
-				777F8B1B152B67D300AF038D /* Supporting Files */,
-			);
-			path = GDICore;
-			sourceTree = "<group>";
-		};
-		777F8B1B152B67D300AF038D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				777F8B1C152B67D300AF038D /* GDICore-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		777F8B2C152B67D400AF038D /* GDICoreTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +206,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		777F8B70152B748E00AF038D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				777F8AD8152B635400AF038D /* GDIMath.h */,
+				777F8AD9152B635400AF038D /* GDIMath.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -263,6 +222,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				777F8B6D152B725500AF038D /* GDICore.h in Headers */,
 				777F8B44152B694600AF038D /* GDITouchProxyView.h in Headers */,
 				777F8B45152B694600AF038D /* UISearchBar+GDIAdditions.h in Headers */,
 				777F8B46152B694600AF038D /* CoreGraphics+GDIAdditions.h in Headers */,
@@ -405,22 +365,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		777F8A99152B629F00AF038D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				777F8A9A152B629F00AF038D /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		777F8AB1152B629F00AF038D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				777F8AB2152B629F00AF038D /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		777F8B2F152B67D400AF038D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -487,9 +431,9 @@
 				GCC_PREFIX_HEADER = "GDICore/GDICore-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRIVATE_HEADERS_FOLDER_PATH = include/GDICore/Private;
+				PRIVATE_HEADERS_FOLDER_PATH = /include/GDICore/Private;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = include/GDICore;
+				PUBLIC_HEADERS_FOLDER_PATH = /include/GDICore;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
 			};
@@ -503,9 +447,9 @@
 				GCC_PREFIX_HEADER = "GDICore/GDICore-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRIVATE_HEADERS_FOLDER_PATH = include/GDICore/Private;
+				PRIVATE_HEADERS_FOLDER_PATH = /include/GDICore/Private;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = include/GDICore;
+				PUBLIC_HEADERS_FOLDER_PATH = /include/GDICore;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
 			};
