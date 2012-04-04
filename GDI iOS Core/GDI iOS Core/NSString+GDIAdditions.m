@@ -28,8 +28,13 @@
 
 + (BOOL)isValidPhoneNumber:(NSString *)phoneNumber
 {
-    NSTextCheckingResult *phoneCheckResult = [NSTextCheckingResult phoneNumberCheckingResultWithRange:[phoneNumber rangeOfString:phoneNumber] phoneNumber:phoneNumber];
-    return phoneCheckResult.numberOfRanges > 0;
+    NSError *error = nil;
+    NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypePhoneNumber
+                                                               error:&error];
+    NSUInteger numberOfMatches = [detector numberOfMatchesInString:phoneNumber
+                                                           options:0
+                                                             range:NSMakeRange(0, [phoneNumber length])];
+    return numberOfMatches > 0;
 }
 
 + (BOOL)isValidEmail:(NSString *)string
