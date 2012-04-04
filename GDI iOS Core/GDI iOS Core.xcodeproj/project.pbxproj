@@ -146,7 +146,7 @@
 			children = (
 				777F8B1D152B67D300AF038D /* GDICore.h */,
 				777F8ADC152B637900AF038D /* Components */,
-				777F8ABF152B62D500AF038D /* UIKit Categories */,
+				777F8ABF152B62D500AF038D /* Categories */,
 				777F8B70152B748E00AF038D /* Utility */,
 				777F8A97152B629F00AF038D /* Supporting Files */,
 			);
@@ -162,7 +162,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		777F8ABF152B62D500AF038D /* UIKit Categories */ = {
+		777F8ABF152B62D500AF038D /* Categories */ = {
 			isa = PBXGroup;
 			children = (
 				777F8B97152B7F5B00AF038D /* CAAnimation+Blocks.h */,
@@ -182,7 +182,7 @@
 				777F8ACA152B634400AF038D /* NSString+GDIAdditions.h */,
 				777F8ACB152B634400AF038D /* NSString+GDIAdditions.m */,
 			);
-			name = "UIKit Categories";
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		777F8ADC152B637900AF038D /* Components */ = {

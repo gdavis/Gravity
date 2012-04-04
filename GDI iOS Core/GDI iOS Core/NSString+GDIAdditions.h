@@ -26,6 +26,7 @@
 
 @interface NSString (GDIAdditions)
 
++ (BOOL)isValidPhoneNumber:(NSString *)phoneNumber;
 + (BOOL)isValidEmail:(NSString *)string;
 
 @end

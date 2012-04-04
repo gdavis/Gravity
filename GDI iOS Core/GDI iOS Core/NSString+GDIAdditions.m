@@ -26,6 +26,12 @@
 
 @implementation NSString (GDIAdditions)
 
++ (BOOL)isValidPhoneNumber:(NSString *)phoneNumber
+{
+    NSTextCheckingResult *phoneCheckResult = [NSTextCheckingResult phoneNumberCheckingResultWithRange:[phoneNumber rangeOfString:phoneNumber] phoneNumber:phoneNumber];
+    return phoneCheckResult.numberOfRanges > 0;
+}
+
 + (BOOL)isValidEmail:(NSString *)string
 {
 	// validate data 
