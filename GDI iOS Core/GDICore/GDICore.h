@@ -34,6 +34,7 @@
 #import "UILabel+GDIAdditions.h"
 #import "NSString+GDIAdditions.h"
 #import "CAAnimation+Blocks.h"
+#import "NSDate+GDIAdditions.h"
 
 // utility
 #import "GDIMath.h"

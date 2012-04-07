@@ -35,8 +35,10 @@
 		777F8B50152B6A0100AF038D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8AEB152B648F00AF038D /* QuartzCore.framework */; };
 		777F8B67152B6E9C00AF038D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8A90152B629F00AF038D /* UIKit.framework */; };
 		777F8B6D152B725500AF038D /* GDICore.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8B1D152B67D300AF038D /* GDICore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		777F8B99152B7F5D00AF038D /* CAAnimation+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8B97152B7F5B00AF038D /* CAAnimation+Blocks.h */; };
+		777F8B99152B7F5D00AF038D /* CAAnimation+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8B97152B7F5B00AF038D /* CAAnimation+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		777F8B9A152B7F5D00AF038D /* CAAnimation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8B98152B7F5C00AF038D /* CAAnimation+Blocks.m */; };
+		77A5687F15309B19004E9C51 /* NSDate+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77A5687D15309B19004E9C51 /* NSDate+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77A5688015309B19004E9C51 /* NSDate+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A5687E15309B19004E9C51 /* NSDate+GDIAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		777F8B33152B67D400AF038D /* GDICoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDICoreTests.m; sourceTree = "<group>"; };
 		777F8B97152B7F5B00AF038D /* CAAnimation+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+Blocks.h"; sourceTree = "<group>"; };
 		777F8B98152B7F5C00AF038D /* CAAnimation+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+Blocks.m"; sourceTree = "<group>"; };
+		77A5687D15309B19004E9C51 /* NSDate+GDIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+GDIAdditions.h"; sourceTree = "<group>"; };
+		77A5687E15309B19004E9C51 /* NSDate+GDIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+GDIAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +185,8 @@
 				777F8AC9152B634400AF038D /* UILabel+GDIAdditions.m */,
 				777F8ACA152B634400AF038D /* NSString+GDIAdditions.h */,
 				777F8ACB152B634400AF038D /* NSString+GDIAdditions.m */,
+				77A5687D15309B19004E9C51 /* NSDate+GDIAdditions.h */,
+				77A5687E15309B19004E9C51 /* NSDate+GDIAdditions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -236,10 +242,11 @@
 				777F8B47152B694600AF038D /* UIView+GDIAdditions.h in Headers */,
 				777F8B48152B694600AF038D /* UIImage+GDIAdditions.h in Headers */,
 				777F8B49152B694600AF038D /* UIColor+GDIAdditions.h in Headers */,
+				777F8B99152B7F5D00AF038D /* CAAnimation+Blocks.h in Headers */,
+				77A5687F15309B19004E9C51 /* NSDate+GDIAdditions.h in Headers */,
 				777F8B4A152B694600AF038D /* UILabel+GDIAdditions.h in Headers */,
 				777F8B4B152B694600AF038D /* NSString+GDIAdditions.h in Headers */,
 				777F8B4C152B694600AF038D /* GDIMath.h in Headers */,
-				777F8B99152B7F5D00AF038D /* CAAnimation+Blocks.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +359,7 @@
 				777F8B42152B693100AF038D /* NSString+GDIAdditions.m in Sources */,
 				777F8B43152B693100AF038D /* GDIMath.m in Sources */,
 				777F8B9A152B7F5D00AF038D /* CAAnimation+Blocks.m in Sources */,
+				77A5688015309B19004E9C51 /* NSDate+GDIAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
