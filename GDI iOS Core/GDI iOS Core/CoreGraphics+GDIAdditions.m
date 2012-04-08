@@ -77,8 +77,13 @@ void CGContextDrawGradientWithColors(CGContextRef context, CGRect rect, NSArray 
     CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef) colors, locations);
     CGPoint startPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMinY(rect));
     CGPoint endPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMaxY(rect));
+    
+    CGPathRef clipPath = CGPathCreateWithRect(rect, NULL);
+    CGContextAddPath(context, clipPath);
+    CGContextClip(context);
     CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0);
 
+    CGPathRelease(clipPath);
     CGGradientRelease(gradient);
     CGColorSpaceRelease(colorSpace);
 }
