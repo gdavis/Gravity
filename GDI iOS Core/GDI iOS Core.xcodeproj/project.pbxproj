@@ -23,21 +23,21 @@
 		777F8B41152B693100AF038D /* UILabel+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AC9152B634400AF038D /* UILabel+GDIAdditions.m */; };
 		777F8B42152B693100AF038D /* NSString+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8ACB152B634400AF038D /* NSString+GDIAdditions.m */; };
 		777F8B43152B693100AF038D /* GDIMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8AD9152B635400AF038D /* GDIMath.m */; };
-		777F8B44152B694600AF038D /* GDITouchProxyView.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AE5152B63C000AF038D /* GDITouchProxyView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		777F8B45152B694600AF038D /* UISearchBar+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AE8152B63CF00AF038D /* UISearchBar+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		777F8B46152B694600AF038D /* CoreGraphics+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC0152B634400AF038D /* CoreGraphics+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		777F8B47152B694600AF038D /* UIView+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC2152B634400AF038D /* UIView+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		777F8B48152B694600AF038D /* UIImage+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC4152B634400AF038D /* UIImage+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		777F8B49152B694600AF038D /* UIColor+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC6152B634400AF038D /* UIColor+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		777F8B4A152B694600AF038D /* UILabel+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC8152B634400AF038D /* UILabel+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		777F8B4B152B694600AF038D /* NSString+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8ACA152B634400AF038D /* NSString+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		777F8B4C152B694600AF038D /* GDIMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AD8152B635400AF038D /* GDIMath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		777F8B44152B694600AF038D /* GDITouchProxyView.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AE5152B63C000AF038D /* GDITouchProxyView.h */; settings = {ATTRIBUTES = (); }; };
+		777F8B45152B694600AF038D /* UISearchBar+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AE8152B63CF00AF038D /* UISearchBar+GDIAdditions.h */; settings = {ATTRIBUTES = (); }; };
+		777F8B46152B694600AF038D /* CoreGraphics+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC0152B634400AF038D /* CoreGraphics+GDIAdditions.h */; settings = {ATTRIBUTES = (); }; };
+		777F8B47152B694600AF038D /* UIView+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC2152B634400AF038D /* UIView+GDIAdditions.h */; settings = {ATTRIBUTES = (); }; };
+		777F8B48152B694600AF038D /* UIImage+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC4152B634400AF038D /* UIImage+GDIAdditions.h */; settings = {ATTRIBUTES = (); }; };
+		777F8B49152B694600AF038D /* UIColor+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC6152B634400AF038D /* UIColor+GDIAdditions.h */; settings = {ATTRIBUTES = (); }; };
+		777F8B4A152B694600AF038D /* UILabel+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AC8152B634400AF038D /* UILabel+GDIAdditions.h */; settings = {ATTRIBUTES = (); }; };
+		777F8B4B152B694600AF038D /* NSString+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8ACA152B634400AF038D /* NSString+GDIAdditions.h */; settings = {ATTRIBUTES = (); }; };
+		777F8B4C152B694600AF038D /* GDIMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8AD8152B635400AF038D /* GDIMath.h */; settings = {ATTRIBUTES = (); }; };
 		777F8B50152B6A0100AF038D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8AEB152B648F00AF038D /* QuartzCore.framework */; };
 		777F8B67152B6E9C00AF038D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8A90152B629F00AF038D /* UIKit.framework */; };
-		777F8B6D152B725500AF038D /* GDICore.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8B1D152B67D300AF038D /* GDICore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		777F8B99152B7F5D00AF038D /* CAAnimation+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8B97152B7F5B00AF038D /* CAAnimation+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		777F8B6D152B725500AF038D /* GDICore.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8B1D152B67D300AF038D /* GDICore.h */; settings = {ATTRIBUTES = (); }; };
+		777F8B99152B7F5D00AF038D /* CAAnimation+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8B97152B7F5B00AF038D /* CAAnimation+Blocks.h */; settings = {ATTRIBUTES = (); }; };
 		777F8B9A152B7F5D00AF038D /* CAAnimation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8B98152B7F5C00AF038D /* CAAnimation+Blocks.m */; };
-		77A5687F15309B19004E9C51 /* NSDate+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77A5687D15309B19004E9C51 /* NSDate+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77A5687F15309B19004E9C51 /* NSDate+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77A5687D15309B19004E9C51 /* NSDate+GDIAdditions.h */; settings = {ATTRIBUTES = (); }; };
 		77A5688015309B19004E9C51 /* NSDate+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A5687E15309B19004E9C51 /* NSDate+GDIAdditions.m */; };
 /* End PBXBuildFile section */
 
@@ -415,6 +415,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -435,6 +436,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -483,6 +485,7 @@
 				GCC_PREFIX_HEADER = "GDICore/GDICore-Prefix.pch";
 				INFOPLIST_FILE = "GDICoreTests/GDICoreTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -498,6 +501,7 @@
 				GCC_PREFIX_HEADER = "GDICore/GDICore-Prefix.pch";
 				INFOPLIST_FILE = "GDICoreTests/GDICoreTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
