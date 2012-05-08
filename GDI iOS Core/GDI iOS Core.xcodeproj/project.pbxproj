@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		776A9FA1154AE5E1007966A4 /* SharedImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 776A9F9B154AE5E1007966A4 /* SharedImageCache.h */; };
+		776A9FA2154AE5E1007966A4 /* SharedImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 776A9F9C154AE5E1007966A4 /* SharedImageCache.m */; };
+		776A9FA3154AE5E1007966A4 /* ImageCacheObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 776A9F9D154AE5E1007966A4 /* ImageCacheObject.h */; };
+		776A9FA4154AE5E1007966A4 /* ImageCacheObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 776A9F9E154AE5E1007966A4 /* ImageCacheObject.m */; };
+		776A9FA5154AE5E1007966A4 /* ImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 776A9F9F154AE5E1007966A4 /* ImageCache.h */; };
+		776A9FA6154AE5E1007966A4 /* ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 776A9FA0154AE5E1007966A4 /* ImageCache.m */; };
+		776A9FAF154AE77D007966A4 /* CAAnimation+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8B97152B7F5B00AF038D /* CAAnimation+Blocks.h */; };
 		777F8B19152B67D300AF038D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8A92152B629F00AF038D /* Foundation.framework */; };
 		777F8B26152B67D400AF038D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8AA8152B629F00AF038D /* SenTestingKit.framework */; };
 		777F8B27152B67D400AF038D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8A90152B629F00AF038D /* UIKit.framework */; };
@@ -35,7 +42,6 @@
 		777F8B50152B6A0100AF038D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8AEB152B648F00AF038D /* QuartzCore.framework */; };
 		777F8B67152B6E9C00AF038D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8A90152B629F00AF038D /* UIKit.framework */; };
 		777F8B6D152B725500AF038D /* GDICore.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8B1D152B67D300AF038D /* GDICore.h */; settings = {ATTRIBUTES = (); }; };
-		777F8B99152B7F5D00AF038D /* CAAnimation+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8B97152B7F5B00AF038D /* CAAnimation+Blocks.h */; settings = {ATTRIBUTES = (); }; };
 		777F8B9A152B7F5D00AF038D /* CAAnimation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8B98152B7F5C00AF038D /* CAAnimation+Blocks.m */; };
 		77A5687F15309B19004E9C51 /* NSDate+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77A5687D15309B19004E9C51 /* NSDate+GDIAdditions.h */; settings = {ATTRIBUTES = (); }; };
 		77A5688015309B19004E9C51 /* NSDate+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A5687E15309B19004E9C51 /* NSDate+GDIAdditions.m */; };
@@ -55,6 +61,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		776A9F9B154AE5E1007966A4 /* SharedImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedImageCache.h; sourceTree = "<group>"; };
+		776A9F9C154AE5E1007966A4 /* SharedImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedImageCache.m; sourceTree = "<group>"; };
+		776A9F9D154AE5E1007966A4 /* ImageCacheObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCacheObject.h; sourceTree = "<group>"; };
+		776A9F9E154AE5E1007966A4 /* ImageCacheObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCacheObject.m; sourceTree = "<group>"; };
+		776A9F9F154AE5E1007966A4 /* ImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCache.h; sourceTree = "<group>"; };
+		776A9FA0154AE5E1007966A4 /* ImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCache.m; sourceTree = "<group>"; };
 		777F8A90152B629F00AF038D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		777F8A92152B629F00AF038D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		777F8A94152B629F00AF038D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -121,6 +133,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		776A9FA8154AE5E7007966A4 /* Image Cache */ = {
+			isa = PBXGroup;
+			children = (
+				776A9F9B154AE5E1007966A4 /* SharedImageCache.h */,
+				776A9F9C154AE5E1007966A4 /* SharedImageCache.m */,
+				776A9F9D154AE5E1007966A4 /* ImageCacheObject.h */,
+				776A9F9E154AE5E1007966A4 /* ImageCacheObject.m */,
+				776A9F9F154AE5E1007966A4 /* ImageCache.h */,
+				776A9FA0154AE5E1007966A4 /* ImageCache.m */,
+			);
+			name = "Image Cache";
+			sourceTree = "<group>";
+		};
 		777F8A81152B629E00AF038D = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				777F8B1D152B67D300AF038D /* GDICore.h */,
+				776A9FA8154AE5E7007966A4 /* Image Cache */,
 				777F8ADC152B637900AF038D /* Components */,
 				777F8ABF152B62D500AF038D /* Categories */,
 				777F8B70152B748E00AF038D /* Utility */,
@@ -252,12 +278,15 @@
 				777F8B47152B694600AF038D /* UIView+GDIAdditions.h in Headers */,
 				777F8B48152B694600AF038D /* UIImage+GDIAdditions.h in Headers */,
 				777F8B49152B694600AF038D /* UIColor+GDIAdditions.h in Headers */,
-				777F8B99152B7F5D00AF038D /* CAAnimation+Blocks.h in Headers */,
+				776A9FAF154AE77D007966A4 /* CAAnimation+Blocks.h in Headers */,
 				77A5687F15309B19004E9C51 /* NSDate+GDIAdditions.h in Headers */,
 				777F8B4A152B694600AF038D /* UILabel+GDIAdditions.h in Headers */,
 				777F8B4B152B694600AF038D /* NSString+GDIAdditions.h in Headers */,
 				777F8B4C152B694600AF038D /* GDIMath.h in Headers */,
 				77CBC7851559A6F600EFEAEA /* NSData+GDIAdditions.h in Headers */,
+				776A9FA1154AE5E1007966A4 /* SharedImageCache.h in Headers */,
+				776A9FA3154AE5E1007966A4 /* ImageCacheObject.h in Headers */,
+				776A9FA5154AE5E1007966A4 /* ImageCache.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +401,9 @@
 				777F8B9A152B7F5D00AF038D /* CAAnimation+Blocks.m in Sources */,
 				77A5688015309B19004E9C51 /* NSDate+GDIAdditions.m in Sources */,
 				77CBC7861559A6F600EFEAEA /* NSData+GDIAdditions.m in Sources */,
+				776A9FA2154AE5E1007966A4 /* SharedImageCache.m in Sources */,
+				776A9FA4154AE5E1007966A4 /* ImageCacheObject.m in Sources */,
+				776A9FA6154AE5E1007966A4 /* ImageCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
