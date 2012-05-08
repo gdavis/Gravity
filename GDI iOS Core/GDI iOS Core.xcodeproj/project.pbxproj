@@ -39,6 +39,9 @@
 		777F8B9A152B7F5D00AF038D /* CAAnimation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8B98152B7F5C00AF038D /* CAAnimation+Blocks.m */; };
 		77A5687F15309B19004E9C51 /* NSDate+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77A5687D15309B19004E9C51 /* NSDate+GDIAdditions.h */; settings = {ATTRIBUTES = (); }; };
 		77A5688015309B19004E9C51 /* NSDate+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A5687E15309B19004E9C51 /* NSDate+GDIAdditions.m */; };
+		77CBC7851559A6F600EFEAEA /* NSData+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77CBC7831559A6F600EFEAEA /* NSData+GDIAdditions.h */; };
+		77CBC7861559A6F600EFEAEA /* NSData+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CBC7841559A6F600EFEAEA /* NSData+GDIAdditions.m */; };
+		77CBC7891559A73800EFEAEA /* libcommonCrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 77CBC7881559A73800EFEAEA /* libcommonCrypto.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 		777F8B98152B7F5C00AF038D /* CAAnimation+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+Blocks.m"; sourceTree = "<group>"; };
 		77A5687D15309B19004E9C51 /* NSDate+GDIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+GDIAdditions.h"; sourceTree = "<group>"; };
 		77A5687E15309B19004E9C51 /* NSDate+GDIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+GDIAdditions.m"; sourceTree = "<group>"; };
+		77CBC7831559A6F600EFEAEA /* NSData+GDIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+GDIAdditions.h"; sourceTree = "<group>"; };
+		77CBC7841559A6F600EFEAEA /* NSData+GDIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+GDIAdditions.m"; sourceTree = "<group>"; };
+		77CBC7881559A73800EFEAEA /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77CBC7891559A73800EFEAEA /* libcommonCrypto.dylib in Frameworks */,
 				777F8B67152B6E9C00AF038D /* UIKit.framework in Frameworks */,
 				777F8B19152B67D300AF038D /* Foundation.framework in Frameworks */,
 				777F8B50152B6A0100AF038D /* QuartzCore.framework in Frameworks */,
@@ -136,6 +143,7 @@
 		777F8A8F152B629F00AF038D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				77CBC7881559A73800EFEAEA /* libcommonCrypto.dylib */,
 				777F8AEB152B648F00AF038D /* QuartzCore.framework */,
 				777F8A90152B629F00AF038D /* UIKit.framework */,
 				777F8A92152B629F00AF038D /* Foundation.framework */,
@@ -187,6 +195,8 @@
 				777F8ACB152B634400AF038D /* NSString+GDIAdditions.m */,
 				77A5687D15309B19004E9C51 /* NSDate+GDIAdditions.h */,
 				77A5687E15309B19004E9C51 /* NSDate+GDIAdditions.m */,
+				77CBC7831559A6F600EFEAEA /* NSData+GDIAdditions.h */,
+				77CBC7841559A6F600EFEAEA /* NSData+GDIAdditions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -247,6 +257,7 @@
 				777F8B4A152B694600AF038D /* UILabel+GDIAdditions.h in Headers */,
 				777F8B4B152B694600AF038D /* NSString+GDIAdditions.h in Headers */,
 				777F8B4C152B694600AF038D /* GDIMath.h in Headers */,
+				77CBC7851559A6F600EFEAEA /* NSData+GDIAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +371,7 @@
 				777F8B43152B693100AF038D /* GDIMath.m in Sources */,
 				777F8B9A152B7F5D00AF038D /* CAAnimation+Blocks.m in Sources */,
 				77A5688015309B19004E9C51 /* NSDate+GDIAdditions.m in Sources */,
+				77CBC7861559A6F600EFEAEA /* NSData+GDIAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +461,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GDICore/GDICore-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRIVATE_HEADERS_FOLDER_PATH = /include/GDICore/Private;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -465,6 +481,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GDICore/GDICore-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRIVATE_HEADERS_FOLDER_PATH = /include/GDICore/Private;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -36,6 +36,7 @@
 @property (nonatomic) CGFloat frameHeight;
 @property (nonatomic) CGFloat frameWidth;
 @property (nonatomic) CGPoint frameOrigin;
+@property (nonatomic) CGSize frameSize;
 
 
 /**

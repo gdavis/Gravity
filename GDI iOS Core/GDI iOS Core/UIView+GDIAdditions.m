@@ -33,6 +33,7 @@
 @dynamic frameWidth;
 @dynamic frameHeight;
 @dynamic frameOrigin;
+@dynamic frameSize;
 
 #pragma mark - Frame Accessors
 
@@ -112,6 +113,18 @@
 {
     self.frame = CGRectMake(frameOrigin.x, frameOrigin.y, self.frameWidth, self.frameHeight);
 }
+
+
+- (CGSize)frameSize
+{
+    return self.frame.size;
+}
+
+- (void)setFrameSize:(CGSize)frameSize
+{
+    self.frame = CGRectMake(self.frameLeft, self.frameTop, frameSize.width, frameSize.height);
+}
+
 
 #pragma mark - Instance Methods
 
