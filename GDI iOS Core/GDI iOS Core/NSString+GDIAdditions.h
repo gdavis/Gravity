@@ -28,7 +28,7 @@
 
 // checks the string value to determine if the contents are null.
 // this checks for values such as '<null>' and '(null)' from database fields.
-- (BOOL)isNull;
++ (BOOL)isNullString:(NSString *)string;
 
 // creates a string with the MD5 representation of this object
 // adopted from: http://mobiledevelopertips.com/core-services/create-md5-hash-from-nsstring-nsdata-or-file.html

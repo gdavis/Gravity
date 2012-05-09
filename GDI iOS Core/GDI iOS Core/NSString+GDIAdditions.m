@@ -46,16 +46,17 @@
     return output;
 }
 
-- (BOOL)isNull
++ (BOOL)isNullString:(NSString *)string
 {    
-    if ((NSNull *)self == [NSNull null] 
-        || [self isEqualToString:@""] 
-        || self.length == 0 
-        || [self isEqualToString:@"(null)"] 
-        || [self isEqualToString:@"<null>"]) {
+    if (string == nil 
+        || string == (id)[NSNull null] 
+        || string.length == 0 
+        || [string isEqualToString:@""]  
+        || [string isEqualToString:@"null"] 
+        || [string isEqualToString:@"(null)"] 
+        || [string isEqualToString:@"<null>"]) {
         return YES;
     }
-    
     return NO;
 }
 
