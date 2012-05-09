@@ -47,7 +47,6 @@
 		77A5688015309B19004E9C51 /* NSDate+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A5687E15309B19004E9C51 /* NSDate+GDIAdditions.m */; };
 		77CBC7851559A6F600EFEAEA /* NSData+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77CBC7831559A6F600EFEAEA /* NSData+GDIAdditions.h */; };
 		77CBC7861559A6F600EFEAEA /* NSData+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CBC7841559A6F600EFEAEA /* NSData+GDIAdditions.m */; };
-		77CBC7891559A73800EFEAEA /* libcommonCrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 77CBC7881559A73800EFEAEA /* libcommonCrypto.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,7 +111,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77CBC7891559A73800EFEAEA /* libcommonCrypto.dylib in Frameworks */,
 				777F8B67152B6E9C00AF038D /* UIKit.framework in Frameworks */,
 				777F8B19152B67D300AF038D /* Foundation.framework in Frameworks */,
 				777F8B50152B6A0100AF038D /* QuartzCore.framework in Frameworks */,
