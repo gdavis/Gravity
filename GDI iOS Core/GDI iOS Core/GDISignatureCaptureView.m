@@ -63,6 +63,7 @@ CGPoint spline(CGPoint p0, CGPoint p1, CGPoint p2, CGPoint p3, CGFloat t);
 - (void)dealloc
 {
     CGPathRelease(_signaturePath);
+    CGPathRelease(_linePath);
 }
 
 #pragma mark - Public Methods
@@ -128,8 +129,21 @@ CGPoint spline(CGPoint p0, CGPoint p1, CGPoint p2, CGPoint p3, CGFloat t);
     // add point to storage
     [_points addObject:[NSValue valueWithCGPoint:touchPoint]];
     
-    // add point to line
-    CGPathAddLineToPoint(_linePath, NULL, touchPoint.x, touchPoint.y);
+    // interpolate our points to create a new path 
+    NSArray *interpolatedPoints = splineInterpolatePoints(_points, smoothing);
+    CGMutablePathRef path = CGPathCreateMutable();
+    
+    // move to the first point
+    CGPoint firstPoint = [[interpolatedPoints objectAtIndex:0] CGPointValue]; 
+    CGPathMoveToPoint(path, NULL, firstPoint.x, firstPoint.y);
+    
+    // then add the interpoolated points to create the path lines
+    for (int i=1; i< interpolatedPoints.count; i++) {
+        CGPoint point = [[interpolatedPoints objectAtIndex:i] CGPointValue];
+        CGPathAddLineToPoint(path, NULL, point.x, point.y);
+    }
+    // set the new path as our line path
+    _linePath = path;
 }
 
 
@@ -142,15 +156,9 @@ CGPoint spline(CGPoint p0, CGPoint p1, CGPoint p2, CGPoint p3, CGFloat t);
         // create new points array for this line
         _points = [NSMutableArray array];
         
-        // create a path for the line
-        _linePath = CGPathCreateMutable();
-        
         UITouch *touch = [touches anyObject];
         CGPoint touchPoint = [touch locationInView:self];
         [_points addObject:[NSValue valueWithCGPoint:touchPoint]];
-        
-        // move path to starting point
-        CGPathMoveToPoint(_linePath, NULL, touchPoint.x, touchPoint.y);
     }
     if ([touches count] == 3) {
         [self clear];
@@ -176,27 +184,10 @@ CGPoint spline(CGPoint p0, CGPoint p1, CGPoint p2, CGPoint p3, CGFloat t);
         CGPoint touchPoint = [touch locationInView:self];
         [self addTouch:touchPoint];
         
-        // here we take the points recorded and then run them through
-        // a spline method to create a smoothed set of points.
-        // with those, we'll create a new path that will be added
-        // to the signature path as a final line.
-        NSArray *interpolatedPoints = splineInterpolatePoints(_points, smoothing);
-        CGMutablePathRef path = CGPathCreateMutable();
-        CGPoint firstPoint = [[interpolatedPoints objectAtIndex:0] CGPointValue]; 
-        
-        // move to the first point
-        CGPathMoveToPoint(path, NULL, firstPoint.x, firstPoint.y);
-        
-        // then add points to create the line
-        for (int i=1; i< interpolatedPoints.count; i++) {
-            CGPoint point = [[interpolatedPoints objectAtIndex:i] CGPointValue];
-            CGPathAddLineToPoint(path, NULL, point.x, point.y);
-        }
         // add the smoothed path to the final signature path
-        CGPathAddPath(_signaturePath, NULL, path);
+        CGPathAddPath(_signaturePath, NULL, _linePath);
         
         // remove the temporary path
-        CGPathRelease(path);
         CGPathRelease(_linePath);
         _linePath = nil;
         
