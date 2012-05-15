@@ -47,6 +47,8 @@
 		77A5688015309B19004E9C51 /* NSDate+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A5687E15309B19004E9C51 /* NSDate+GDIAdditions.m */; };
 		77CBC7851559A6F600EFEAEA /* NSData+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77CBC7831559A6F600EFEAEA /* NSData+GDIAdditions.h */; };
 		77CBC7861559A6F600EFEAEA /* NSData+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CBC7841559A6F600EFEAEA /* NSData+GDIAdditions.m */; };
+		77D66C7815616C5D002173CA /* GDISignatureCaptureView.h in Headers */ = {isa = PBXBuildFile; fileRef = 77D66C7615616C5D002173CA /* GDISignatureCaptureView.h */; };
+		77D66C7915616C5D002173CA /* GDISignatureCaptureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D66C7715616C5D002173CA /* GDISignatureCaptureView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,8 @@
 		77CBC7831559A6F600EFEAEA /* NSData+GDIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+GDIAdditions.h"; sourceTree = "<group>"; };
 		77CBC7841559A6F600EFEAEA /* NSData+GDIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+GDIAdditions.m"; sourceTree = "<group>"; };
 		77CBC7881559A73800EFEAEA /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
+		77D66C7615616C5D002173CA /* GDISignatureCaptureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDISignatureCaptureView.h; sourceTree = "<group>"; };
+		77D66C7715616C5D002173CA /* GDISignatureCaptureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDISignatureCaptureView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +234,8 @@
 			children = (
 				777F8AE5152B63C000AF038D /* GDITouchProxyView.h */,
 				777F8AE6152B63C000AF038D /* GDITouchProxyView.m */,
+				77D66C7615616C5D002173CA /* GDISignatureCaptureView.h */,
+				77D66C7715616C5D002173CA /* GDISignatureCaptureView.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -285,6 +291,7 @@
 				776A9FA1154AE5E1007966A4 /* SharedImageCache.h in Headers */,
 				776A9FA3154AE5E1007966A4 /* ImageCacheObject.h in Headers */,
 				776A9FA5154AE5E1007966A4 /* ImageCache.h in Headers */,
+				77D66C7815616C5D002173CA /* GDISignatureCaptureView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +409,7 @@
 				776A9FA2154AE5E1007966A4 /* SharedImageCache.m in Sources */,
 				776A9FA4154AE5E1007966A4 /* ImageCacheObject.m in Sources */,
 				776A9FA6154AE5E1007966A4 /* ImageCache.m in Sources */,
+				77D66C7915616C5D002173CA /* GDISignatureCaptureView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +509,7 @@
 				PUBLIC_HEADERS_FOLDER_PATH = /include/GDICore;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Debug;
 		};
