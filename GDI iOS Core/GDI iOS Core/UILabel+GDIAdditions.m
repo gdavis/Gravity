@@ -26,6 +26,22 @@
 
 @implementation UILabel (GDIAdditions)
 
+- (void)adjustSizeToFitText
+{
+    if (!self.text || [self.text length] == 0) {
+        return;
+    }
+    CGSize labelSize;
+    if (self.numberOfLines == 1) {
+        labelSize = [self.text sizeWithFont:self.font];
+    }
+    else {
+        labelSize = [self.text sizeWithFont:self.font constrainedToSize:CGSizeMake(self.frame.size.width, FLT_MAX) lineBreakMode:self.lineBreakMode];
+    }
+
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, labelSize.width, labelSize.height);
+}
+
 - (void)adjustHeightToFitText
 {
     if (!self.text || [self.text length] == 0 || self.numberOfLines > 0) {

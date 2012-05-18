@@ -26,6 +26,11 @@
 
 @interface UILabel (GDIAdditions)
 
+// "smart" method which attempts to adjust a label based
+// on the number of lines and line break mode set.
+- (void)adjustSizeToFitText;
+
+// use to adjust the height of a multi-line text field
 - (void)adjustHeightToFitText;
 
 @end
