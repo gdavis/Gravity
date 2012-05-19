@@ -65,7 +65,7 @@
 - (UIImage *)imageCroppedToRect:(CGRect)rect opaque:(BOOL)opaque
 {    
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(rect.size.width,
-                                                      rect.size.height), YES, 0.f);
+                                                      rect.size.height), opaque, 0.f);
     [self drawAtPoint:CGPointMake(-rect.origin.x, -rect.origin.y) blendMode:kCGBlendModeCopy alpha:1.];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
