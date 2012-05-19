@@ -62,38 +62,11 @@
 
 - (UIImage *)imageCroppedToRect:(CGRect)rect opaque:(BOOL)opaque
 {    
-    // constrain the rect
-    rect.origin.x = rect.origin.x < 0 ? 0 : rect.origin.x;
-    rect.origin.x = rect.origin.x > self.size.width ? self.size.width : rect.origin.x;
-    
-    rect.origin.y = rect.origin.y < 0 ? 0 : rect.origin.y;
-    rect.origin.y = rect.origin.y > self.size.height ? self.size.height : rect.origin.y;
-
-    rect.size.width = rect.size.width > self.size.width ? self.size.width - rect.origin.x : rect.size.width;
-    rect.size.width = rect.size.width < 1 ? 1 : rect.size.width;
-    
-    rect.size.height = rect.size.height > self.size.height ? self.size.height - rect.origin.y : rect.size.height;
-    rect.size.height = rect.size.height < 1 ? 1 : rect.size.height;
-    
-    // create image context to draw into
-    UIGraphicsBeginImageContextWithOptions(rect.size, opaque, 1.f);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    // flip our vertical axis 
-    CGContextScaleCTM(context, 1, -1);
-    CGContextTranslateCTM(context, 0, -rect.size.height);
-    
-    // translate context to inset to the cropped rect
-    CGContextTranslateCTM(context, 0, rect.size.height - self.size.height + rect.origin.y);
-    
-    // draw image
-    CGContextDrawImage(context, CGRectMake(-rect.origin.x, 0, self.size.width, self.size.height), self.CGImage);
-    
-    // create a new image from the context and return
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(rect.size.width,
+                                                      rect.size.height), YES, 0.f);
+    [self drawAtPoint:CGPointMake(-rect.origin.x, -rect.origin.y) blendMode:kCGBlendModeCopy alpha:1.];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    
     UIGraphicsEndImageContext();
-    
     return image;
 }
 
