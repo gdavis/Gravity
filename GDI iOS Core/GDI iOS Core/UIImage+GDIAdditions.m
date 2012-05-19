@@ -27,6 +27,8 @@
 
 @implementation UIImage (GDIAdditions)
 
+#pragma mark - Image Manipulation
+
 - (UIImage *)imageWithTintColor:(UIColor *)color
 {
     UIGraphicsBeginImageContext(self.size);
@@ -36,7 +38,7 @@
     
     CGContextScaleCTM(context, 1, -1);
     CGContextTranslateCTM(context, 0, -imageRect.size.height);
-
+    
     // draw the image first
     CGContextDrawImage(context, imageRect, [self CGImage]);
     
@@ -68,6 +70,122 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
+}
+
+
+- (UIImage *)imageByScalingToSize:(CGSize)targetSize
+{
+    UIImage* sourceImage = self; 
+    CGFloat targetWidth = targetSize.width;
+    CGFloat targetHeight = targetSize.height;
+    
+    CGImageRef imageRef = [sourceImage CGImage];
+    CGBitmapInfo bitmapInfo = CGImageGetBitmapInfo(imageRef);
+    CGColorSpaceRef colorSpaceInfo = CGImageGetColorSpace(imageRef);
+    
+    if (bitmapInfo == kCGImageAlphaNone) {
+        bitmapInfo = kCGImageAlphaNoneSkipLast;
+    }
+    
+    CGContextRef bitmap;
+    
+    if (sourceImage.imageOrientation == UIImageOrientationUp || sourceImage.imageOrientation == UIImageOrientationDown) {
+        bitmap = CGBitmapContextCreate(NULL, targetWidth, targetHeight, CGImageGetBitsPerComponent(imageRef), CGImageGetBytesPerRow(imageRef), colorSpaceInfo, bitmapInfo);
+    } 
+    else {
+        bitmap = CGBitmapContextCreate(NULL, targetHeight, targetWidth, CGImageGetBitsPerComponent(imageRef), CGImageGetBytesPerRow(imageRef), colorSpaceInfo, bitmapInfo);
+    }       
+    
+    if (sourceImage.imageOrientation == UIImageOrientationLeft) {
+        CGContextRotateCTM (bitmap, M_PI_2);
+        CGContextTranslateCTM (bitmap, 0, -targetHeight);
+    } 
+    else if (sourceImage.imageOrientation == UIImageOrientationRight) {
+        CGContextRotateCTM (bitmap, -M_PI_2);
+        CGContextTranslateCTM (bitmap, -targetWidth, 0);    
+    } 
+    else if (sourceImage.imageOrientation == UIImageOrientationUp) {
+        // NOTHING
+    } 
+    else if (sourceImage.imageOrientation == UIImageOrientationDown) {
+        CGContextTranslateCTM (bitmap, targetWidth, targetHeight);
+        CGContextRotateCTM (bitmap, -M_PI);
+    }
+    
+    CGContextDrawImage(bitmap, CGRectMake(0, 0, targetWidth, targetHeight), imageRef);
+    CGImageRef ref = CGBitmapContextCreateImage(bitmap);
+    UIImage* newImage = [UIImage imageWithCGImage:ref];
+    
+    CGContextRelease(bitmap);
+    CGImageRelease(ref);
+    
+    return newImage; 
+}
+
+
+#pragma mark Convenience Functions for Image Picking
+
+- (UIImage *)rotateImage:(UIImage*)img imageOrientation:(UIImageOrientation)orient
+{
+    CGImageRef          imgRef = img.CGImage;
+    CGFloat             width = CGImageGetWidth(imgRef);
+    CGFloat             height = CGImageGetHeight(imgRef);
+    CGAffineTransform   transform = CGAffineTransformIdentity;
+    CGRect              bounds = CGRectMake(0, 0, width, height);
+    CGSize              imageSize = bounds.size;
+    CGFloat             boundHeight;
+    
+    switch(orient) {
+            
+        case UIImageOrientationUp: //EXIF = 1
+            transform = CGAffineTransformIdentity;
+            break;
+            
+        case UIImageOrientationDown: //EXIF = 3
+            transform = CGAffineTransformMakeTranslation(imageSize.width, imageSize.height);
+            transform = CGAffineTransformRotate(transform, M_PI);
+            break;
+            
+        case UIImageOrientationLeft: //EXIF = 6
+            boundHeight = bounds.size.height;
+            bounds.size.height = bounds.size.width;
+            bounds.size.width = boundHeight;
+            transform = CGAffineTransformMakeTranslation(imageSize.height, imageSize.width);
+            transform = CGAffineTransformScale(transform, -1.0, 1.0);
+            transform = CGAffineTransformRotate(transform, 3.0 * M_PI / 2.0);
+            break;
+            
+        case UIImageOrientationRight: //EXIF = 8
+            boundHeight = bounds.size.height;
+            bounds.size.height = bounds.size.width;
+            bounds.size.width = boundHeight;
+            transform = CGAffineTransformMakeTranslation(0.0, imageSize.width);
+            transform = CGAffineTransformRotate(transform, 3.0 * M_PI / 2.0);
+            break;
+            
+        default:
+            // image is not auto-rotated by the photo picker, so whatever the user
+            // sees is what they expect to get. No modification necessary
+            transform = CGAffineTransformIdentity;
+            break;
+            
+    }
+    
+    UIGraphicsBeginImageContext(bounds.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    if ((orient == UIImageOrientationDown) || (orient == UIImageOrientationRight) || (orient == UIImageOrientationUp)){
+        // flip the coordinate space upside down
+        CGContextScaleCTM(context, 1, -1);
+        CGContextTranslateCTM(context, 0, -height);
+    }
+    
+    CGContextConcatCTM(context, transform);
+    CGContextDrawImage(UIGraphicsGetCurrentContext(), CGRectMake(0, 0, width, height), imgRef);
+    UIImage *imageCopy = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return imageCopy;
 }
 
 
@@ -104,6 +222,7 @@
 }
 
 
+#pragma mark - Class Methods
 
 + (UIImage*)imageOfView:(UIView*)view
 {

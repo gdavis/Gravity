@@ -26,12 +26,29 @@
 
 @interface UIImage (GDIAdditions)
 
+// returns an image with a tint color applied over the top if it
 - (UIImage *)imageWithTintColor:(UIColor *)color;
+
+// returns an image of the receiever cropped to the specified rectangle
 - (UIImage *)imageCroppedToRect:(CGRect)rect;
+
+// returns an image of the receiever cropped to the specified rectangle
 - (UIImage *)imageCroppedToRect:(CGRect)rect opaque:(BOOL)opaque;
+
+// adopted from: http://stackoverflow.com/questions/1260249/resizing-uiimages-pulled-from-the-camera-also-rotates-the-uiimage
+// returns an image of the receiver resized to the specified size
+- (UIImage *)imageByScalingToSize:(CGSize)targetSize;
+
+// returns an image of the receiever rotated by UIImageOrientation, or EXIF, values
+- (UIImage *)rotateImage:(UIImage*)img imageOrientation:(UIImageOrientation)orient;
+
+// returns a transformation of the speficified rectangle to match given EXIF orientation
 - (CGRect)transformRect:(CGRect)rect forEXIFOrientation:(NSUInteger)orientation;
 
+// returns a snapshot of the receiver
 + (UIImage*)imageOfView:(UIView*)view;
+
+// convenience method to return an image from the main bundle
 + (UIImage*)imageFromMainBundleWithName:(NSString*)filename;
 
 @end
