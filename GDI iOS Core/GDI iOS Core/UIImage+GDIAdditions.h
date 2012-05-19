@@ -27,6 +27,9 @@
 @interface UIImage (GDIAdditions)
 
 - (UIImage *)imageWithTintColor:(UIColor *)color;
+- (UIImage *)imageCroppedToRect:(CGRect)rect;
+- (CGRect)transformRect:(CGRect)rect forEXIFOrientation:(NSUInteger)orientation;
+
 + (UIImage*)imageOfView:(UIView*)view;
 + (UIImage*)imageFromMainBundleWithName:(NSString*)filename;
 

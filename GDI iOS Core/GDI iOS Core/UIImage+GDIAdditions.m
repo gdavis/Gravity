@@ -53,6 +53,73 @@
     return  newImage;
 }
 
+
+- (UIImage *)imageCroppedToRect:(CGRect)rect
+{    
+    // create image context to draw into
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 1.f);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    // scale and translate to move 
+//    CGContextScaleCTM(context, 1, -1);
+//    CGContextTranslateCTM(context, 0, -rect.size.height);
+    
+    // translate context to inset to the cropped rect
+    CGContextTranslateCTM(context, -rect.origin.x, -rect.origin.y);
+    
+    // draw image at full size
+    CGContextDrawImage(context, CGRectMake(0, 0, self.size.width, self.size.height), self.CGImage);
+    
+    // clip the context to the size of the rect
+    CGMutablePathRef cropPath = CGPathCreateMutable();
+    CGPathAddRect(cropPath, NULL, rect);
+    CGContextAddPath(context, cropPath);
+    CGContextClip(context);
+    CGPathRelease(cropPath);
+    
+    // create a new image from the crop and return
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
+
+- (CGRect)transformRect:(CGRect)rect forEXIFOrientation:(NSUInteger)orientation
+{
+    CGAffineTransform translation = CGAffineTransformIdentity;
+    CGFloat rotation = 0;
+    
+    switch (orientation) {
+        case 8: { // EXIF #8
+            
+            translation = CGAffineTransformMakeTranslation(self.size.height, 0.0);
+            rotation = M_PI_2;
+            break;
+        }
+        case 3: { // EXIF #3
+            
+            translation = CGAffineTransformMakeTranslation(self.size.width, self.size.height);
+            rotation = M_PI;
+            break;
+        }
+        case 6: { // EXIF #6
+            
+            translation = CGAffineTransformMakeTranslation(0.0, self.size.width);
+            rotation = M_PI + M_PI_2;
+            break;
+        }
+        case 1: // EXIF #1 - do nothing
+        default: // EXIF 2,4,5,7 - ignore
+            return rect;
+    }
+    
+    return CGRectApplyAffineTransform(rect, CGAffineTransformRotate(translation, rotation));
+}
+
+
+
 + (UIImage*)imageOfView:(UIView*)view
 {
 	UIGraphicsBeginImageContext(view.bounds.size);    
