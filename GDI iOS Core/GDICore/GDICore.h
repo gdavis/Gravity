@@ -24,6 +24,7 @@
 
 // components
 #import "GDITouchProxyView.h"
+#import "GDISignatureCaptureView.h"
 
 // categories
 #import "UISearchBar+GDIAdditions.h"

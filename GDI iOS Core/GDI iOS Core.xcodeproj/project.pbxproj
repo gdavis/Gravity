@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7723890E1567EC62009FD06D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8A90152B629F00AF038D /* UIKit.framework */; };
+		7723890F1567EC62009FD06D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8A92152B629F00AF038D /* Foundation.framework */; };
+		772389101567EC62009FD06D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8A94152B629F00AF038D /* CoreGraphics.framework */; };
+		772389161567EC62009FD06D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 772389141567EC62009FD06D /* InfoPlist.strings */; };
+		772389181567EC62009FD06D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 772389171567EC62009FD06D /* main.m */; };
+		7723891C1567EC62009FD06D /* GDIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7723891B1567EC62009FD06D /* GDIAppDelegate.m */; };
+		7723891F1567EC62009FD06D /* GDIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7723891E1567EC62009FD06D /* GDIViewController.m */; };
+		772389221567EC62009FD06D /* GDIViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 772389201567EC62009FD06D /* GDIViewController_iPhone.xib */; };
+		772389251567EC62009FD06D /* GDIViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 772389231567EC62009FD06D /* GDIViewController_iPad.xib */; };
+		7723892F1567ED57009FD06D /* diablo3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7723892E1567ED57009FD06D /* diablo3.jpg */; };
+		772389331567EFE0009FD06D /* libGDICore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8B18152B67D300AF038D /* libGDICore.a */; };
+		772389341567F061009FD06D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8AEB152B648F00AF038D /* QuartzCore.framework */; };
 		776A9FA1154AE5E1007966A4 /* SharedImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 776A9F9B154AE5E1007966A4 /* SharedImageCache.h */; };
 		776A9FA2154AE5E1007966A4 /* SharedImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 776A9F9C154AE5E1007966A4 /* SharedImageCache.m */; };
 		776A9FA3154AE5E1007966A4 /* ImageCacheObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 776A9F9D154AE5E1007966A4 /* ImageCacheObject.h */; };
@@ -52,6 +64,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		772389311567EEE8009FD06D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 777F8A83152B629E00AF038D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 777F8B17152B67D300AF038D;
+			remoteInfo = GDICore;
+		};
 		777F8B29152B67D400AF038D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 777F8A83152B629E00AF038D /* Project object */;
@@ -62,6 +81,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7723890C1567EC62009FD06D /* GDICoreWorkspace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDICoreWorkspace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		772389131567EC62009FD06D /* GDICoreWorkspace-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GDICoreWorkspace-Info.plist"; sourceTree = "<group>"; };
+		772389151567EC62009FD06D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		772389171567EC62009FD06D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		772389191567EC62009FD06D /* GDICoreWorkspace-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GDICoreWorkspace-Prefix.pch"; sourceTree = "<group>"; };
+		7723891A1567EC62009FD06D /* GDIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDIAppDelegate.h; sourceTree = "<group>"; };
+		7723891B1567EC62009FD06D /* GDIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDIAppDelegate.m; sourceTree = "<group>"; };
+		7723891D1567EC62009FD06D /* GDIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDIViewController.h; sourceTree = "<group>"; };
+		7723891E1567EC62009FD06D /* GDIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDIViewController.m; sourceTree = "<group>"; };
+		772389211567EC62009FD06D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GDIViewController_iPhone.xib; sourceTree = "<group>"; };
+		772389241567EC62009FD06D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GDIViewController_iPad.xib; sourceTree = "<group>"; };
+		7723892E1567ED57009FD06D /* diablo3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = diablo3.jpg; path = assets/images/diablo3.jpg; sourceTree = "<group>"; };
 		776A9F9B154AE5E1007966A4 /* SharedImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedImageCache.h; sourceTree = "<group>"; };
 		776A9F9C154AE5E1007966A4 /* SharedImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedImageCache.m; sourceTree = "<group>"; };
 		776A9F9D154AE5E1007966A4 /* ImageCacheObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCacheObject.h; sourceTree = "<group>"; };
@@ -111,6 +142,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		772389091567EC62009FD06D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				772389331567EFE0009FD06D /* libGDICore.a in Frameworks */,
+				772389341567F061009FD06D /* QuartzCore.framework in Frameworks */,
+				7723890E1567EC62009FD06D /* UIKit.framework in Frameworks */,
+				7723890F1567EC62009FD06D /* Foundation.framework in Frameworks */,
+				772389101567EC62009FD06D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		777F8B15152B67D300AF038D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -135,6 +178,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		772389111567EC62009FD06D /* GDICoreWorkspace */ = {
+			isa = PBXGroup;
+			children = (
+				7723891A1567EC62009FD06D /* GDIAppDelegate.h */,
+				7723891B1567EC62009FD06D /* GDIAppDelegate.m */,
+				7723891D1567EC62009FD06D /* GDIViewController.h */,
+				7723891E1567EC62009FD06D /* GDIViewController.m */,
+				772389201567EC62009FD06D /* GDIViewController_iPhone.xib */,
+				772389231567EC62009FD06D /* GDIViewController_iPad.xib */,
+				772389121567EC62009FD06D /* Supporting Files */,
+			);
+			path = GDICoreWorkspace;
+			sourceTree = "<group>";
+		};
+		772389121567EC62009FD06D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7723892C1567ED4B009FD06D /* assets */,
+				772389131567EC62009FD06D /* GDICoreWorkspace-Info.plist */,
+				772389141567EC62009FD06D /* InfoPlist.strings */,
+				772389171567EC62009FD06D /* main.m */,
+				772389191567EC62009FD06D /* GDICoreWorkspace-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7723892C1567ED4B009FD06D /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				7723892D1567ED50009FD06D /* images */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
+		7723892D1567ED50009FD06D /* images */ = {
+			isa = PBXGroup;
+			children = (
+				7723892E1567ED57009FD06D /* diablo3.jpg */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		776A9FA8154AE5E7007966A4 /* Image Cache */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +238,7 @@
 			children = (
 				777F8A96152B629F00AF038D /* GDICore */,
 				777F8B2C152B67D400AF038D /* GDICoreTests */,
+				772389111567EC62009FD06D /* GDICoreWorkspace */,
 				777F8A8F152B629F00AF038D /* Frameworks */,
 				777F8A8D152B629F00AF038D /* Products */,
 			);
@@ -163,6 +249,7 @@
 			children = (
 				777F8B18152B67D300AF038D /* libGDICore.a */,
 				777F8B25152B67D400AF038D /* GDICoreTests.octest */,
+				7723890C1567EC62009FD06D /* GDICoreWorkspace.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -298,6 +385,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		7723890B1567EC62009FD06D /* GDICoreWorkspace */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 772389281567EC62009FD06D /* Build configuration list for PBXNativeTarget "GDICoreWorkspace" */;
+			buildPhases = (
+				772389081567EC62009FD06D /* Sources */,
+				772389091567EC62009FD06D /* Frameworks */,
+				7723890A1567EC62009FD06D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				772389321567EEE8009FD06D /* PBXTargetDependency */,
+			);
+			name = GDICoreWorkspace;
+			productName = GDICoreWorkspace;
+			productReference = 7723890C1567EC62009FD06D /* GDICoreWorkspace.app */;
+			productType = "com.apple.product-type.application";
+		};
 		777F8B17152B67D300AF038D /* GDICore */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 777F8B35152B67D400AF038D /* Build configuration list for PBXNativeTarget "GDICore" */;
@@ -358,11 +463,23 @@
 			targets = (
 				777F8B17152B67D300AF038D /* GDICore */,
 				777F8B24152B67D400AF038D /* GDICoreTests */,
+				7723890B1567EC62009FD06D /* GDICoreWorkspace */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7723890A1567EC62009FD06D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				772389161567EC62009FD06D /* InfoPlist.strings in Resources */,
+				772389221567EC62009FD06D /* GDIViewController_iPhone.xib in Resources */,
+				772389251567EC62009FD06D /* GDIViewController_iPad.xib in Resources */,
+				7723892F1567ED57009FD06D /* diablo3.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		777F8B22152B67D400AF038D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -390,6 +507,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		772389081567EC62009FD06D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				772389181567EC62009FD06D /* main.m in Sources */,
+				7723891C1567EC62009FD06D /* GDIAppDelegate.m in Sources */,
+				7723891F1567EC62009FD06D /* GDIViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		777F8B14152B67D300AF038D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -424,6 +551,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		772389321567EEE8009FD06D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 777F8B17152B67D300AF038D /* GDICore */;
+			targetProxy = 772389311567EEE8009FD06D /* PBXContainerItemProxy */;
+		};
 		777F8B2A152B67D400AF038D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 777F8B17152B67D300AF038D /* GDICore */;
@@ -432,6 +564,30 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		772389141567EC62009FD06D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				772389151567EC62009FD06D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		772389201567EC62009FD06D /* GDIViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				772389211567EC62009FD06D /* en */,
+			);
+			name = GDIViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		772389231567EC62009FD06D /* GDIViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				772389241567EC62009FD06D /* en */,
+			);
+			name = GDIViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
 		777F8B2F152B67D400AF038D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -443,6 +599,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		772389261567EC62009FD06D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)\"/**";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GDICoreWorkspace/GDICoreWorkspace-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)\"/**";
+				INFOPLIST_FILE = "GDICoreWorkspace/GDICoreWorkspace-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		772389271567EC62009FD06D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)\"/**";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GDICoreWorkspace/GDICoreWorkspace-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)\"/**";
+				INFOPLIST_FILE = "GDICoreWorkspace/GDICoreWorkspace-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		777F8AB7152B629F00AF038D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -568,6 +772,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		772389281567EC62009FD06D /* Build configuration list for PBXNativeTarget "GDICoreWorkspace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				772389261567EC62009FD06D /* Debug */,
+				772389271567EC62009FD06D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		777F8A86152B629E00AF038D /* Build configuration list for PBXProject "GDI iOS Core" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

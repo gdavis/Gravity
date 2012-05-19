@@ -28,6 +28,7 @@
 
 - (UIImage *)imageWithTintColor:(UIColor *)color;
 - (UIImage *)imageCroppedToRect:(CGRect)rect;
+- (UIImage *)imageCroppedToRect:(CGRect)rect opaque:(BOOL)opaque;
 - (CGRect)transformRect:(CGRect)rect forEXIFOrientation:(NSUInteger)orientation;
 
 + (UIImage*)imageOfView:(UIView*)view;

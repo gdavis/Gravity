@@ -55,29 +55,41 @@
 
 
 - (UIImage *)imageCroppedToRect:(CGRect)rect
+{
+    return [self imageCroppedToRect:rect opaque:NO];
+}
+
+
+- (UIImage *)imageCroppedToRect:(CGRect)rect opaque:(BOOL)opaque
 {    
+    // constrain the rect
+    rect.origin.x = rect.origin.x < 0 ? 0 : rect.origin.x;
+    rect.origin.x = rect.origin.x > self.size.width ? self.size.width : rect.origin.x;
+    
+    rect.origin.y = rect.origin.y < 0 ? 0 : rect.origin.y;
+    rect.origin.y = rect.origin.y > self.size.height ? self.size.height : rect.origin.y;
+
+    rect.size.width = rect.size.width > self.size.width ? self.size.width - rect.origin.x : rect.size.width;
+    rect.size.width = rect.size.width < 1 ? 1 : rect.size.width;
+    
+    rect.size.height = rect.size.height > self.size.height ? self.size.height - rect.origin.y : rect.size.height;
+    rect.size.height = rect.size.height < 1 ? 1 : rect.size.height;
+    
     // create image context to draw into
-    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 1.f);
+    UIGraphicsBeginImageContextWithOptions(rect.size, opaque, 1.f);
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    // scale and translate to move 
-//    CGContextScaleCTM(context, 1, -1);
-//    CGContextTranslateCTM(context, 0, -rect.size.height);
+    // flip our vertical axis 
+    CGContextScaleCTM(context, 1, -1);
+    CGContextTranslateCTM(context, 0, -rect.size.height);
     
     // translate context to inset to the cropped rect
-    CGContextTranslateCTM(context, -rect.origin.x, -rect.origin.y);
+    CGContextTranslateCTM(context, 0, rect.size.height - self.size.height + rect.origin.y);
     
-    // draw image at full size
-    CGContextDrawImage(context, CGRectMake(0, 0, self.size.width, self.size.height), self.CGImage);
+    // draw image
+    CGContextDrawImage(context, CGRectMake(-rect.origin.x, 0, self.size.width, self.size.height), self.CGImage);
     
-    // clip the context to the size of the rect
-    CGMutablePathRef cropPath = CGPathCreateMutable();
-    CGPathAddRect(cropPath, NULL, rect);
-    CGContextAddPath(context, cropPath);
-    CGContextClip(context);
-    CGPathRelease(cropPath);
-    
-    // create a new image from the crop and return
+    // create a new image from the context and return
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     
     UIGraphicsEndImageContext();
