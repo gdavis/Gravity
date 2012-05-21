@@ -31,6 +31,9 @@
 - (void)adjustSizeToFitText;
 
 // use to adjust the height of a multi-line text field
+- (void)adjustWidthToFitText;
+
+// use to adjust the height of a multi-line text field
 - (void)adjustHeightToFitText;
 
 @end

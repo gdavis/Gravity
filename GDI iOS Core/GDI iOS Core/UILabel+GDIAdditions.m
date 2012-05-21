@@ -42,6 +42,16 @@
     self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, labelSize.width, labelSize.height);
 }
 
+- (void)adjustWidthToFitText
+{
+    if (!self.text || [self.text length] == 0) {
+        return;
+    }
+    
+    CGSize labelSize = [self.text sizeWithFont:self.font];
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, labelSize.width, self.frame.size.height);
+}
+
 - (void)adjustHeightToFitText
 {
     if (!self.text || [self.text length] == 0 || self.numberOfLines > 0) {
