@@ -55,6 +55,8 @@
 		777F8B67152B6E9C00AF038D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 777F8A90152B629F00AF038D /* UIKit.framework */; };
 		777F8B6D152B725500AF038D /* GDICore.h in Headers */ = {isa = PBXBuildFile; fileRef = 777F8B1D152B67D300AF038D /* GDICore.h */; settings = {ATTRIBUTES = (); }; };
 		777F8B9A152B7F5D00AF038D /* CAAnimation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 777F8B98152B7F5C00AF038D /* CAAnimation+Blocks.m */; };
+		779D764F156B0A71008FB936 /* UIImageView+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 779D764D156B0A71008FB936 /* UIImageView+GDIAdditions.h */; };
+		779D7650156B0A71008FB936 /* UIImageView+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 779D764E156B0A71008FB936 /* UIImageView+GDIAdditions.m */; };
 		77A5687F15309B19004E9C51 /* NSDate+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77A5687D15309B19004E9C51 /* NSDate+GDIAdditions.h */; settings = {ATTRIBUTES = (); }; };
 		77A5688015309B19004E9C51 /* NSDate+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A5687E15309B19004E9C51 /* NSDate+GDIAdditions.m */; };
 		77CBC7851559A6F600EFEAEA /* NSData+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77CBC7831559A6F600EFEAEA /* NSData+GDIAdditions.h */; };
@@ -132,6 +134,8 @@
 		777F8B33152B67D400AF038D /* GDICoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDICoreTests.m; sourceTree = "<group>"; };
 		777F8B97152B7F5B00AF038D /* CAAnimation+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+Blocks.h"; sourceTree = "<group>"; };
 		777F8B98152B7F5C00AF038D /* CAAnimation+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+Blocks.m"; sourceTree = "<group>"; };
+		779D764D156B0A71008FB936 /* UIImageView+GDIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+GDIAdditions.h"; sourceTree = "<group>"; };
+		779D764E156B0A71008FB936 /* UIImageView+GDIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+GDIAdditions.m"; sourceTree = "<group>"; };
 		77A5687D15309B19004E9C51 /* NSDate+GDIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+GDIAdditions.h"; sourceTree = "<group>"; };
 		77A5687E15309B19004E9C51 /* NSDate+GDIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+GDIAdditions.m"; sourceTree = "<group>"; };
 		77CBC7831559A6F600EFEAEA /* NSData+GDIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+GDIAdditions.h"; sourceTree = "<group>"; };
@@ -302,6 +306,8 @@
 				777F8AC3152B634400AF038D /* UIView+GDIAdditions.m */,
 				777F8AC4152B634400AF038D /* UIImage+GDIAdditions.h */,
 				777F8AC5152B634400AF038D /* UIImage+GDIAdditions.m */,
+				779D764D156B0A71008FB936 /* UIImageView+GDIAdditions.h */,
+				779D764E156B0A71008FB936 /* UIImageView+GDIAdditions.m */,
 				777F8AC6152B634400AF038D /* UIColor+GDIAdditions.h */,
 				777F8AC7152B634400AF038D /* UIColor+GDIAdditions.m */,
 				777F8AC8152B634400AF038D /* UILabel+GDIAdditions.h */,
@@ -379,6 +385,7 @@
 				776A9FA3154AE5E1007966A4 /* ImageCacheObject.h in Headers */,
 				776A9FA5154AE5E1007966A4 /* ImageCache.h in Headers */,
 				77D66C7815616C5D002173CA /* GDISignatureCaptureView.h in Headers */,
+				779D764F156B0A71008FB936 /* UIImageView+GDIAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +544,7 @@
 				776A9FA4154AE5E1007966A4 /* ImageCacheObject.m in Sources */,
 				776A9FA6154AE5E1007966A4 /* ImageCache.m in Sources */,
 				77D66C7915616C5D002173CA /* GDISignatureCaptureView.m in Sources */,
+				779D7650156B0A71008FB936 /* UIImageView+GDIAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -779,6 +787,7 @@
 				772389271567EC62009FD06D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		777F8A86152B629E00AF038D /* Build configuration list for PBXProject "GDI iOS Core" */ = {
 			isa = XCConfigurationList;

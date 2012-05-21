@@ -31,6 +31,7 @@
 #import "CoreGraphics+GDIAdditions.h"
 #import "UIView+GDIAdditions.h"
 #import "UIImage+GDIAdditions.h"
+#import "UIImageView+GDIAdditions.h"
 #import "UIColor+GDIAdditions.h"
 #import "UILabel+GDIAdditions.h"
 #import "NSString+GDIAdditions.h"
