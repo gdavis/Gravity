@@ -16,5 +16,6 @@
 
 - (UIImage*)imageOfSignature;
 - (void)clear;
+- (BOOL)hasSignature;
 
 @end

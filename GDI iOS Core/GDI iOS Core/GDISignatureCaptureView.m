@@ -7,6 +7,7 @@
 //
 
 #import "GDISignatureCaptureView.h"
+#import "UIView+GDIAdditions.h"
 
 @interface GDISignatureCaptureView() {
     NSMutableArray *_points;
@@ -70,11 +71,7 @@ CGPoint spline(CGPoint p0, CGPoint p1, CGPoint p2, CGPoint p3, CGFloat t);
 
 - (UIImage*)imageOfSignature
 {
-	UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 1.f);
-	[self.layer renderInContext:UIGraphicsGetCurrentContext()];
-	UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
-	UIGraphicsEndImageContext();
-	return viewImage;
+	return [self imageOfView];
 }
 
 
@@ -83,6 +80,12 @@ CGPoint spline(CGPoint p0, CGPoint p1, CGPoint p2, CGPoint p3, CGFloat t);
     CGPathRelease(_signaturePath);
     _signaturePath = CGPathCreateMutable();
     [self setNeedsDisplay];
+}
+
+
+- (BOOL)hasSignature
+{
+    return !CGPathIsEmpty(_signaturePath);
 }
 
 
@@ -116,11 +119,10 @@ CGPoint spline(CGPoint p0, CGPoint p1, CGPoint p2, CGPoint p3, CGFloat t);
     CGContextSetLineWidth(ctx, strokeWidth);
     CGContextSetLineJoin(ctx, kCGLineJoinRound);
     CGContextAddPath(ctx, _signaturePath);
-    CGContextStrokePath(ctx);
     if (_linePath) {
         CGContextAddPath(ctx, _linePath);
-        CGContextStrokePath(ctx);
     }
+    CGContextStrokePath(ctx);
 }
 
 
