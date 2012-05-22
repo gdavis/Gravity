@@ -8,24 +8,46 @@
 
 #import "UIImageView+GDIAdditions.h"
 
+@interface UIImageView(GDIAdditionsPrivate)
+- (void)loadImageInBackgroundThreadWithName:(NSString *)name;
+- (void)loadImageInBackgroundThreadWithContentsOfFile:(NSString *)filePath;
+@end
+
+
+@implementation UIImageView (GDIAdditionsPrivate)
+
+- (void)loadImageInBackgroundThreadWithName:(NSString *)name
+{
+    UIImage *image = [UIImage imageNamed:name];
+    [self performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:NO];
+}
+
+- (void)loadImageInBackgroundThreadWithContentsOfFile:(NSString *)filePath
+{
+    UIImage *image = [UIImage imageWithContentsOfFile:filePath];
+    [self performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:NO];
+}
+
+@end
+
 @implementation UIImageView (GDIAdditions)
 
 - (void)setImageInBackgroundThreadWithName:(NSString *)imageName
 {
-    NSOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-        UIImage *image = [UIImage imageNamed:imageName];
-        [self performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:NO];
-    }];
+    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self 
+                                                                            selector:@selector(loadImageInBackgroundThreadWithName:) 
+                                                                              object:imageName];
     [operation start];
 }
 
 - (void)setImageInBackgroundThreadWithContentsOfFile:(NSString *)filePath
 {
-    NSOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-        UIImage *image = [UIImage imageWithContentsOfFile:filePath];
-        [self performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:NO];
-    }];
+    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self 
+                                                                            selector:@selector(loadImageInBackgroundThreadWithContentsOfFile:) 
+                                                                              object:filePath];
     [operation start];
 }
+
+
 
 @end
