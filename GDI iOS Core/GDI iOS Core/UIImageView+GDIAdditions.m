@@ -8,58 +8,26 @@
 
 #import "UIImageView+GDIAdditions.h"
 
-@interface UIImageView(GDIAdditionsPrivate)
-+ (NSOperationQueue *)imageBackgroundOperationQueue;
-- (void)loadImageInBackgroundThreadWithName:(NSString *)name;
-- (void)loadImageInBackgroundThreadWithContentsOfFile:(NSString *)filePath;
-@end
-
-
-@implementation UIImageView (GDIAdditionsPrivate)
-
-+ (NSOperationQueue*)imageBackgroundOperationQueue
-{
-    static NSOperationQueue *operationQueue;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        operationQueue = [[NSOperationQueue alloc] init];
-        operationQueue.maxConcurrentOperationCount = 1;
-    });
-    return operationQueue;
-}
-
-- (void)loadImageInBackgroundThreadWithName:(NSString *)name
-{
-    UIImage *image = [UIImage imageNamed:name];
-    [self performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:YES];
-}
-
-- (void)loadImageInBackgroundThreadWithContentsOfFile:(NSString *)filePath
-{
-    UIImage *image = [UIImage imageWithContentsOfFile:filePath];
-    [self performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:YES];
-}
-
-@end
-
 @implementation UIImageView (GDIAdditions)
 
 - (void)setImageInBackgroundThreadWithName:(NSString *)imageName
 {
-    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self 
-                                                                            selector:@selector(loadImageInBackgroundThreadWithName:) 
-                                                                              object:imageName];
-    operation.queuePriority = NSOperationQueuePriorityVeryHigh;
-    [[UIImageView imageBackgroundOperationQueue] addOperation:operation];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0ul), ^{
+        UIImage *image = [UIImage imageNamed:imageName];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            self.image = image;
+        });
+    });
 }
 
 - (void)setImageInBackgroundThreadWithContentsOfFile:(NSString *)filePath
 {
-    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self 
-                                                                            selector:@selector(loadImageInBackgroundThreadWithContentsOfFile:) 
-                                                                              object:filePath];
-    operation.queuePriority = NSOperationQueuePriorityVeryHigh;
-    [[UIImageView imageBackgroundOperationQueue] addOperation:operation];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0ul), ^{
+        UIImage *image = [UIImage imageWithContentsOfFile:filePath];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            self.image = image;
+        });
+    });
 }
 
 
