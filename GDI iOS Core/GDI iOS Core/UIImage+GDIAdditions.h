@@ -39,8 +39,12 @@
 // returns an image of the receiver resized to the specified size
 - (UIImage *)imageByScalingToSize:(CGSize)targetSize;
 
+// adopted from: http://stackoverflow.com/questions/5427656/ios-uiimagepickercontroller-result-image-orientation-after-upload
+// returns and image rotated to match its appropriate EXIT orientation
+- (UIImage *)fixOrientation;
+
 // returns an image of the receiever rotated by UIImageOrientation, or EXIF, values
-- (UIImage *)rotateImage:(UIImage*)img imageOrientation:(UIImageOrientation)orient;
++ (UIImage *)rotateImage:(UIImage*)img imageOrientation:(UIImageOrientation)orient;
 
 // returns a transformation of the speficified rectangle to match given EXIF orientation
 - (CGRect)transformRect:(CGRect)rect forEXIFOrientation:(NSUInteger)orientation;
