@@ -38,6 +38,7 @@
 #import "CAAnimation+Blocks.h"
 #import "NSDate+GDIAdditions.h"
 #import "NSData+GDIAdditions.h"
+#import "UIDevice+GDIAdditions.h"
 
 // utility
 #import "GDIMath.h"

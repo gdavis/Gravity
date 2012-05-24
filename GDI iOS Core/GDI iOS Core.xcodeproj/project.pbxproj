@@ -63,6 +63,8 @@
 		77CBC7861559A6F600EFEAEA /* NSData+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CBC7841559A6F600EFEAEA /* NSData+GDIAdditions.m */; };
 		77D66C7815616C5D002173CA /* GDISignatureCaptureView.h in Headers */ = {isa = PBXBuildFile; fileRef = 77D66C7615616C5D002173CA /* GDISignatureCaptureView.h */; };
 		77D66C7915616C5D002173CA /* GDISignatureCaptureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D66C7715616C5D002173CA /* GDISignatureCaptureView.m */; };
+		77F49C1C156E05FF0090C78F /* UIDevice+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77F49C1A156E05FF0090C78F /* UIDevice+GDIAdditions.h */; };
+		77F49C1D156E05FF0090C78F /* UIDevice+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F49C1B156E05FF0090C78F /* UIDevice+GDIAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +145,8 @@
 		77CBC7881559A73800EFEAEA /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
 		77D66C7615616C5D002173CA /* GDISignatureCaptureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDISignatureCaptureView.h; sourceTree = "<group>"; };
 		77D66C7715616C5D002173CA /* GDISignatureCaptureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDISignatureCaptureView.m; sourceTree = "<group>"; };
+		77F49C1A156E05FF0090C78F /* UIDevice+GDIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+GDIAdditions.h"; sourceTree = "<group>"; };
+		77F49C1B156E05FF0090C78F /* UIDevice+GDIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+GDIAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +322,8 @@
 				77A5687E15309B19004E9C51 /* NSDate+GDIAdditions.m */,
 				77CBC7831559A6F600EFEAEA /* NSData+GDIAdditions.h */,
 				77CBC7841559A6F600EFEAEA /* NSData+GDIAdditions.m */,
+				77F49C1A156E05FF0090C78F /* UIDevice+GDIAdditions.h */,
+				77F49C1B156E05FF0090C78F /* UIDevice+GDIAdditions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -386,6 +392,7 @@
 				776A9FA5154AE5E1007966A4 /* ImageCache.h in Headers */,
 				77D66C7815616C5D002173CA /* GDISignatureCaptureView.h in Headers */,
 				779D764F156B0A71008FB936 /* UIImageView+GDIAdditions.h in Headers */,
+				77F49C1C156E05FF0090C78F /* UIDevice+GDIAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +552,7 @@
 				776A9FA6154AE5E1007966A4 /* ImageCache.m in Sources */,
 				77D66C7915616C5D002173CA /* GDISignatureCaptureView.m in Sources */,
 				779D7650156B0A71008FB936 /* UIImageView+GDIAdditions.m in Sources */,
+				77F49C1D156E05FF0090C78F /* UIDevice+GDIAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
