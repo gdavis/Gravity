@@ -26,19 +26,26 @@
 #import "GDITouchProxyView.h"
 #import "GDISignatureCaptureView.h"
 
-// categories
-#import "UISearchBar+GDIAdditions.h"
-#import "CoreGraphics+GDIAdditions.h"
-#import "UIView+GDIAdditions.h"
+// ui kit categories
+#import "UIAlertView+GDIAdditions.h"
+#import "UIColor+GDIAdditions.h"
+#import "UIDevice+GDIAdditions.h"
 #import "UIImage+GDIAdditions.h"
 #import "UIImageView+GDIAdditions.h"
-#import "UIColor+GDIAdditions.h"
 #import "UILabel+GDIAdditions.h"
+#import "UISearchBar+GDIAdditions.h"
+#import "UIView+GDIAdditions.h"
+
+// foundation categories
 #import "NSString+GDIAdditions.h"
-#import "CAAnimation+Blocks.h"
 #import "NSDate+GDIAdditions.h"
 #import "NSData+GDIAdditions.h"
-#import "UIDevice+GDIAdditions.h"
+
+// core graphics categories
+#import "CoreGraphics+GDIAdditions.h"
+
+// core animation categories
+#import "CAAnimation+Blocks.h"
 
 // utility
 #import "GDIMath.h"
