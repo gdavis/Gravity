@@ -8,55 +8,55 @@
 
 /* Begin PBXBuildFile section */
 		77DAEC5715790DE80035EFC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAEC5615790DE80035EFC5 /* Foundation.framework */; };
-		77DAEC5D15790DE80035EFC5 /* Gravity.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC5C15790DE80035EFC5 /* Gravity.m */; };
 		77DAEC6515790DE80035EFC5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAEC6415790DE80035EFC5 /* SenTestingKit.framework */; };
 		77DAEC6815790DE80035EFC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAEC5615790DE80035EFC5 /* Foundation.framework */; };
 		77DAEC6B15790DE80035EFC5 /* libGravity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAEC5315790DE80035EFC5 /* libGravity.a */; };
 		77DAEC7115790DE80035EFC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77DAEC6F15790DE80035EFC5 /* InfoPlist.strings */; };
 		77DAEC7415790DE80035EFC5 /* GravityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC7315790DE80035EFC5 /* GravityTests.m */; };
-		77DAECAA15790F3C0035EFC5 /* SharedImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC8415790F3B0035EFC5 /* SharedImageCache.h */; };
+		77DAECAA15790F3C0035EFC5 /* SharedImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC8415790F3B0035EFC5 /* SharedImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECAB15790F3C0035EFC5 /* SharedImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC8515790F3B0035EFC5 /* SharedImageCache.m */; };
-		77DAECAC15790F3C0035EFC5 /* ImageCacheObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC8615790F3B0035EFC5 /* ImageCacheObject.h */; };
+		77DAECAC15790F3C0035EFC5 /* ImageCacheObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC8615790F3B0035EFC5 /* ImageCacheObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECAD15790F3C0035EFC5 /* ImageCacheObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC8715790F3C0035EFC5 /* ImageCacheObject.m */; };
-		77DAECAE15790F3C0035EFC5 /* ImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC8815790F3C0035EFC5 /* ImageCache.h */; };
+		77DAECAE15790F3C0035EFC5 /* ImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC8815790F3C0035EFC5 /* ImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECAF15790F3C0035EFC5 /* ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC8915790F3C0035EFC5 /* ImageCache.m */; };
-		77DAECB015790F3C0035EFC5 /* GDITouchProxyView.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC8A15790F3C0035EFC5 /* GDITouchProxyView.h */; };
+		77DAECB015790F3C0035EFC5 /* GDITouchProxyView.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC8A15790F3C0035EFC5 /* GDITouchProxyView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECB115790F3C0035EFC5 /* GDITouchProxyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC8B15790F3C0035EFC5 /* GDITouchProxyView.m */; };
-		77DAECB215790F3C0035EFC5 /* GDISignatureCaptureView.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC8C15790F3C0035EFC5 /* GDISignatureCaptureView.h */; };
+		77DAECB215790F3C0035EFC5 /* GDISignatureCaptureView.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC8C15790F3C0035EFC5 /* GDISignatureCaptureView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECB315790F3C0035EFC5 /* GDISignatureCaptureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC8D15790F3C0035EFC5 /* GDISignatureCaptureView.m */; };
-		77DAECB415790F3C0035EFC5 /* UIAlertView+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC8E15790F3C0035EFC5 /* UIAlertView+GDIAdditions.h */; };
+		77DAECB415790F3C0035EFC5 /* UIAlertView+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC8E15790F3C0035EFC5 /* UIAlertView+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECB515790F3C0035EFC5 /* UIAlertView+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC8F15790F3C0035EFC5 /* UIAlertView+GDIAdditions.m */; };
-		77DAECB615790F3C0035EFC5 /* UIColor+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9015790F3C0035EFC5 /* UIColor+GDIAdditions.h */; };
+		77DAECB615790F3C0035EFC5 /* UIColor+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9015790F3C0035EFC5 /* UIColor+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECB715790F3C0035EFC5 /* UIColor+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC9115790F3C0035EFC5 /* UIColor+GDIAdditions.m */; };
-		77DAECB815790F3C0035EFC5 /* UIDevice+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9215790F3C0035EFC5 /* UIDevice+GDIAdditions.h */; };
+		77DAECB815790F3C0035EFC5 /* UIDevice+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9215790F3C0035EFC5 /* UIDevice+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECB915790F3C0035EFC5 /* UIDevice+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC9315790F3C0035EFC5 /* UIDevice+GDIAdditions.m */; };
-		77DAECBA15790F3C0035EFC5 /* UIImage+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9415790F3C0035EFC5 /* UIImage+GDIAdditions.h */; };
+		77DAECBA15790F3C0035EFC5 /* UIImage+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9415790F3C0035EFC5 /* UIImage+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECBB15790F3C0035EFC5 /* UIImage+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC9515790F3C0035EFC5 /* UIImage+GDIAdditions.m */; };
-		77DAECBC15790F3C0035EFC5 /* UIImageView+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9615790F3C0035EFC5 /* UIImageView+GDIAdditions.h */; };
+		77DAECBC15790F3C0035EFC5 /* UIImageView+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9615790F3C0035EFC5 /* UIImageView+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECBD15790F3C0035EFC5 /* UIImageView+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC9715790F3C0035EFC5 /* UIImageView+GDIAdditions.m */; };
-		77DAECBE15790F3C0035EFC5 /* UILabel+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9815790F3C0035EFC5 /* UILabel+GDIAdditions.h */; };
+		77DAECBE15790F3C0035EFC5 /* UILabel+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9815790F3C0035EFC5 /* UILabel+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECBF15790F3C0035EFC5 /* UILabel+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC9915790F3C0035EFC5 /* UILabel+GDIAdditions.m */; };
-		77DAECC015790F3C0035EFC5 /* UISearchBar+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9A15790F3C0035EFC5 /* UISearchBar+GDIAdditions.h */; };
+		77DAECC015790F3C0035EFC5 /* UISearchBar+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9A15790F3C0035EFC5 /* UISearchBar+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECC115790F3C0035EFC5 /* UISearchBar+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC9B15790F3C0035EFC5 /* UISearchBar+GDIAdditions.m */; };
-		77DAECC215790F3C0035EFC5 /* UIView+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9C15790F3C0035EFC5 /* UIView+GDIAdditions.h */; };
+		77DAECC215790F3C0035EFC5 /* UIView+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9C15790F3C0035EFC5 /* UIView+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECC315790F3C0035EFC5 /* UIView+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC9D15790F3C0035EFC5 /* UIView+GDIAdditions.m */; };
-		77DAECC415790F3C0035EFC5 /* NSData+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9E15790F3C0035EFC5 /* NSData+GDIAdditions.h */; };
+		77DAECC415790F3C0035EFC5 /* NSData+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9E15790F3C0035EFC5 /* NSData+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECC515790F3C0035EFC5 /* NSData+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC9F15790F3C0035EFC5 /* NSData+GDIAdditions.m */; };
-		77DAECC615790F3C0035EFC5 /* NSDate+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAECA015790F3C0035EFC5 /* NSDate+GDIAdditions.h */; };
+		77DAECC615790F3C0035EFC5 /* NSDate+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAECA015790F3C0035EFC5 /* NSDate+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECC715790F3C0035EFC5 /* NSDate+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAECA115790F3C0035EFC5 /* NSDate+GDIAdditions.m */; };
-		77DAECC815790F3C0035EFC5 /* NSString+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAECA215790F3C0035EFC5 /* NSString+GDIAdditions.h */; };
+		77DAECC815790F3C0035EFC5 /* NSString+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAECA215790F3C0035EFC5 /* NSString+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECC915790F3C0035EFC5 /* NSString+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAECA315790F3C0035EFC5 /* NSString+GDIAdditions.m */; };
-		77DAECCA15790F3C0035EFC5 /* CAAnimation+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAECA415790F3C0035EFC5 /* CAAnimation+Blocks.h */; };
+		77DAECCA15790F3C0035EFC5 /* CAAnimation+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAECA415790F3C0035EFC5 /* CAAnimation+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECCB15790F3C0035EFC5 /* CAAnimation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAECA515790F3C0035EFC5 /* CAAnimation+Blocks.m */; };
-		77DAECCC15790F3C0035EFC5 /* CoreGraphics+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAECA615790F3C0035EFC5 /* CoreGraphics+GDIAdditions.h */; };
+		77DAECCC15790F3C0035EFC5 /* CoreGraphics+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAECA615790F3C0035EFC5 /* CoreGraphics+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECCD15790F3C0035EFC5 /* CoreGraphics+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAECA715790F3C0035EFC5 /* CoreGraphics+GDIAdditions.m */; };
-		77DAECCE15790F3C0035EFC5 /* GDIMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAECA815790F3C0035EFC5 /* GDIMath.h */; };
+		77DAECCE15790F3C0035EFC5 /* GDIMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAECA815790F3C0035EFC5 /* GDIMath.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECCF15790F3C0035EFC5 /* GDIMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAECA915790F3C0035EFC5 /* GDIMath.m */; };
 		77DAECDC15790FEC0035EFC5 /* libcommonCrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAECD915790FEC0035EFC5 /* libcommonCrypto.dylib */; };
 		77DAECDD15790FEC0035EFC5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAECDA15790FEC0035EFC5 /* QuartzCore.framework */; };
 		77DAECDE15790FEC0035EFC5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAECDB15790FEC0035EFC5 /* CoreGraphics.framework */; };
 		77DAECE11579104E0035EFC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAECE01579104E0035EFC5 /* UIKit.framework */; };
 		77DAECE2157910770035EFC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAECE01579104E0035EFC5 /* UIKit.framework */; };
+		77DAECF1157918CC0035EFC5 /* Gravity.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC5B15790DE80035EFC5 /* Gravity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +74,6 @@
 		77DAEC5615790DE80035EFC5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		77DAEC5A15790DE80035EFC5 /* Gravity-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gravity-Prefix.pch"; sourceTree = "<group>"; };
 		77DAEC5B15790DE80035EFC5 /* Gravity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Gravity.h; sourceTree = "<group>"; };
-		77DAEC5C15790DE80035EFC5 /* Gravity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Gravity.m; sourceTree = "<group>"; };
 		77DAEC6315790DE80035EFC5 /* GravityTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GravityTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77DAEC6415790DE80035EFC5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		77DAEC6E15790DE80035EFC5 /* GravityTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GravityTests-Info.plist"; sourceTree = "<group>"; };
@@ -187,12 +186,11 @@
 		77DAEC5815790DE80035EFC5 /* Gravity */ = {
 			isa = PBXGroup;
 			children = (
-				77DAECD815790FA20035EFC5 /* Utility */,
 				77DAEC5B15790DE80035EFC5 /* Gravity.h */,
-				77DAEC5C15790DE80035EFC5 /* Gravity.m */,
-				77DAECD115790F460035EFC5 /* Image Cache */,
-				77DAECD215790F560035EFC5 /* Components */,
 				77DAECD315790F6E0035EFC5 /* Categories */,
+				77DAECD215790F560035EFC5 /* Components */,
+				77DAECD115790F460035EFC5 /* Image Cache */,
+				77DAECD815790FA20035EFC5 /* Utility */,
 				77DAEC5915790DE80035EFC5 /* Supporting Files */,
 			);
 			path = Gravity;
@@ -341,6 +339,7 @@
 				77DAECBA15790F3C0035EFC5 /* UIImage+GDIAdditions.h in Headers */,
 				77DAECBC15790F3C0035EFC5 /* UIImageView+GDIAdditions.h in Headers */,
 				77DAECBE15790F3C0035EFC5 /* UILabel+GDIAdditions.h in Headers */,
+				77DAECF1157918CC0035EFC5 /* Gravity.h in Headers */,
 				77DAECC015790F3C0035EFC5 /* UISearchBar+GDIAdditions.h in Headers */,
 				77DAECC215790F3C0035EFC5 /* UIView+GDIAdditions.h in Headers */,
 				77DAECC415790F3C0035EFC5 /* NSData+GDIAdditions.h in Headers */,
@@ -451,7 +450,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77DAEC5D15790DE80035EFC5 /* Gravity.m in Sources */,
 				77DAECAB15790F3C0035EFC5 /* SharedImageCache.m in Sources */,
 				77DAECAD15790F3C0035EFC5 /* ImageCacheObject.m in Sources */,
 				77DAECAF15790F3C0035EFC5 /* ImageCache.m in Sources */,
@@ -556,12 +554,16 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Gravity/Gravity-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SDKROOT)/usr/lib/system\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
+				PRIVATE_HEADERS_FOLDER_PATH = "$(PUBLIC_HEADERS_FOLDER_PATH)/Private";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include/Gravity;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -576,12 +578,16 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Gravity/Gravity-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SDKROOT)/usr/lib/system\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
+				PRIVATE_HEADERS_FOLDER_PATH = "$(PUBLIC_HEADERS_FOLDER_PATH)/Private";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include/Gravity;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
