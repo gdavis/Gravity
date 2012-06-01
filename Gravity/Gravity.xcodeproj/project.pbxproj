@@ -51,7 +51,6 @@
 		77DAECCD15790F3C0035EFC5 /* CoreGraphics+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAECA715790F3C0035EFC5 /* CoreGraphics+GDIAdditions.m */; };
 		77DAECCE15790F3C0035EFC5 /* GDIMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAECA815790F3C0035EFC5 /* GDIMath.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECCF15790F3C0035EFC5 /* GDIMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAECA915790F3C0035EFC5 /* GDIMath.m */; };
-		77DAECDC15790FEC0035EFC5 /* libcommonCrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAECD915790FEC0035EFC5 /* libcommonCrypto.dylib */; };
 		77DAECDD15790FEC0035EFC5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAECDA15790FEC0035EFC5 /* QuartzCore.framework */; };
 		77DAECDE15790FEC0035EFC5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAECDB15790FEC0035EFC5 /* CoreGraphics.framework */; };
 		77DAECE11579104E0035EFC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAECE01579104E0035EFC5 /* UIKit.framework */; };
@@ -118,7 +117,6 @@
 		77DAECA715790F3C0035EFC5 /* CoreGraphics+GDIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CoreGraphics+GDIAdditions.m"; sourceTree = "<group>"; };
 		77DAECA815790F3C0035EFC5 /* GDIMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIMath.h; sourceTree = "<group>"; };
 		77DAECA915790F3C0035EFC5 /* GDIMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIMath.m; sourceTree = "<group>"; };
-		77DAECD915790FEC0035EFC5 /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
 		77DAECDA15790FEC0035EFC5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		77DAECDB15790FEC0035EFC5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		77DAECE01579104E0035EFC5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -130,7 +128,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				77DAEC5715790DE80035EFC5 /* Foundation.framework in Frameworks */,
-				77DAECDC15790FEC0035EFC5 /* libcommonCrypto.dylib in Frameworks */,
 				77DAECDD15790FEC0035EFC5 /* QuartzCore.framework in Frameworks */,
 				77DAECDE15790FEC0035EFC5 /* CoreGraphics.framework in Frameworks */,
 				77DAECE11579104E0035EFC5 /* UIKit.framework in Frameworks */,
@@ -173,7 +170,6 @@
 		77DAEC5515790DE80035EFC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				77DAECD915790FEC0035EFC5 /* libcommonCrypto.dylib */,
 				77DAECDA15790FEC0035EFC5 /* QuartzCore.framework */,
 				77DAECDB15790FEC0035EFC5 /* CoreGraphics.framework */,
 				77DAEC5615790DE80035EFC5 /* Foundation.framework */,
