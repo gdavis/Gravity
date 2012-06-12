@@ -39,6 +39,10 @@
 // returns an image of the receiver resized to the specified size
 - (UIImage *)imageByScalingToSize:(CGSize)targetSize;
 
+// returns an image of the receiver resized to the specified size while
+// maintaining the aspect ratio of the image
+- (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize;
+
 // adopted from: http://stackoverflow.com/questions/5427656/ios-uiimagepickercontroller-result-image-orientation-after-upload
 // returns and image rotated to match its appropriate EXIT orientation
 - (UIImage *)fixOrientation;
