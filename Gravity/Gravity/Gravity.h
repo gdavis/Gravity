@@ -41,6 +41,7 @@
 #import "UIView+GDIAdditions.h"
 
 // foundation categories
+#import "NSObject+PerformBlockAfterDelay.h"
 #import "NSString+GDIAdditions.h"
 #import "NSDate+GDIAdditions.h"
 #import "NSData+GDIAdditions.h"
