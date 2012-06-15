@@ -29,6 +29,7 @@
 // components
 #import "GDITouchProxyView.h"
 #import "GDISignatureCaptureView.h"
+#import "GDIAutoFocusingScrollViewController.h"
 
 // ui kit categories
 #import "UIAlertView+GDIAdditions.h"

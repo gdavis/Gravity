@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7703A375158AEEA400CF326C /* GDIAutoFocusingScrollViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7703A373158AEEA400CF326C /* GDIAutoFocusingScrollViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7703A376158AEEA400CF326C /* GDIAutoFocusingScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7703A374158AEEA400CF326C /* GDIAutoFocusingScrollViewController.m */; };
 		7772C64B158AAE2400A8AF93 /* NSObject+PerformBlockAfterDelay.h in Headers */ = {isa = PBXBuildFile; fileRef = 7772C649158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7772C64C158AAE2400A8AF93 /* NSObject+PerformBlockAfterDelay.m in Sources */ = {isa = PBXBuildFile; fileRef = 7772C64A158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.m */; };
 		77DAEC5715790DE80035EFC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAEC5615790DE80035EFC5 /* Foundation.framework */; };
@@ -71,6 +73,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7703A373158AEEA400CF326C /* GDIAutoFocusingScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIAutoFocusingScrollViewController.h; sourceTree = "<group>"; };
+		7703A374158AEEA400CF326C /* GDIAutoFocusingScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIAutoFocusingScrollViewController.m; sourceTree = "<group>"; };
 		7772C649158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PerformBlockAfterDelay.h"; sourceTree = "<group>"; };
 		7772C64A158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PerformBlockAfterDelay.m"; sourceTree = "<group>"; };
 		77DAEC5315790DE80035EFC5 /* libGravity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGravity.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,6 +247,8 @@
 				77DAEC8B15790F3C0035EFC5 /* GDITouchProxyView.m */,
 				77DAEC8C15790F3C0035EFC5 /* GDISignatureCaptureView.h */,
 				77DAEC8D15790F3C0035EFC5 /* GDISignatureCaptureView.m */,
+				7703A373158AEEA400CF326C /* GDIAutoFocusingScrollViewController.h */,
+				7703A374158AEEA400CF326C /* GDIAutoFocusingScrollViewController.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -345,6 +351,7 @@
 				77DAECF1157918CC0035EFC5 /* Gravity.h in Headers */,
 				77DAECC015790F3C0035EFC5 /* UISearchBar+GDIAdditions.h in Headers */,
 				77DAECC215790F3C0035EFC5 /* UIView+GDIAdditions.h in Headers */,
+				7703A375158AEEA400CF326C /* GDIAutoFocusingScrollViewController.h in Headers */,
 				77DAECC415790F3C0035EFC5 /* NSData+GDIAdditions.h in Headers */,
 				77DAECC615790F3C0035EFC5 /* NSDate+GDIAdditions.h in Headers */,
 				77DAECC815790F3C0035EFC5 /* NSString+GDIAdditions.h in Headers */,
@@ -473,6 +480,7 @@
 				77DAECCD15790F3C0035EFC5 /* CoreGraphics+GDIAdditions.m in Sources */,
 				77DAECCF15790F3C0035EFC5 /* GDIMath.m in Sources */,
 				7772C64C158AAE2400A8AF93 /* NSObject+PerformBlockAfterDelay.m in Sources */,
+				7703A376158AEEA400CF326C /* GDIAutoFocusingScrollViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
