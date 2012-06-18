@@ -27,6 +27,7 @@
 #import "ImageCacheObject.h"
 
 // components
+#import "GDIBoundTextField.h"
 #import "GDITouchProxyView.h"
 #import "GDISignatureCaptureView.h"
 #import "GDIAutoFocusingScrollViewController.h"
