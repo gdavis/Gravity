@@ -9,15 +9,39 @@
 #import "GDIBoundTextField.h"
 
 @interface GDIBoundTextField () {
+    BOOL _isSettingText;
     __weak NSObject *_boundObject;
     NSString *_boundKeypath;
 }
 
 - (void)removeBind;
+- (void)updateBoundObjectValue;
+- (void)updateTextByTrimmingIfNecessary;
 
 @end
 
+
 @implementation GDIBoundTextField
+@synthesize shouldTrimInput;
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        shouldTrimInput = YES;
+    }
+    return self;
+}
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        shouldTrimInput = YES;
+    }
+    return self;
+}
+
 
 - (void)bindTextToObject:(NSObject *)obj keyPath:(NSString *)keypath
 {
@@ -26,44 +50,78 @@
     
     // store references
     _boundObject = obj;
-    _boundKeypath = [NSString stringWithString:keypath];
+    _boundKeypath = keypath;
     
     // bind to new object
-    if (_boundObject) {
+    if (_boundObject && _boundKeypath) {
+        
+        // register KVO observer
         [_boundObject addObserver:self forKeyPath:_boundKeypath options:NSKeyValueObservingOptionNew context:nil];
+        
+        // set our text to the value of our object's keypath
+        [super setText:[_boundObject valueForKey:_boundKeypath]];
     }
 }
+
+
+- (void)setText:(NSString *)text
+{
+    [super setText:text];
+    [self updateBoundObjectValue];
+}
+
 
 - (void)dealloc
 {
     [self removeBind];
 }
 
+
 - (void)removeBind
 {
-    if (_boundObject) {
+    if (_boundObject && _boundKeypath) {
         [_boundObject removeObserver:self forKeyPath:_boundKeypath];
-        _boundObject = nil;
-        _boundKeypath = nil;
     }
+    _boundObject = nil;
+    _boundKeypath = nil;
 }
+
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-    
-    if ([keyPath isEqualToString:_boundKeypath]) {
+    if ([keyPath isEqualToString:_boundKeypath] && !_isSettingText) {
         NSString *newText = [change objectForKey:NSKeyValueChangeNewKey];
-        self.text = newText;
+        super.text = newText;
     }
 }
 
+
+- (void)updateBoundObjectValue
+{
+    if (_boundObject && _boundKeypath) {
+        NSString *storedValue = [_boundObject valueForKey:_boundKeypath];
+        if (![storedValue isEqualToString:self.text]) {
+            _isSettingText = YES;   
+            NSString *text = shouldTrimInput ? [self.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]
+                                             : self.text;
+            [_boundObject setValue:text forKey:_boundKeypath];
+            _isSettingText = NO;
+        }
+    }
+}
+
+- (void)updateTextByTrimmingIfNecessary
+{
+    if (shouldTrimInput && self.text) {
+        super.text = [self.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    }
+}
+
+
 - (BOOL)resignFirstResponder
 {
-    // attempt to our text value on our bound object
-    if (_boundObject && _boundKeypath) {
-        [_boundObject setValue:self.text forKey:_boundKeypath];
-    }
+    [self updateBoundObjectValue];
+    [self updateTextByTrimmingIfNecessary];
     return [super resignFirstResponder];
 }
 
