@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7703A375158AEEA400CF326C /* GDIAutoFocusingScrollViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7703A373158AEEA400CF326C /* GDIAutoFocusingScrollViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7703A376158AEEA400CF326C /* GDIAutoFocusingScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7703A374158AEEA400CF326C /* GDIAutoFocusingScrollViewController.m */; };
-		774679AD1592305C00D5DF6D /* GDIBoundTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 774679AB1592305C00D5DF6D /* GDIBoundTextView.h */; };
+		774679AD1592305C00D5DF6D /* GDIBoundTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 774679AB1592305C00D5DF6D /* GDIBoundTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		774679AE1592305C00D5DF6D /* GDIBoundTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 774679AC1592305C00D5DF6D /* GDIBoundTextView.m */; };
 		7772C64B158AAE2400A8AF93 /* NSObject+PerformBlockAfterDelay.h in Headers */ = {isa = PBXBuildFile; fileRef = 7772C649158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7772C64C158AAE2400A8AF93 /* NSObject+PerformBlockAfterDelay.m in Sources */ = {isa = PBXBuildFile; fileRef = 7772C64A158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.m */; };
@@ -363,6 +363,7 @@
 				77DAECF1157918CC0035EFC5 /* Gravity.h in Headers */,
 				77DAECC015790F3C0035EFC5 /* UISearchBar+GDIAdditions.h in Headers */,
 				77C64BBA158FCC5D00D18066 /* GDIBoundTextField.h in Headers */,
+				774679AD1592305C00D5DF6D /* GDIBoundTextView.h in Headers */,
 				77DAECC215790F3C0035EFC5 /* UIView+GDIAdditions.h in Headers */,
 				7703A375158AEEA400CF326C /* GDIAutoFocusingScrollViewController.h in Headers */,
 				77DAECC415790F3C0035EFC5 /* NSData+GDIAdditions.h in Headers */,
@@ -371,7 +372,6 @@
 				77DAECCA15790F3C0035EFC5 /* CAAnimation+Blocks.h in Headers */,
 				77DAECCC15790F3C0035EFC5 /* CoreGraphics+GDIAdditions.h in Headers */,
 				77DAECCE15790F3C0035EFC5 /* GDIMath.h in Headers */,
-				774679AD1592305C00D5DF6D /* GDIBoundTextView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

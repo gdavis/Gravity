@@ -28,6 +28,7 @@
 
 // components
 #import "GDIBoundTextField.h"
+#import "GDIBoundTextView.h"
 #import "GDITouchProxyView.h"
 #import "GDISignatureCaptureView.h"
 #import "GDIAutoFocusingScrollViewController.h"
