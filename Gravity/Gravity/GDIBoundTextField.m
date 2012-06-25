@@ -14,7 +14,6 @@
     NSString *_boundKeypath;
 }
 
-- (void)removeBind;
 - (void)updateBoundObjectValue;
 - (void)updateTextByTrimmingIfNecessary;
 
