@@ -10,6 +10,7 @@
 
 @interface GDIBoundTextView : UITextView
 
+@property (strong, nonatomic) NSString *placeholder;
 
 // calling this method will invoke KVO on the keypath of the object specified.
 // this method acts as a crude replacement for binding NSManagedObjects to UI components,

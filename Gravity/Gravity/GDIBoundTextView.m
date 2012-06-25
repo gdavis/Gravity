@@ -21,6 +21,7 @@
 
 @implementation GDIBoundTextView
 @synthesize shouldTrimInput;
+@synthesize placeholder;
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -96,7 +97,7 @@
 
 - (void)updateBoundObjectValue
 {
-    if (_boundObject && _boundKeypath) {
+    if (_boundObject && _boundKeypath && ![self.text isEqualToString:self.placeholder]) {
         NSString *storedValue = [_boundObject valueForKey:_boundKeypath];
         if (![storedValue isEqualToString:self.text]) {
             _isSettingText = YES;   
@@ -110,7 +111,7 @@
 
 - (void)updateTextByTrimmingIfNecessary
 {
-    if (shouldTrimInput && self.text) {
+    if (shouldTrimInput && self.text && ![self.text isEqualToString:self.placeholder]) {
         super.text = [self.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     }
 }
