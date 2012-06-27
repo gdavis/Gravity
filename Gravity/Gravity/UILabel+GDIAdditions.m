@@ -59,7 +59,7 @@
     }
     
     CGSize labelSize = [self.text sizeWithFont:self.font constrainedToSize:CGSizeMake(self.frame.size.width, FLT_MAX) lineBreakMode:self.lineBreakMode];
-    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, labelSize.width, labelSize.height);
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, labelSize.height);
 }
 
 @end
