@@ -42,4 +42,22 @@
     return dateInterval >= startInterval && dateInterval <= endInterval;
 }
 
+
++ (NSDate *)dateWithDaysFromNow:(NSUInteger)days
+{
+    return [NSDate dateWithHoursFromNow:24 * days];
+}
+
+
++ (NSDate *)dateWithHoursFromNow:(NSUInteger)hours 
+{
+    return [NSDate dateWithMinutesFromNow:60 * hours];
+}
+
+
++ (NSDate *)dateWithMinutesFromNow:(NSUInteger)minutes 
+{
+    return [NSDate dateWithTimeIntervalSinceNow:60 * minutes];
+}
+
 @end

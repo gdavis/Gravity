@@ -15,4 +15,8 @@
 
 - (BOOL)isDateBetweenStartDate:(NSDate *)startDate endDate:(NSDate *)endDate;
 
++ (NSDate *)dateWithDaysFromNow:(NSUInteger)days;
++ (NSDate *)dateWithHoursFromNow:(NSUInteger)days;
++ (NSDate *)dateWithMinutesFromNow:(NSUInteger)days;
+
 @end
