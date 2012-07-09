@@ -4,7 +4,7 @@
 //  Created by Grant Davis on 4/23/12.
 //  Copyright 2009 Grant Davis Interactive, LLC. All rights reserved.
 //
-
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
 @class ImageCacheObject;
