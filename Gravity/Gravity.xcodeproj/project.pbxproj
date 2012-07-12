@@ -591,7 +591,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRIVATE_HEADERS_FOLDER_PATH = "$(PUBLIC_HEADERS_FOLDER_PATH)/Private";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "include/${PRODUCT_NAME}";
+				PUBLIC_HEADERS_FOLDER_PATH = ../../Headers/Gravity;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -615,7 +615,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRIVATE_HEADERS_FOLDER_PATH = "$(PUBLIC_HEADERS_FOLDER_PATH)/Private";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "include/${PRODUCT_NAME}";
+				PUBLIC_HEADERS_FOLDER_PATH = ../../Headers/Gravity;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
