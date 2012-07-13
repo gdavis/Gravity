@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7703A375158AEEA400CF326C /* GDIAutoFocusingScrollViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7703A373158AEEA400CF326C /* GDIAutoFocusingScrollViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7703A376158AEEA400CF326C /* GDIAutoFocusingScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7703A374158AEEA400CF326C /* GDIAutoFocusingScrollViewController.m */; };
+		771773D115B0737F0024B32E /* UIView+GDIAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 771773CF15B0737F0024B32E /* UIView+GDIAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		771773D215B0737F0024B32E /* UIView+GDIAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 771773D015B0737F0024B32E /* UIView+GDIAnimation.m */; };
 		774679AD1592305C00D5DF6D /* GDIBoundTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 774679AB1592305C00D5DF6D /* GDIBoundTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		774679AE1592305C00D5DF6D /* GDIBoundTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 774679AC1592305C00D5DF6D /* GDIBoundTextView.m */; };
 		7772C64B158AAE2400A8AF93 /* NSObject+PerformBlockAfterDelay.h in Headers */ = {isa = PBXBuildFile; fileRef = 7772C649158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -79,6 +81,8 @@
 /* Begin PBXFileReference section */
 		7703A373158AEEA400CF326C /* GDIAutoFocusingScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIAutoFocusingScrollViewController.h; sourceTree = "<group>"; };
 		7703A374158AEEA400CF326C /* GDIAutoFocusingScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIAutoFocusingScrollViewController.m; sourceTree = "<group>"; };
+		771773CF15B0737F0024B32E /* UIView+GDIAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GDIAnimation.h"; sourceTree = "<group>"; };
+		771773D015B0737F0024B32E /* UIView+GDIAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GDIAnimation.m"; sourceTree = "<group>"; };
 		774679AB1592305C00D5DF6D /* GDIBoundTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIBoundTextView.h; sourceTree = "<group>"; };
 		774679AC1592305C00D5DF6D /* GDIBoundTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIBoundTextView.m; sourceTree = "<group>"; };
 		7772C649158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PerformBlockAfterDelay.h"; sourceTree = "<group>"; };
@@ -295,6 +299,8 @@
 				77DAEC9B15790F3C0035EFC5 /* UISearchBar+GDIAdditions.m */,
 				77DAEC9C15790F3C0035EFC5 /* UIView+GDIAdditions.h */,
 				77DAEC9D15790F3C0035EFC5 /* UIView+GDIAdditions.m */,
+				771773CF15B0737F0024B32E /* UIView+GDIAnimation.h */,
+				771773D015B0737F0024B32E /* UIView+GDIAnimation.m */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -366,6 +372,7 @@
 				774679AD1592305C00D5DF6D /* GDIBoundTextView.h in Headers */,
 				77DAECC215790F3C0035EFC5 /* UIView+GDIAdditions.h in Headers */,
 				7703A375158AEEA400CF326C /* GDIAutoFocusingScrollViewController.h in Headers */,
+				771773D115B0737F0024B32E /* UIView+GDIAnimation.h in Headers */,
 				77DAECC415790F3C0035EFC5 /* NSData+GDIAdditions.h in Headers */,
 				77DAECC615790F3C0035EFC5 /* NSDate+GDIAdditions.h in Headers */,
 				77DAECC815790F3C0035EFC5 /* NSString+GDIAdditions.h in Headers */,
@@ -497,6 +504,7 @@
 				7703A376158AEEA400CF326C /* GDIAutoFocusingScrollViewController.m in Sources */,
 				77C64BBB158FCC5D00D18066 /* GDIBoundTextField.m in Sources */,
 				774679AE1592305C00D5DF6D /* GDIBoundTextView.m in Sources */,
+				771773D215B0737F0024B32E /* UIView+GDIAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
