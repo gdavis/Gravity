@@ -13,6 +13,8 @@
 		771773D215B0737F0024B32E /* UIView+GDIAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 771773D015B0737F0024B32E /* UIView+GDIAnimation.m */; };
 		774679AD1592305C00D5DF6D /* GDIBoundTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 774679AB1592305C00D5DF6D /* GDIBoundTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		774679AE1592305C00D5DF6D /* GDIBoundTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 774679AC1592305C00D5DF6D /* GDIBoundTextView.m */; };
+		7771953B15B9BFD400EEE868 /* UIFont+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7771953915B9BFD400EEE868 /* UIFont+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7771953C15B9BFD400EEE868 /* UIFont+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7771953A15B9BFD400EEE868 /* UIFont+GDIAdditions.m */; };
 		7772C64B158AAE2400A8AF93 /* NSObject+PerformBlockAfterDelay.h in Headers */ = {isa = PBXBuildFile; fileRef = 7772C649158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7772C64C158AAE2400A8AF93 /* NSObject+PerformBlockAfterDelay.m in Sources */ = {isa = PBXBuildFile; fileRef = 7772C64A158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.m */; };
 		77C64BBA158FCC5D00D18066 /* GDIBoundTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 77C64BB8158FCC5D00D18066 /* GDIBoundTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -85,6 +87,8 @@
 		771773D015B0737F0024B32E /* UIView+GDIAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GDIAnimation.m"; sourceTree = "<group>"; };
 		774679AB1592305C00D5DF6D /* GDIBoundTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIBoundTextView.h; sourceTree = "<group>"; };
 		774679AC1592305C00D5DF6D /* GDIBoundTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIBoundTextView.m; sourceTree = "<group>"; };
+		7771953915B9BFD400EEE868 /* UIFont+GDIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+GDIAdditions.h"; sourceTree = "<group>"; };
+		7771953A15B9BFD400EEE868 /* UIFont+GDIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+GDIAdditions.m"; sourceTree = "<group>"; };
 		7772C649158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PerformBlockAfterDelay.h"; sourceTree = "<group>"; };
 		7772C64A158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PerformBlockAfterDelay.m"; sourceTree = "<group>"; };
 		77C64BB8158FCC5D00D18066 /* GDIBoundTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIBoundTextField.h; sourceTree = "<group>"; };
@@ -301,6 +305,8 @@
 				77DAEC9D15790F3C0035EFC5 /* UIView+GDIAdditions.m */,
 				771773CF15B0737F0024B32E /* UIView+GDIAnimation.h */,
 				771773D015B0737F0024B32E /* UIView+GDIAnimation.m */,
+				7771953915B9BFD400EEE868 /* UIFont+GDIAdditions.h */,
+				7771953A15B9BFD400EEE868 /* UIFont+GDIAdditions.m */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -369,6 +375,7 @@
 				77DAECF1157918CC0035EFC5 /* Gravity.h in Headers */,
 				77DAECC015790F3C0035EFC5 /* UISearchBar+GDIAdditions.h in Headers */,
 				77C64BBA158FCC5D00D18066 /* GDIBoundTextField.h in Headers */,
+				7771953B15B9BFD400EEE868 /* UIFont+GDIAdditions.h in Headers */,
 				774679AD1592305C00D5DF6D /* GDIBoundTextView.h in Headers */,
 				77DAECC215790F3C0035EFC5 /* UIView+GDIAdditions.h in Headers */,
 				7703A375158AEEA400CF326C /* GDIAutoFocusingScrollViewController.h in Headers */,
@@ -505,6 +512,7 @@
 				77C64BBB158FCC5D00D18066 /* GDIBoundTextField.m in Sources */,
 				774679AE1592305C00D5DF6D /* GDIBoundTextView.m in Sources */,
 				771773D215B0737F0024B32E /* UIView+GDIAnimation.m in Sources */,
+				7771953C15B9BFD400EEE868 /* UIFont+GDIAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
