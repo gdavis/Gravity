@@ -43,6 +43,7 @@
 #import "UISearchBar+GDIAdditions.h"
 #import "UIView+GDIAdditions.h"
 #import "UIView+GDIAnimation.h"
+#import "UIFont+GDIAdditions.h"
 
 // foundation categories
 #import "NSObject+PerformBlockAfterDelay.h"
