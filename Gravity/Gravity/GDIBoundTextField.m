@@ -7,6 +7,7 @@
 //
 
 #import "GDIBoundTextField.h"
+#import "NSString+GDIAdditions.h"
 
 @interface GDIBoundTextField () {
     BOOL _isSettingText;
@@ -99,7 +100,7 @@
 {
     if (_boundObject && _boundKeypath) {
         NSString *storedValue = [_boundObject valueForKey:_boundKeypath];
-        if (![storedValue isEqualToString:self.text]) {
+        if (![storedValue isEqualToString:self.text] && ![NSString isNullString:self.text]) {
             _isSettingText = YES;   
             NSString *text = shouldTrimInput ? [self.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]
                                              : self.text;
@@ -111,7 +112,7 @@
 
 - (void)updateTextByTrimmingIfNecessary
 {
-    if (shouldTrimInput && self.text) {
+    if (shouldTrimInput && ![NSString isNullString:self.text]) {
         super.text = [self.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     }
 }
