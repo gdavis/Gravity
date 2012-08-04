@@ -7,6 +7,7 @@
 //
 
 #import "GDIBoundTextField.h"
+#import "NSString+GDIAdditions.h"
 
 @interface GDIBoundTextField () {
     BOOL _isSettingText;
@@ -90,7 +91,12 @@
 {
     if ([keyPath isEqualToString:_boundKeypath] && !_isSettingText) {
         NSString *newText = [change objectForKey:NSKeyValueChangeNewKey];
-        super.text = newText;
+        if (![NSString isNullString:newText]) {
+            super.text = newText;
+        }
+        else {
+            super.text = nil;
+        }
     }
 }
 
