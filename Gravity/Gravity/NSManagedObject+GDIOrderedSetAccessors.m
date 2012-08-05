@@ -10,7 +10,7 @@
 
 @implementation NSManagedObject (GDIOrderedSetAccessors)
 
-- (void)insertObject:(NSObject *)value atIndex:(NSUInteger)idx forKey:(NSString *)key
+- (void)insertObject:(id)value atIndex:(NSUInteger)idx forKey:(NSString *)key
 {
     NSIndexSet* indexes = [NSIndexSet indexSetWithIndex:idx];
     [self willChange:NSKeyValueChangeInsertion valuesAtIndexes:indexes forKey:key];
@@ -52,7 +52,7 @@
 }
 
 
-- (void)replaceObjectInAtIndex:(NSUInteger)idx withObject:(NSObject *)value forKey:(NSString *)key
+- (void)replaceObjectInAtIndex:(NSUInteger)idx withObject:(id)value forKey:(NSString *)key
 {
     NSIndexSet* indexes = [NSIndexSet indexSetWithIndex:idx];
     [self willChange:NSKeyValueChangeReplacement valuesAtIndexes:indexes forKey:key];
@@ -73,7 +73,7 @@
 }
 
 
-- (void)addObject:(NSObject *)value forKey:(NSString *)key
+- (void)addObject:(id)value forKey:(NSString *)key
 {
     NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self mutableOrderedSetValueForKey:key]];
     NSUInteger idx = [tmpOrderedSet count];
@@ -85,7 +85,7 @@
 }
 
 
-- (void)removeObject:(NSObject *)value forKey:(NSString *)key
+- (void)removeObject:(id)value forKey:(NSString *)key
 {
     NSMutableOrderedSet *tmpOrderedSet = [NSMutableOrderedSet orderedSetWithOrderedSet:[self mutableOrderedSetValueForKey:key]];
     NSUInteger idx = [tmpOrderedSet indexOfObject:value];
