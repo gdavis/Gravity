@@ -68,6 +68,8 @@
 		77DAECE11579104E0035EFC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAECE01579104E0035EFC5 /* UIKit.framework */; };
 		77DAECE2157910770035EFC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAECE01579104E0035EFC5 /* UIKit.framework */; };
 		77DAECF1157918CC0035EFC5 /* Gravity.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC5B15790DE80035EFC5 /* Gravity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77F60C9115CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.h in Headers */ = {isa = PBXBuildFile; fileRef = 77F60C8F15CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77F60C9215CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F60C9015CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +146,8 @@
 		77DAECDA15790FEC0035EFC5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		77DAECDB15790FEC0035EFC5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		77DAECE01579104E0035EFC5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		77F60C8F15CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+GDIOrderedSetAccessors.h"; sourceTree = "<group>"; };
+		77F60C9015CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+GDIOrderedSetAccessors.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +280,7 @@
 		77DAECD315790F6E0035EFC5 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				77F60C8D15CF20EF000AFF56 /* Core Data */,
 				77DAECD715790F820035EFC5 /* Core Graphics */,
 				77DAECD615790F7E0035EFC5 /* Core Animation */,
 				77DAECD515790F7A0035EFC5 /* Foundation */,
@@ -353,6 +358,15 @@
 			name = Utility;
 			sourceTree = "<group>";
 		};
+		77F60C8D15CF20EF000AFF56 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				77F60C8F15CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.h */,
+				77F60C9015CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.m */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -380,6 +394,7 @@
 				77DAECC215790F3C0035EFC5 /* UIView+GDIAdditions.h in Headers */,
 				7703A375158AEEA400CF326C /* GDIAutoFocusingScrollViewController.h in Headers */,
 				771773D115B0737F0024B32E /* UIView+GDIAnimation.h in Headers */,
+				77F60C9115CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.h in Headers */,
 				77DAECC415790F3C0035EFC5 /* NSData+GDIAdditions.h in Headers */,
 				77DAECC615790F3C0035EFC5 /* NSDate+GDIAdditions.h in Headers */,
 				77DAECC815790F3C0035EFC5 /* NSString+GDIAdditions.h in Headers */,
@@ -513,6 +528,7 @@
 				774679AE1592305C00D5DF6D /* GDIBoundTextView.m in Sources */,
 				771773D215B0737F0024B32E /* UIView+GDIAnimation.m in Sources */,
 				7771953C15B9BFD400EEE868 /* UIFont+GDIAdditions.m in Sources */,
+				77F60C9215CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

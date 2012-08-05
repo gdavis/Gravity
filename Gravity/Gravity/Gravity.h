@@ -57,6 +57,9 @@
 // core animation categories
 #import "CAAnimation+Blocks.h"
 
+// core data categories
+#import "NSManagedObject+GDIOrderedSetAccessors.h"
+
 // utility
 #import "GDIMath.h"
 
