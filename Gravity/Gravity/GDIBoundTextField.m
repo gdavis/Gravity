@@ -59,7 +59,7 @@
         [_boundObject addObserver:self forKeyPath:_boundKeypath options:NSKeyValueObservingOptionNew context:nil];
         
         // set our text to the value of our object's keypath
-        [super setText:[_boundObject valueForKey:_boundKeypath]];
+        [super setText:[_boundObject valueForKeyPath:_boundKeypath]];
     }
 }
 
@@ -104,12 +104,19 @@
 - (void)updateBoundObjectValue
 {
     if (_boundObject && _boundKeypath) {
-        NSString *storedValue = [_boundObject valueForKey:_boundKeypath];
-        if (![storedValue isEqualToString:self.text] && ![NSString isNullString:self.text]) {
-            _isSettingText = YES;   
-            NSString *text = shouldTrimInput ? [self.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]
-                                             : self.text;
-            [_boundObject setValue:text forKey:_boundKeypath];
+        NSString *storedValue = [_boundObject valueForKeyPath:_boundKeypath];
+        if (![storedValue isEqualToString:self.text]) {
+            _isSettingText = YES;
+            
+            if (![NSString isNullString:self.text]) {
+                NSString *text = shouldTrimInput ? [self.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]
+                : self.text;
+                [_boundObject setValue:text forKeyPath:_boundKeypath];
+            }
+            else {
+                [_boundObject setValue:nil forKeyPath:_boundKeypath];
+            }
+
             _isSettingText = NO;
         }
     }
