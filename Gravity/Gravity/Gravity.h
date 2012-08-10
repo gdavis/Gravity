@@ -32,6 +32,7 @@
 #import "GDITouchProxyView.h"
 #import "GDISignatureCaptureView.h"
 #import "GDIAutoFocusingScrollViewController.h"
+#import "GDIDatePicker.h"
 
 // ui kit categories
 #import "UIAlertView+GDIAdditions.h"

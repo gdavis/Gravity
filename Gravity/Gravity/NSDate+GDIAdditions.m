@@ -43,21 +43,38 @@
 }
 
 
-+ (NSDate *)dateWithDaysFromNow:(NSUInteger)days
++ (NSDate *)dateWithDaysFromNow:(CGFloat)days
 {
     return [NSDate dateWithHoursFromNow:24 * days];
 }
 
 
-+ (NSDate *)dateWithHoursFromNow:(NSUInteger)hours 
++ (NSDate *)dateWithHoursFromNow:(CGFloat)hours 
 {
     return [NSDate dateWithMinutesFromNow:60 * hours];
 }
 
 
-+ (NSDate *)dateWithMinutesFromNow:(NSUInteger)minutes 
++ (NSDate *)dateWithMinutesFromNow:(CGFloat)minutes 
 {
     return [NSDate dateWithTimeIntervalSinceNow:60 * minutes];
 }
+
+
++ (NSDate *)dateWithDays:(CGFloat)days fromDate:(NSDate *)date
+{
+    return [NSDate dateWithHours:24 * days fromDate:date];
+}
+
++ (NSDate *)dateWithHours:(CGFloat)hours fromDate:(NSDate *)date
+{
+    return [NSDate dateWithMinutes:60 * hours fromDate:date];
+}
+
++ (NSDate *)dateWithMinutes:(CGFloat)mins fromDate:(NSDate *)date
+{
+    return [NSDate dateWithTimeInterval:60 * mins sinceDate:date];
+}
+
 
 @end

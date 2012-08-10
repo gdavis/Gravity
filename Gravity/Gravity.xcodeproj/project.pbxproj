@@ -11,6 +11,8 @@
 		7703A376158AEEA400CF326C /* GDIAutoFocusingScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7703A374158AEEA400CF326C /* GDIAutoFocusingScrollViewController.m */; };
 		771773D115B0737F0024B32E /* UIView+GDIAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 771773CF15B0737F0024B32E /* UIView+GDIAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		771773D215B0737F0024B32E /* UIView+GDIAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 771773D015B0737F0024B32E /* UIView+GDIAnimation.m */; };
+		77414AEF15D560CA0048B157 /* GDIDatePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 77414AED15D560CA0048B157 /* GDIDatePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77414AF015D560CA0048B157 /* GDIDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 77414AEE15D560CA0048B157 /* GDIDatePicker.m */; };
 		774679AD1592305C00D5DF6D /* GDIBoundTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 774679AB1592305C00D5DF6D /* GDIBoundTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		774679AE1592305C00D5DF6D /* GDIBoundTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 774679AC1592305C00D5DF6D /* GDIBoundTextView.m */; };
 		7771953B15B9BFD400EEE868 /* UIFont+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7771953915B9BFD400EEE868 /* UIFont+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -87,6 +89,8 @@
 		7703A374158AEEA400CF326C /* GDIAutoFocusingScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIAutoFocusingScrollViewController.m; sourceTree = "<group>"; };
 		771773CF15B0737F0024B32E /* UIView+GDIAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GDIAnimation.h"; sourceTree = "<group>"; };
 		771773D015B0737F0024B32E /* UIView+GDIAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GDIAnimation.m"; sourceTree = "<group>"; };
+		77414AED15D560CA0048B157 /* GDIDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIDatePicker.h; sourceTree = "<group>"; };
+		77414AEE15D560CA0048B157 /* GDIDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIDatePicker.m; sourceTree = "<group>"; };
 		774679AB1592305C00D5DF6D /* GDIBoundTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIBoundTextView.h; sourceTree = "<group>"; };
 		774679AC1592305C00D5DF6D /* GDIBoundTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIBoundTextView.m; sourceTree = "<group>"; };
 		7771953915B9BFD400EEE868 /* UIFont+GDIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+GDIAdditions.h"; sourceTree = "<group>"; };
@@ -273,6 +277,8 @@
 				77C64BB9158FCC5D00D18066 /* GDIBoundTextField.m */,
 				774679AB1592305C00D5DF6D /* GDIBoundTextView.h */,
 				774679AC1592305C00D5DF6D /* GDIBoundTextView.m */,
+				77414AED15D560CA0048B157 /* GDIDatePicker.h */,
+				77414AEE15D560CA0048B157 /* GDIDatePicker.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -395,6 +401,7 @@
 				7703A375158AEEA400CF326C /* GDIAutoFocusingScrollViewController.h in Headers */,
 				771773D115B0737F0024B32E /* UIView+GDIAnimation.h in Headers */,
 				77F60C9115CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.h in Headers */,
+				77414AEF15D560CA0048B157 /* GDIDatePicker.h in Headers */,
 				77DAECC415790F3C0035EFC5 /* NSData+GDIAdditions.h in Headers */,
 				77DAECC615790F3C0035EFC5 /* NSDate+GDIAdditions.h in Headers */,
 				77DAECC815790F3C0035EFC5 /* NSString+GDIAdditions.h in Headers */,
@@ -529,6 +536,7 @@
 				771773D215B0737F0024B32E /* UIView+GDIAnimation.m in Sources */,
 				7771953C15B9BFD400EEE868 /* UIFont+GDIAdditions.m in Sources */,
 				77F60C9215CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.m in Sources */,
+				77414AF015D560CA0048B157 /* GDIDatePicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
