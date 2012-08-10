@@ -12,8 +12,8 @@
 
 @interface GDIPhoneNumberFormatting ()
 
--(NSString*)formatNumber:(NSString*)mobileNumber;
--(int)getLength:(NSString*)mobileNumber;
++ (NSString*)formatNumber:(NSString*)mobileNumber;
++ (int)getLength:(NSString*)mobileNumber;
 
 @end
 
@@ -23,7 +23,7 @@
 #pragma mark - Phone Number Field Formatting
 
 // Adopted from: http://stackoverflow.com/questions/6052966/phone-number-formatting
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
++ (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     // if the incoming string is not a phone-friendly character, bail out.
     NSCharacterSet *allowedCharacters = [NSCharacterSet characterSetWithCharactersInString:kAllowedCharacters];
@@ -31,7 +31,7 @@
         return NO;
     }
     
-    int length = [self getLength:textField.text];
+    int length = [GDIPhoneNumberFormatting getLength:textField.text];
     
     if(length == 10) {
         if(range.length == 0)
@@ -39,13 +39,13 @@
     }
     
     if(length == 3) {
-        NSString *num = [self formatNumber:textField.text];
+        NSString *num = [GDIPhoneNumberFormatting formatNumber:textField.text];
         textField.text = [NSString stringWithFormat:@"(%@) ",num];
         if(range.length > 0)
             textField.text = [NSString stringWithFormat:@"%@",[num substringToIndex:3]];
     }
     else if(length == 6) {
-        NSString *num = [self formatNumber:textField.text];
+        NSString *num = [GDIPhoneNumberFormatting formatNumber:textField.text];
         textField.text = [NSString stringWithFormat:@"(%@) %@-",[num  substringToIndex:3],[num substringFromIndex:3]];
         if(range.length > 0)
             textField.text = [NSString stringWithFormat:@"(%@) %@",[num substringToIndex:3],[num substringFromIndex:3]];
@@ -54,7 +54,7 @@
 }
 
 
-- (BOOL)textView:(UITextView *)textView shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
++ (BOOL)textView:(UITextView *)textView shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     // if the incoming string is not a phone-friendly character, bail out.
     NSCharacterSet *allowedCharacters = [NSCharacterSet characterSetWithCharactersInString:kAllowedCharacters];
@@ -62,7 +62,7 @@
         return NO;
     }
     
-    int length = [self getLength:textView.text];
+    int length = [GDIPhoneNumberFormatting getLength:textView.text];
     
     if(length == 10) {
         if(range.length == 0)
@@ -70,13 +70,13 @@
     }
     
     if(length == 3) {
-        NSString *num = [self formatNumber:textView.text];
+        NSString *num = [GDIPhoneNumberFormatting formatNumber:textView.text];
         textView.text = [NSString stringWithFormat:@"(%@) ",num];
         if(range.length > 0)
             textView.text = [NSString stringWithFormat:@"%@",[num substringToIndex:3]];
     }
     else if(length == 6) {
-        NSString *num = [self formatNumber:textView.text];
+        NSString *num = [GDIPhoneNumberFormatting formatNumber:textView.text];
         textView.text = [NSString stringWithFormat:@"(%@) %@-",[num  substringToIndex:3],[num substringFromIndex:3]];
         if(range.length > 0)
             textView.text = [NSString stringWithFormat:@"(%@) %@",[num substringToIndex:3],[num substringFromIndex:3]];
@@ -85,7 +85,7 @@
 }
 
 
--(NSString*)formatNumber:(NSString*)mobileNumber
++ (NSString*)formatNumber:(NSString*)mobileNumber
 {
     mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"(" withString:@""];
     mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@")" withString:@""];
@@ -101,7 +101,7 @@
 }
 
 
--(int)getLength:(NSString*)mobileNumber
++ (int)getLength:(NSString*)mobileNumber
 {
     mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"(" withString:@""];
     mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@")" withString:@""];
