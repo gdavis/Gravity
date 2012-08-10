@@ -19,6 +19,8 @@
 		7771953C15B9BFD400EEE868 /* UIFont+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7771953A15B9BFD400EEE868 /* UIFont+GDIAdditions.m */; };
 		7772C64B158AAE2400A8AF93 /* NSObject+PerformBlockAfterDelay.h in Headers */ = {isa = PBXBuildFile; fileRef = 7772C649158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7772C64C158AAE2400A8AF93 /* NSObject+PerformBlockAfterDelay.m in Sources */ = {isa = PBXBuildFile; fileRef = 7772C64A158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.m */; };
+		7783437115D584C400A0D362 /* GDIPhoneNumberFormatting.h in Headers */ = {isa = PBXBuildFile; fileRef = 7783436F15D584C400A0D362 /* GDIPhoneNumberFormatting.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7783437215D584C400A0D362 /* GDIPhoneNumberFormatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 7783437015D584C400A0D362 /* GDIPhoneNumberFormatting.m */; };
 		77C64BBA158FCC5D00D18066 /* GDIBoundTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 77C64BB8158FCC5D00D18066 /* GDIBoundTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77C64BBB158FCC5D00D18066 /* GDIBoundTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C64BB9158FCC5D00D18066 /* GDIBoundTextField.m */; };
 		77DAEC5715790DE80035EFC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAEC5615790DE80035EFC5 /* Foundation.framework */; };
@@ -97,6 +99,8 @@
 		7771953A15B9BFD400EEE868 /* UIFont+GDIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+GDIAdditions.m"; sourceTree = "<group>"; };
 		7772C649158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PerformBlockAfterDelay.h"; sourceTree = "<group>"; };
 		7772C64A158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PerformBlockAfterDelay.m"; sourceTree = "<group>"; };
+		7783436F15D584C400A0D362 /* GDIPhoneNumberFormatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIPhoneNumberFormatting.h; sourceTree = "<group>"; };
+		7783437015D584C400A0D362 /* GDIPhoneNumberFormatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIPhoneNumberFormatting.m; sourceTree = "<group>"; };
 		77C64BB8158FCC5D00D18066 /* GDIBoundTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIBoundTextField.h; sourceTree = "<group>"; };
 		77C64BB9158FCC5D00D18066 /* GDIBoundTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIBoundTextField.m; sourceTree = "<group>"; };
 		77DAEC5315790DE80035EFC5 /* libGravity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGravity.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -360,6 +364,8 @@
 			children = (
 				77DAECA815790F3C0035EFC5 /* GDIMath.h */,
 				77DAECA915790F3C0035EFC5 /* GDIMath.m */,
+				7783436F15D584C400A0D362 /* GDIPhoneNumberFormatting.h */,
+				7783437015D584C400A0D362 /* GDIPhoneNumberFormatting.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -401,6 +407,7 @@
 				7703A375158AEEA400CF326C /* GDIAutoFocusingScrollViewController.h in Headers */,
 				771773D115B0737F0024B32E /* UIView+GDIAnimation.h in Headers */,
 				77F60C9115CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.h in Headers */,
+				7783437115D584C400A0D362 /* GDIPhoneNumberFormatting.h in Headers */,
 				77414AEF15D560CA0048B157 /* GDIDatePicker.h in Headers */,
 				77DAECC415790F3C0035EFC5 /* NSData+GDIAdditions.h in Headers */,
 				77DAECC615790F3C0035EFC5 /* NSDate+GDIAdditions.h in Headers */,
@@ -537,6 +544,7 @@
 				7771953C15B9BFD400EEE868 /* UIFont+GDIAdditions.m in Sources */,
 				77F60C9215CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.m in Sources */,
 				77414AF015D560CA0048B157 /* GDIDatePicker.m in Sources */,
+				7783437215D584C400A0D362 /* GDIPhoneNumberFormatting.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
