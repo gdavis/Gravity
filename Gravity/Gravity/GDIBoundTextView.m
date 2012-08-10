@@ -15,6 +15,7 @@
     NSString *_boundKeypath;
 }
 
+- (void)addObserverForTextChanges;
 - (void)updateBoundObjectValue;
 - (void)updateTextByTrimmingIfNecessary;
 
@@ -29,6 +30,7 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         shouldTrimInput = YES;
+        [self addObserverForTextChanges];
     }
     return self;
 }
@@ -38,8 +40,22 @@
     self = [super initWithFrame:frame];
     if (self) {
         shouldTrimInput = YES;
+        [self addObserverForTextChanges];
     }
     return self;
+}
+
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self removeBind];
+}
+
+
+- (void)addObserverForTextChanges
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBoundObjectValue) name:UITextViewTextDidChangeNotification object:self];
 }
 
 
@@ -68,12 +84,6 @@
 {
     [super setText:text];
     [self updateBoundObjectValue];
-}
-
-
-- (void)dealloc
-{
-    [self removeBind];
 }
 
 
