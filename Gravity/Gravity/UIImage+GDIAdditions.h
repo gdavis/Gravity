@@ -26,6 +26,10 @@
 
 @interface UIImage (GDIAdditions)
 
+// adopted from: http://stackoverflow.com/a/1300589/189292
+// returns an image converted to grayscale
+- (UIImage *)imageByConvertingToGrayscale;
+
 // returns an image with a tint color applied over the top if it
 - (UIImage *)imageWithTintColor:(UIColor *)color;
 
