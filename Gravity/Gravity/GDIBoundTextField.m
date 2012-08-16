@@ -119,29 +119,26 @@
 {
     if (_boundObject && _boundKeypath) {
         NSString *storedValue = [_boundObject valueForKeyPath:_boundKeypath];
-        if (![storedValue isEqualToString:self.text]) {
+        
+        // create final text string to update our bound object with
+        // by first removing any exluded strings
+        NSString *finalText = nil;
+        if (![NSString isNullString:self.excludedText]) {
+            finalText = [self.text stringByReplacingOccurrencesOfString:self.excludedText withString:@""];
+        }
+        else {
+            finalText = self.text;
+        }
+        
+        if (shouldTrimInput) {
+            finalText = [finalText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        }
+        
+        if (![storedValue isEqualToString:finalText]) {
             _isSettingText = YES;
             
-            // create final text string to update our bound object with
-            // by first removing any exluded strings
-            NSString *finalText = nil;
-            if (![NSString isNullString:self.excludedText]) {
-                finalText = [self.text stringByReplacingOccurrencesOfString:self.excludedText withString:@""];
-            }
-            else {
-                finalText = self.text;
-            }
-            
             if (![NSString isNullString:finalText]) {
-                NSString *text = finalText;
-                
-                // trim if necessary
-                if (shouldTrimInput) {
-                    [_boundObject setValue:[text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] forKey:_boundKeypath];
-                }
-                else {
-                    [_boundObject setValue:text forKeyPath:_boundKeypath];
-                }
+                [_boundObject setValue:finalText forKeyPath:_boundKeypath];
             }
             else {
                 [_boundObject setValue:nil forKeyPath:_boundKeypath];
