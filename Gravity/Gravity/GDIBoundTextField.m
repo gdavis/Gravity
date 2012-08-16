@@ -24,6 +24,7 @@
 
 @implementation GDIBoundTextField
 @synthesize shouldTrimInput;
+@synthesize excludedText;
 
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -77,7 +78,8 @@
         [_boundObject addObserver:self forKeyPath:_boundKeypath options:NSKeyValueObservingOptionNew context:nil];
         
         // set our text to the value of our object's keypath
-        [super setText:[_boundObject valueForKeyPath:_boundKeypath]];
+        NSString *boundValue = [_boundObject valueForKeyPath:_boundKeypath];
+        [super setText:boundValue];
     }
 }
 
@@ -120,10 +122,26 @@
         if (![storedValue isEqualToString:self.text]) {
             _isSettingText = YES;
             
-            if (![NSString isNullString:self.text]) {
-                NSString *text = shouldTrimInput ? [self.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]
-                : self.text;
-                [_boundObject setValue:text forKeyPath:_boundKeypath];
+            // create final text string to update our bound object with
+            // by first removing any exluded strings
+            NSString *finalText = nil;
+            if (![NSString isNullString:self.excludedText]) {
+                finalText = [self.text stringByReplacingOccurrencesOfString:self.excludedText withString:@""];
+            }
+            else {
+                finalText = self.text;
+            }
+            
+            if (![NSString isNullString:finalText]) {
+                NSString *text = finalText;
+                
+                // trim if necessary
+                if (shouldTrimInput) {
+                    [_boundObject setValue:[text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] forKey:_boundKeypath];
+                }
+                else {
+                    [_boundObject setValue:text forKeyPath:_boundKeypath];
+                }
             }
             else {
                 [_boundObject setValue:nil forKeyPath:_boundKeypath];
