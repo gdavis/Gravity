@@ -22,4 +22,10 @@
 // when saving values to a bound object. defaults to YES.
 @property (nonatomic) BOOL shouldTrimInput;
 
+// text value that will be ignored when updating the bound object.
+// this is useful for text fields where you want to display a suffix,
+// but do not want to actually save the suffix along with the other text
+// to the bound object
+@property (strong, nonatomic) NSString *excludedText;
+
 @end
