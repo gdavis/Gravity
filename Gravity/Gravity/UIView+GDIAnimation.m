@@ -92,9 +92,6 @@
     scaleBounceAnimation.duration = .666f;
     scaleBounceAnimation.beginTime = startTime;
     scaleBounceAnimation.fillMode = kCAFillModeBackwards;
-    scaleBounceAnimation.completion = ^(BOOL complete) {
-        [[UIApplication sharedApplication] endIgnoringInteractionEvents];
-    };
     
     // configure the sizes of the scale for our keyframes
     CATransform3D startingScale = CATransform3DMakeScale(0.1, 0.1, 1);
