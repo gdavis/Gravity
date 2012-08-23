@@ -11,6 +11,7 @@
 #import "CAAnimation+Blocks.h"
 
 #define kDefaultAnimationTime .333f
+#define kBounceKey @"bounce"
 
 @implementation UIView (GDIAnimation)
 
@@ -137,7 +138,7 @@
     fadeAnimation.completion = complete;
     
     // perform the animations
-    [layer addAnimation:scaleBounceAnimation forKey:nil];
+    [layer addAnimation:scaleBounceAnimation forKey:kBounceKey];
     [layer addAnimation:fadeAnimation forKey:nil];
 }
 
@@ -153,7 +154,7 @@
 - (void)bounceOutWithCompletion:(void (^)(BOOL success))complete
 {
     CALayer *layer = self.layer;
-    [layer removeAllAnimations];
+    [layer removeAnimationForKey:kBounceKey];
     
     // create the scale animation
     CAKeyframeAnimation *scaleBounceAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
@@ -201,10 +202,9 @@
     CAAnimationGroup *bounceGroup = [CAAnimationGroup animation];
     bounceGroup.animations = [NSArray arrayWithObjects:scaleBounceAnimation, fadeAnimation, nil];
     bounceGroup.duration = .5f;
-    bounceGroup.fillMode = kCAFillModeForwards;
-    bounceGroup.removedOnCompletion = NO;
+    bounceGroup.fillMode = kCAFillModeBackwards;
     bounceGroup.completion = complete;
-    [layer addAnimation:bounceGroup forKey:nil];
+    [layer addAnimation:bounceGroup forKey:kBounceKey];
 }
 
 @end
