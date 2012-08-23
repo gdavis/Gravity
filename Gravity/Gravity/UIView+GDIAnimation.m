@@ -202,7 +202,8 @@
     CAAnimationGroup *bounceGroup = [CAAnimationGroup animation];
     bounceGroup.animations = [NSArray arrayWithObjects:scaleBounceAnimation, fadeAnimation, nil];
     bounceGroup.duration = .5f;
-    bounceGroup.fillMode = kCAFillModeBackwards;
+    bounceGroup.fillMode = kCAFillModeBoth;
+    bounceGroup.removedOnCompletion = NO;
     bounceGroup.completion = complete;
     [layer addAnimation:bounceGroup forKey:kBounceKey];
 }
