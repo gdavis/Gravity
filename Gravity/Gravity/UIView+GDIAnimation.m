@@ -146,7 +146,7 @@
 
 - (void)bounceOut
 {
-    [self bounceInWithCompletion:nil];
+    [self bounceOutWithCompletion:nil];
 }
 
 
