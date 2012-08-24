@@ -27,6 +27,15 @@
 
 @implementation NSString (GDIAdditions)
 
+-(NSString *)stringByStrippingHTML
+{
+    NSRange r;
+    NSString *s = [self copy];
+    while ((r = [s rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+        s = [s stringByReplacingCharactersInRange:r withString:@""];
+    return s;
+}
+
 - (NSString*)MD5
 {
     // Create pointer to the string as UTF8
