@@ -30,6 +30,9 @@
 // this checks for values such as '<null>' and '(null)' from database fields.
 + (BOOL)isNullString:(NSString *)string;
 
+// removes all characters between <> tags from the reciever and returns the result
+- (NSString *)stringByStrippingHTML;
+
 // creates a string with the MD5 representation of this object
 // adopted from: http://mobiledevelopertips.com/core-services/create-md5-hash-from-nsstring-nsdata-or-file.html
 - (NSString *)MD5;
