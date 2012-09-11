@@ -10,10 +10,14 @@
 
 @interface NSDate (GDIAdditions)
 
-+ (NSInteger)daysBetweenStartDate:(NSDate *)startDate endDate:(NSDate *)endDate;
-- (NSInteger)daysFromDate:(NSDate *)date;
+// adopted from: http://stackoverflow.com/a/2615847/189292
+- (NSString *)stringWithUTCFormat:(NSDate *)localDate;
++ (NSDate *)dateFromUTCString:(NSString *)utcString;
 
+- (NSInteger)daysFromDate:(NSDate *)date;
 - (BOOL)isDateBetweenStartDate:(NSDate *)startDate endDate:(NSDate *)endDate;
+
++ (NSInteger)daysBetweenStartDate:(NSDate *)startDate endDate:(NSDate *)endDate;
 
 + (NSDate *)dateWithDaysFromNow:(CGFloat)days;
 + (NSDate *)dateWithHoursFromNow:(CGFloat)days;

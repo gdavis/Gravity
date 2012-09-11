@@ -13,12 +13,14 @@
 + (void)debugAlertWithError:(NSError *)error
 {
     #ifdef DEBUG
+    #ifdef __i386__
     UIAlertView *debugAlert = [[UIAlertView alloc] initWithTitle:error.domain 
                                                          message:[NSString stringWithFormat:@"Description: \n%@\n\nFailure Reason:\n%@", error.localizedDescription, error.localizedFailureReason] 
                                                         delegate:nil 
                                                cancelButtonTitle:@"Continue" 
                                                otherButtonTitles:nil];
     [debugAlert show];
+    #endif
     #endif
 }
 
