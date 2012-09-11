@@ -258,6 +258,7 @@
 
 // returns a rect representing the area of the screen that is not taken
 // up by the keyboard when it displays
+// TODO: Abstract sizes for different interface idioms
 - (CGRect)viewableAreaForOrientation:(UIInterfaceOrientation)orientation
 {
     CGRect viewableArea = CGRectZero;
