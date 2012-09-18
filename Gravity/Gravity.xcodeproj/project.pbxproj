@@ -464,7 +464,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = GDI;
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Grant Davis Interactive, LLC";
 			};
 			buildConfigurationList = 77DAEC4D15790DE80035EFC5 /* Build configuration list for PBXProject "Gravity" */;
