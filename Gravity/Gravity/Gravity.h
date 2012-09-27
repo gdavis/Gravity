@@ -33,6 +33,7 @@
 #import "GDISignatureCaptureView.h"
 #import "GDIAutoFocusingScrollViewController.h"
 #import "GDIDatePicker.h"
+#import "GDIPickerView.h"
 
 // ui kit categories
 #import "UIAlertView+GDIAdditions.h"
