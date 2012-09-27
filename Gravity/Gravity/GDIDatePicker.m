@@ -15,6 +15,9 @@
 #define kYearComponentWidth 78.f
 #define kDayComponentWidth 50.f
 
+#define kAMPMComponentWidth 55.f
+#define kMinuteComponentWidth 48.f
+#define kHourComponentWidth 60.f
 
 @interface GDIDatePicker() {
     UITapGestureRecognizer *_tapGesture;
@@ -67,7 +70,7 @@
         CGRect availableArea = CGRectMake(0, 0, self.frameWidth - kSideMargin * 2, self.frameHeight);
         
         // check to see if our available area contains the touch
-        if (CGRectContainsPoint(availableArea, offsetLoc) && self.datePickerMode == UIDatePickerModeDate) {
+        if (CGRectContainsPoint(availableArea, offsetLoc)) {
             
             // determine which row the has been selected.
             NSUInteger rowIndex = floorf(offsetLoc.y / kRowHeight);
@@ -82,22 +85,41 @@
             // date based on where the user has touched
             NSDateComponents *components = [[NSDateComponents alloc] init];
             
-            
-            // determine which component has been selected
-            if (offsetLoc.x >= availableArea.size.width - kYearComponentWidth) {
-                // year touched
-                // select the date +/- 1 year
-                [components setYear:rowDelta];
-                
+            if (self.datePickerMode == UIDatePickerModeDate) {
+                // determine which component has been selected
+                if (offsetLoc.x >= availableArea.size.width - kYearComponentWidth) {
+                    // year touched
+                    // select the date +/- 1 year
+                    [components setYear:rowDelta];
+                    
+                }
+                else if (offsetLoc.x >= availableArea.size.width - kYearComponentWidth - kDayComponentWidth) {
+                    // day touched
+                    [components setDay:rowDelta];
+                }
+                else {
+                    // month touched
+                    [components setMonth:rowDelta];
+                }
             }
-            else if (offsetLoc.x >= availableArea.size.width - kYearComponentWidth - kDayComponentWidth) {
-                // day touched
-                [components setDay:rowDelta];
+            else if (self.datePickerMode == UIDatePickerModeTime) {
+                // determine which component has been selected
+                if (offsetLoc.x >= availableArea.size.width - kAMPMComponentWidth) {
+                    
+                    // select the date +/- 1 year
+                    [components setHour:rowDelta * 12];
+                    
+                }
+                else if (offsetLoc.x >= availableArea.size.width - kMinuteComponentWidth - kHourComponentWidth) {
+                    // minutes
+                    [components setMinute:rowDelta];
+                }
+                else {
+                    // hour touched
+                    [components setHour:rowDelta];
+                }
             }
-            else {
-                // month touched
-                [components setMonth:rowDelta];
-            }
+            // TODO: Finish other date modes
             
             NSDate *adjustedDate = [gregorian dateByAddingComponents:components toDate:self.date options:0];
             [self setDate:adjustedDate animated:YES];
