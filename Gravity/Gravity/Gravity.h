@@ -25,6 +25,7 @@
 #import "SharedImageCache.h"
 #import "ImageCache.h"
 #import "ImageCacheObject.h"
+#import "GDIXMLReader.h"
 
 // components
 #import "GDIBoundTextField.h"

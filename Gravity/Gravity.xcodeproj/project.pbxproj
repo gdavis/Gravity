@@ -15,6 +15,8 @@
 		77414AF015D560CA0048B157 /* GDIDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 77414AEE15D560CA0048B157 /* GDIDatePicker.m */; };
 		774679AD1592305C00D5DF6D /* GDIBoundTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 774679AB1592305C00D5DF6D /* GDIBoundTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		774679AE1592305C00D5DF6D /* GDIBoundTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 774679AC1592305C00D5DF6D /* GDIBoundTextView.m */; };
+		776A5338161A6164007D17B0 /* GDIXMLReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 776A5336161A6164007D17B0 /* GDIXMLReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		776A5339161A6164007D17B0 /* GDIXMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 776A5337161A6164007D17B0 /* GDIXMLReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7771953B15B9BFD400EEE868 /* UIFont+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7771953915B9BFD400EEE868 /* UIFont+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7771953C15B9BFD400EEE868 /* UIFont+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7771953A15B9BFD400EEE868 /* UIFont+GDIAdditions.m */; };
 		7772C64B158AAE2400A8AF93 /* NSObject+PerformBlockAfterDelay.h in Headers */ = {isa = PBXBuildFile; fileRef = 7772C649158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -97,6 +99,8 @@
 		77414AEE15D560CA0048B157 /* GDIDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIDatePicker.m; sourceTree = "<group>"; };
 		774679AB1592305C00D5DF6D /* GDIBoundTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIBoundTextView.h; sourceTree = "<group>"; };
 		774679AC1592305C00D5DF6D /* GDIBoundTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIBoundTextView.m; sourceTree = "<group>"; };
+		776A5336161A6164007D17B0 /* GDIXMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GDIXMLReader.h; path = Vendor/XMLReader/GDIXMLReader.h; sourceTree = SOURCE_ROOT; };
+		776A5337161A6164007D17B0 /* GDIXMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GDIXMLReader.m; path = Vendor/XMLReader/GDIXMLReader.m; sourceTree = SOURCE_ROOT; };
 		7771953915B9BFD400EEE868 /* UIFont+GDIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+GDIAdditions.h"; sourceTree = "<group>"; };
 		7771953A15B9BFD400EEE868 /* UIFont+GDIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+GDIAdditions.m"; sourceTree = "<group>"; };
 		7772C649158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PerformBlockAfterDelay.h"; sourceTree = "<group>"; };
@@ -188,6 +192,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		776A5333161A6153007D17B0 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				776A5335161A6159007D17B0 /* XMLReader */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		776A5335161A6159007D17B0 /* XMLReader */ = {
+			isa = PBXGroup;
+			children = (
+				776A5336161A6164007D17B0 /* GDIXMLReader.h */,
+				776A5337161A6164007D17B0 /* GDIXMLReader.m */,
+			);
+			name = XMLReader;
+			sourceTree = "<group>";
+		};
 		77DAEC4815790DE80035EFC5 = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +243,7 @@
 		77DAEC5815790DE80035EFC5 /* Gravity */ = {
 			isa = PBXGroup;
 			children = (
+				776A5333161A6153007D17B0 /* Vendor */,
 				77DAEC5B15790DE80035EFC5 /* Gravity.h */,
 				77DAECD315790F6E0035EFC5 /* Categories */,
 				77DAECD215790F560035EFC5 /* Components */,
@@ -420,6 +442,7 @@
 				77DAECC815790F3C0035EFC5 /* NSString+GDIAdditions.h in Headers */,
 				77DAECCA15790F3C0035EFC5 /* CAAnimation+Blocks.h in Headers */,
 				77DAECCC15790F3C0035EFC5 /* CoreGraphics+GDIAdditions.h in Headers */,
+				776A5338161A6164007D17B0 /* GDIXMLReader.h in Headers */,
 				77EDB8C11614B414007F6CFE /* GDIPickerView.h in Headers */,
 				77DAECCE15790F3C0035EFC5 /* GDIMath.h in Headers */,
 			);
@@ -553,6 +576,7 @@
 				77414AF015D560CA0048B157 /* GDIDatePicker.m in Sources */,
 				7783437215D584C400A0D362 /* GDIPhoneNumberFormatting.m in Sources */,
 				77EDB8C21614B414007F6CFE /* GDIPickerView.m in Sources */,
+				776A5339161A6164007D17B0 /* GDIXMLReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
