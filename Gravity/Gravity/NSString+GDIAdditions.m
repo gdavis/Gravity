@@ -27,6 +27,39 @@
 
 @implementation NSString (GDIAdditions)
 
+- (NSString *)stringByTruncatingToLength:(NSUInteger)length suffix:(NSString *)suffix
+{
+    if (self.length <= length) {
+        return self;
+    }
+    
+    // find the last whitespace
+    NSRange lastWhitespaceRange = [self rangeOfCharacterFromSet:[NSCharacterSet whitespaceCharacterSet]
+                                                        options:NSBackwardsSearch
+                                                          range:NSMakeRange(0, length)];
+    
+    // trim to the whitespace location
+    NSString *shortText = nil;
+    if (lastWhitespaceRange.location != NSNotFound) {
+        shortText = [self substringWithRange:NSMakeRange(0, lastWhitespaceRange.location)];
+    }
+    // if we don't find whitespace, trim to the given length
+    else {
+        shortText = [self substringWithRange:NSMakeRange(0, length)];
+    }
+    
+    // make sure the last character is not punctuation
+    NSString *lastChar = [shortText substringFromIndex:shortText.length-1];
+    if ([lastChar rangeOfCharacterFromSet:[NSCharacterSet punctuationCharacterSet]].length > 0) {
+        shortText = [shortText substringToIndex:shortText.length-1];
+    }
+    
+    // add suffix if needed
+    if (suffix) return [shortText stringByAppendingString:suffix];
+    return shortText;
+}
+
+
 -(NSString *)stringByStrippingHTML
 {
     NSRange r;

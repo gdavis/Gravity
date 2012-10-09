@@ -30,6 +30,10 @@
 // this checks for values such as '<null>' and '(null)' from database fields.
 + (BOOL)isNullString:(NSString *)string;
 
+// returns a string by truncating to the last whitespace character under the given range
+// and adds a suffix to the string, such as an ellipsis, if provided.
+- (NSString *)stringByTruncatingToLength:(NSUInteger)length suffix:(NSString *)suffix;
+
 // removes all characters between <> tags from the reciever and returns the result
 - (NSString *)stringByStrippingHTML;
 
