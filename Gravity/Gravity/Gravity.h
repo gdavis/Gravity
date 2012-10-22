@@ -25,6 +25,7 @@
 #import "SharedImageCache.h"
 #import "ImageCache.h"
 #import "ImageCacheObject.h"
+#import "GDIXMLReader.h"
 
 // components
 #import "GDIBoundTextField.h"
@@ -33,6 +34,7 @@
 #import "GDISignatureCaptureView.h"
 #import "GDIAutoFocusingScrollViewController.h"
 #import "GDIDatePicker.h"
+#import "GDIPickerView.h"
 
 // ui kit categories
 #import "UIAlertView+GDIAdditions.h"

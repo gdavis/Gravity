@@ -38,7 +38,7 @@
 }
 
 
-- (NSString *)stringWithUTCFormat:(NSDate *)localDate
++ (NSString *)stringWithUTCFormat:(NSDate *)localDate
 {
     static NSDateFormatter *dateFormatter = nil;
     static NSTimeZone *timeZone = nil;

@@ -11,7 +11,7 @@
 @interface NSDate (GDIAdditions)
 
 // adopted from: http://stackoverflow.com/a/2615847/189292
-- (NSString *)stringWithUTCFormat:(NSDate *)localDate;
++ (NSString *)stringWithUTCFormat:(NSDate *)localDate;
 + (NSDate *)dateFromUTCString:(NSString *)utcString;
 
 - (NSInteger)daysFromDate:(NSDate *)date;
