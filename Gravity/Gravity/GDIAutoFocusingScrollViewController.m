@@ -11,6 +11,7 @@
 
 @interface GDIAutoFocusingScrollViewController () {
     BOOL _isRotating;
+    BOOL _keyboardIsVisible;
     CGPoint _originalOffset;
     CGRect _keyboardFrame;
     CGFloat _animationDuration;
@@ -147,6 +148,21 @@
 - (void)handleKeyboardFrameChange:(NSNotification *)n
 {
     _keyboardFrame = [[[n userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    CGRect keyboardEndFrame;
+    [[n.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardEndFrame];
+    
+    CGFloat dockedHeight = 264.f;
+    BOOL isFitToBottom = keyboardEndFrame.origin.y + keyboardEndFrame.size.height == 1024.f;
+    if (isFitToBottom && (keyboardEndFrame.size.width == dockedHeight || keyboardEndFrame.size.height == dockedHeight)) {
+        // Keyboard is docked
+        _keyboardIsVisible = YES;
+        _keyboardFrame = keyboardEndFrame;
+    } else {
+        // Keyboard is split or undocked
+        _keyboardIsVisible = NO;
+        _keyboardFrame = CGRectZero;
+    }
 }
 
 
