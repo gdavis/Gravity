@@ -113,4 +113,31 @@
     return length;
 }
 
++ (NSString*)formatStringAsPhoneNumber:(NSString*)phoneNumber
+{
+    NSString *cleanNumber = [[GDIPhoneNumberFormatting formatNumber:phoneNumber]
+                             stringByTrimmingCharactersInSet:[NSCharacterSet letterCharacterSet]];
+    
+    int length = [GDIPhoneNumberFormatting getLength:cleanNumber];
+    
+    if (length < 3) {
+        return cleanNumber;
+    }
+    else if (length == 3) {
+        return [NSString stringWithFormat:@"(%@)", cleanNumber];
+    }
+    else if (length <= 6) {
+        return [NSString stringWithFormat:@"(%@) %@",[cleanNumber  substringToIndex:3],[cleanNumber substringFromIndex:3]];
+    }
+    else if (length > 6) {
+        return [NSString stringWithFormat:@"(%@) %@-%@",
+                [cleanNumber  substringToIndex:3],
+                [cleanNumber substringWithRange:NSMakeRange(3, 3)],
+                [cleanNumber substringFromIndex:6]];
+    }
+
+    return nil;
+}
+
+
 @end

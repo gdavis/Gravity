@@ -12,5 +12,6 @@
 
 + (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
 + (BOOL)textView:(UITextView *)textView shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
++ (NSString*)formatStringAsPhoneNumber:(NSString*)phoneNumber;
 
 @end
