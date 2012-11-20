@@ -35,6 +35,7 @@
 #import "GDIAutoFocusingScrollViewController.h"
 #import "GDIDatePicker.h"
 #import "GDIPickerView.h"
+#import "GDIKeyboardObserver.h"
 
 // ui kit categories
 #import "UIAlertView+GDIAdditions.h"

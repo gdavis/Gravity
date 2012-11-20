@@ -8,12 +8,14 @@
 
 #import "GDIAutoFocusingScrollViewController.h"
 #import "UIView+GDIAdditions.h"
+#import "GDIKeyboardObserver.h"
+#import "NSObject+PerformBlockAfterDelay.h"
 
 @interface GDIAutoFocusingScrollViewController () {
     BOOL _isRotating;
-    BOOL _keyboardIsVisible;
+//    BOOL _keyboardIsVisible;
     CGPoint _originalOffset;
-    CGRect _keyboardFrame;
+//    CGRect _keyboardFrame;
     CGFloat _animationDuration;
     UIView *_referenceView;
     __weak UIView *_currentView;
@@ -55,10 +57,14 @@
 {
     [super viewDidLoad];
     
+    _animationDuration = .25f;
+    
     // listen for keyboard events
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardFrameChange:) name:UIKeyboardDidChangeFrameNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardDidDock) name:UIKeyboardDidDockNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardDidUndock) name:UIKeyboardDidUndockNotification object:nil];
 }
 
 
@@ -105,7 +111,6 @@
     [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
     
     _isRotating = YES;
-    _keyboardFrame = CGRectZero;
     
     // resize our content scroll view for the rotation
     // when we finish, we can resize it again to position
@@ -129,39 +134,27 @@
 
 #pragma mark - Keyboard Notification Handlers
 
-- (void)handleKeyboardWillShow:(NSNotification *)n
+- (void)handleKeyboardDidDock
 {
-    _keyboardFrame = [[[n userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    _animationDuration = [[[n userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
-    
-    if (_tempView) {
-        [self scrollContentViewWithFocusOnSubview:_tempView animation:YES];
-        _tempView = nil;
-    }
-    
-    if (_isRotating) {
-        [self scrollToView:_currentView animation:NO];
+    if (_currentView) {
+        [self scrollToView:_currentView animation:YES];
     }
 }
 
 
-- (void)handleKeyboardFrameChange:(NSNotification *)n
+- (void)handleKeyboardDidUndock
 {
-    _keyboardFrame = [[[n userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    
-    CGRect keyboardEndFrame;
-    [[n.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardEndFrame];
-    
-    CGFloat dockedHeight = 264.f;
-    BOOL isFitToBottom = keyboardEndFrame.origin.y + keyboardEndFrame.size.height == 1024.f;
-    if (isFitToBottom && (keyboardEndFrame.size.width == dockedHeight || keyboardEndFrame.size.height == dockedHeight)) {
-        // Keyboard is docked
-        _keyboardIsVisible = YES;
-        _keyboardFrame = keyboardEndFrame;
-    } else {
-        // Keyboard is split or undocked
-        _keyboardIsVisible = NO;
-        _keyboardFrame = CGRectZero;
+    if (_currentView) {
+        [self scrollToView:_currentView animation:YES];
+    }
+}
+
+
+- (void)handleKeyboardDidShow:(NSNotification *)n
+{
+    if (_tempView) {
+        [self scrollContentViewWithFocusOnSubview:_tempView animation:YES];
+        _tempView = nil;
     }
 }
 
@@ -171,6 +164,7 @@
     if (_currentView && !_isRotating) {
         [self restoreContentScrollViewPosition];
     }
+    _tempView = nil;
 }
 
 
@@ -180,7 +174,7 @@
 {    
     UIView *prevView = _currentView;
     
-    if (CGRectIsEmpty(_keyboardFrame)) {
+    if (![[GDIKeyboardObserver sharedObserver] isVisible]) {
         _tempView = subview;
         return;
     }
@@ -277,16 +271,29 @@
 // TODO: Abstract sizes for different interface idioms
 - (CGRect)viewableAreaForOrientation:(UIInterfaceOrientation)orientation
 {
+    CGRect keyboardFrame = [[GDIKeyboardObserver sharedObserver] keyboardFrame];
+    
+    // here we need to translate the frame from a window rect to one that takes
+    // into account the orientation of the app by using the root view as our relative
+    // frame scope
+    UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
+    UIView *rootView = window.rootViewController.view;
+    keyboardFrame = [rootView convertRect:keyboardFrame fromView:window];
+    
+    if (![[GDIKeyboardObserver sharedObserver] isVisible] || ![[GDIKeyboardObserver sharedObserver] isDocked]) {
+        keyboardFrame = CGRectZero;
+    }
+    
     CGRect viewableArea = CGRectZero;
     switch (orientation) {
         case UIInterfaceOrientationPortrait:
         case UIInterfaceOrientationPortraitUpsideDown: {
-            viewableArea = CGRectMake(0, 0, 768, 1024 - _keyboardFrame.size.height);
+            viewableArea = CGRectMake(0, 0, 768, 1024 - keyboardFrame.size.height);
             break;
         }
         case UIInterfaceOrientationLandscapeLeft:
         case UIInterfaceOrientationLandscapeRight: {
-            viewableArea = CGRectMake(0, 0, 1024, 768 - _keyboardFrame.size.width);
+            viewableArea = CGRectMake(0, 0, 1024, 768 - keyboardFrame.size.height);
             break;
         }
         default:
