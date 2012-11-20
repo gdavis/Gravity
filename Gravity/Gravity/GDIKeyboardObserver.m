@@ -17,7 +17,10 @@ NSString * const UIKeyboardDidUndockNotification = @"GDIKeyboardDidUndockNotific
 {
     self = [super init];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardFrameChange:) name:UIKeyboardDidChangeFrameNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(handleKeyboardFrameChange:)
+                                                     name:UIKeyboardDidChangeFrameNotification
+                                                   object:nil];
     }
     return self;
 }
@@ -30,15 +33,22 @@ NSString * const UIKeyboardDidUndockNotification = @"GDIKeyboardDidUndockNotific
 
 - (void)handleKeyboardFrameChange:(NSNotification *)n
 {
-    _keyboardFrame = [[[n userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-//    NSLog(@"keyboard changed to: %@", NSStringFromCGRect(_keyboardFrame));
+    CGRect keyboardFrame = [[[n userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     
+    UIView *rootView = [[[[UIApplication sharedApplication] keyWindow] rootViewController] view];
     UIWindow *window = [[UIApplication sharedApplication] keyWindow];
-    CGRect windowFrame = [window bounds];
+    
+//    NSLog(@"****");
+//    NSLog(@"keyboard changed to: %@", NSStringFromCGRect(_keyboardFrame));
+//    NSLog(@"window bounds: %@", NSStringFromCGRect([window bounds]));
+//    NSLog(@"root view bounds: %@", NSStringFromCGRect(rootView.bounds));
+    
+    _keyboardFrame = [rootView convertRect:keyboardFrame fromView:window];
+//    NSLog(@"relative keyboard bounds: %@", NSStringFromCGRect(_keyboardFrame));
     
     // first check to see if the keyboard intersects the main window.
     // if it does, we know the keyboard is visible and we can detect is position
-    if (CGRectIntersectsRect(windowFrame, _keyboardFrame)) {
+    if (CGRectIntersectsRect(rootView.bounds, _keyboardFrame)) {
         
         _isVisible = YES;
         
@@ -46,22 +56,15 @@ NSString * const UIKeyboardDidUndockNotification = @"GDIKeyboardDidUndockNotific
         CGFloat dockedHeight = UIInterfaceOrientationIsPortrait(orientation) ? 264.f : 352.f;
         CGFloat screenHeight = UIInterfaceOrientationIsPortrait(orientation) ? 1024.f : 768.f;
         
-        if (UIInterfaceOrientationIsPortrait(orientation)) {
-            _isFitToBottom = _keyboardFrame.origin.y + _keyboardFrame.size.height == screenHeight;
-        }
-        else {
-            _isFitToBottom = _keyboardFrame.origin.x + _keyboardFrame.size.width == screenHeight;
-        }
+        _isFitToBottom = _keyboardFrame.origin.y + _keyboardFrame.size.height == screenHeight;
         
         if (_isFitToBottom &&
             (_keyboardFrame.size.width == dockedHeight || _keyboardFrame.size.height == dockedHeight)) {
-            
-            if (!_isDocked) {
+
                 // Keyboard is docked
                 _isDocked = YES;
                 [[NSNotificationCenter defaultCenter] postNotificationName:UIKeyboardDidDockNotification object:nil];
-            }
-        } else if (_isDocked) {
+        } else {
             // Keyboard is split or undocked
             _isDocked = NO;
             [[NSNotificationCenter defaultCenter] postNotificationName:UIKeyboardDidUndockNotification object:nil];

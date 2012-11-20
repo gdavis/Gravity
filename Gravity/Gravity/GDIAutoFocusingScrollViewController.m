@@ -13,16 +13,14 @@
 
 @interface GDIAutoFocusingScrollViewController () {
     BOOL _isRotating;
-//    BOOL _keyboardIsVisible;
     CGPoint _originalOffset;
-//    CGRect _keyboardFrame;
     CGFloat _animationDuration;
     UIView *_referenceView;
     __weak UIView *_currentView;
     __weak UIView *_tempView;
 }
 
-- (void)restoreContentScrollViewPosition;
+- (void)restoreContentScrollViewFrame;
 - (void)scrollToView:(UIView *)subview animation:(BOOL)animate;
 
 @end
@@ -61,7 +59,7 @@
     
     // listen for keyboard events
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardDidDock) name:UIKeyboardDidDockNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardDidUndock) name:UIKeyboardDidUndockNotification object:nil];
@@ -70,14 +68,23 @@
 
 - (void)viewDidUnload
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidChangeFrameNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidDockNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidUndockNotification object:nil];
     
     _referenceView = nil;
     [self setContentScrollView:nil];
     [super viewDidUnload];
 }
+
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -144,6 +151,8 @@
 
 - (void)handleKeyboardDidUndock
 {
+    [self restoreContentScrollViewFrame];
+    
     if (_currentView) {
         [self scrollToView:_currentView animation:YES];
     }
@@ -159,12 +168,17 @@
 }
 
 
-- (void)handleKeyboardWillHide:(NSNotification *)n
+- (void)handleKeyboardDidHide:(NSNotification *)n
 {
-    if (_currentView && !_isRotating) {
-        [self restoreContentScrollViewPosition];
+    // if this value comes back as true, the user is moving between keyboard display
+    // modes and is not actually hiding the keyboard.
+    BOOL changedByUser = [[[n userInfo] objectForKey:@"UIKeyboardFrameChangedByUserInteraction"] boolValue];
+    if (!changedByUser) {
+        if (_currentView && !_isRotating) {
+            [self restoreContentScrollViewFrame];
+            _currentView = nil;
+        }
     }
-    _tempView = nil;
 }
 
 
@@ -271,16 +285,8 @@
 // TODO: Abstract sizes for different interface idioms
 - (CGRect)viewableAreaForOrientation:(UIInterfaceOrientation)orientation
 {
-    CGRect keyboardFrame = [[GDIKeyboardObserver sharedObserver] keyboardFrame];
-    
-    // here we need to translate the frame from a window rect to one that takes
-    // into account the orientation of the app by using the root view as our relative
-    // frame scope
-    UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
-    UIView *rootView = window.rootViewController.view;
-    keyboardFrame = [rootView convertRect:keyboardFrame fromView:window];
-    
-    if (![[GDIKeyboardObserver sharedObserver] isVisible] || ![[GDIKeyboardObserver sharedObserver] isDocked]) {
+    CGRect keyboardFrame = [[GDIKeyboardObserver sharedObserver] keyboardFrame];    
+    if (![[GDIKeyboardObserver sharedObserver] isDocked]) {
         keyboardFrame = CGRectZero;
     }
     
@@ -303,14 +309,10 @@
 }
 
 
-- (void)restoreContentScrollViewPosition
+- (void)restoreContentScrollViewFrame
 {    
     // restore scroll frame
     self.contentScrollView.frame = _referenceView.frame;
-    
-    // reset object references
-    _currentView = nil;
-    _tempView = nil;
 }
 
 
