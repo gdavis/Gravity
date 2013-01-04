@@ -27,6 +27,8 @@
 		7783437215D584C400A0D362 /* GDIPhoneNumberFormatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 7783437015D584C400A0D362 /* GDIPhoneNumberFormatting.m */; };
 		77C64BBA158FCC5D00D18066 /* GDIBoundTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 77C64BB8158FCC5D00D18066 /* GDIBoundTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77C64BBB158FCC5D00D18066 /* GDIBoundTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C64BB9158FCC5D00D18066 /* GDIBoundTextField.m */; };
+		77D1DEC216976B5B008CD85C /* GDIProgressiveMigration.h in Headers */ = {isa = PBXBuildFile; fileRef = 77D1DEC016976B5B008CD85C /* GDIProgressiveMigration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77D1DEC316976B5B008CD85C /* GDIProgressiveMigration.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D1DEC116976B5B008CD85C /* GDIProgressiveMigration.m */; };
 		77DAEC5715790DE80035EFC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAEC5615790DE80035EFC5 /* Foundation.framework */; };
 		77DAEC6515790DE80035EFC5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAEC6415790DE80035EFC5 /* SenTestingKit.framework */; };
 		77DAEC6815790DE80035EFC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAEC5615790DE80035EFC5 /* Foundation.framework */; };
@@ -113,6 +115,8 @@
 		7783437015D584C400A0D362 /* GDIPhoneNumberFormatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIPhoneNumberFormatting.m; sourceTree = "<group>"; };
 		77C64BB8158FCC5D00D18066 /* GDIBoundTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIBoundTextField.h; sourceTree = "<group>"; };
 		77C64BB9158FCC5D00D18066 /* GDIBoundTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIBoundTextField.m; sourceTree = "<group>"; };
+		77D1DEC016976B5B008CD85C /* GDIProgressiveMigration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIProgressiveMigration.h; sourceTree = "<group>"; };
+		77D1DEC116976B5B008CD85C /* GDIProgressiveMigration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIProgressiveMigration.m; sourceTree = "<group>"; };
 		77DAEC5315790DE80035EFC5 /* libGravity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGravity.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		77DAEC5615790DE80035EFC5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		77DAEC5A15790DE80035EFC5 /* Gravity-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gravity-Prefix.pch"; sourceTree = "<group>"; };
@@ -213,6 +217,17 @@
 			name = XMLReader;
 			sourceTree = "<group>";
 		};
+		77D1DEBF16976B35008CD85C /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				77D1DEC016976B5B008CD85C /* GDIProgressiveMigration.h */,
+				77D1DEC116976B5B008CD85C /* GDIProgressiveMigration.m */,
+				77F60C8F15CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.h */,
+				77F60C9015CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.m */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
 		77DAEC4815790DE80035EFC5 = {
 			isa = PBXGroup;
 			children = (
@@ -247,9 +262,13 @@
 		77DAEC5815790DE80035EFC5 /* Gravity */ = {
 			isa = PBXGroup;
 			children = (
+				77D1DEBF16976B35008CD85C /* Core Data */,
+				77DAECD715790F820035EFC5 /* Core Graphics */,
+				77DAECD615790F7E0035EFC5 /* Core Animation */,
+				77DAECD515790F7A0035EFC5 /* Foundation */,
+				77DAECD415790F750035EFC5 /* UIKit */,
 				776A5333161A6153007D17B0 /* Vendor */,
 				77DAEC5B15790DE80035EFC5 /* Gravity.h */,
-				77DAECD315790F6E0035EFC5 /* Categories */,
 				77DAECD215790F560035EFC5 /* Components */,
 				77DAECD115790F460035EFC5 /* Image Cache */,
 				77DAECD815790FA20035EFC5 /* Utility */,
@@ -319,18 +338,6 @@
 				77EDB8C01614B414007F6CFE /* GDIPickerView.m */,
 			);
 			name = Components;
-			sourceTree = "<group>";
-		};
-		77DAECD315790F6E0035EFC5 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				77F60C8D15CF20EF000AFF56 /* Core Data */,
-				77DAECD715790F820035EFC5 /* Core Graphics */,
-				77DAECD615790F7E0035EFC5 /* Core Animation */,
-				77DAECD515790F7A0035EFC5 /* Foundation */,
-				77DAECD415790F750035EFC5 /* UIKit */,
-			);
-			name = Categories;
 			sourceTree = "<group>";
 		};
 		77DAECD415790F750035EFC5 /* UIKit */ = {
@@ -404,15 +411,6 @@
 			name = Utility;
 			sourceTree = "<group>";
 		};
-		77F60C8D15CF20EF000AFF56 /* Core Data */ = {
-			isa = PBXGroup;
-			children = (
-				77F60C8F15CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.h */,
-				77F60C9015CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.m */,
-			);
-			name = "Core Data";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -448,6 +446,7 @@
 				77DAECC615790F3C0035EFC5 /* NSDate+GDIAdditions.h in Headers */,
 				77DAECC815790F3C0035EFC5 /* NSString+GDIAdditions.h in Headers */,
 				77DAECCA15790F3C0035EFC5 /* CAAnimation+Blocks.h in Headers */,
+				77D1DEC216976B5B008CD85C /* GDIProgressiveMigration.h in Headers */,
 				77DAECCC15790F3C0035EFC5 /* CoreGraphics+GDIAdditions.h in Headers */,
 				776A5338161A6164007D17B0 /* GDIXMLReader.h in Headers */,
 				77EDB8C11614B414007F6CFE /* GDIPickerView.h in Headers */,
@@ -585,6 +584,7 @@
 				77EDB8C21614B414007F6CFE /* GDIPickerView.m in Sources */,
 				776A5339161A6164007D17B0 /* GDIXMLReader.m in Sources */,
 				776E78E1165AEB7500B9C524 /* GDIKeyboardObserver.m in Sources */,
+				77D1DEC316976B5B008CD85C /* GDIProgressiveMigration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
