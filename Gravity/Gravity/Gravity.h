@@ -48,6 +48,7 @@
 #import "UIView+GDIAdditions.h"
 #import "UIView+GDIAnimation.h"
 #import "UIFont+GDIAdditions.h"
+#import "UIApplication+GDIAddtions.h"
 
 // foundation categories
 #import "NSObject+PerformBlockAfterDelay.h"
