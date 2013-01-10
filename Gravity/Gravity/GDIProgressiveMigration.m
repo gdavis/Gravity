@@ -97,6 +97,9 @@
                  modelName, storeExtension];
     NSURL *destinationStoreURL = [NSURL fileURLWithPath:storePath];
     
+    NSLog(@"Performing migration from source model version: %@\nto target model version: %@",
+          [sourceModel versionIdentifiers],
+          [targetModel versionIdentifiers]);
     if (![manager migrateStoreFromURL:sourceStoreURL
                                  type:type
                               options:nil
