@@ -36,6 +36,7 @@
 #import "GDIDatePicker.h"
 #import "GDIPickerView.h"
 #import "GDIKeyboardObserver.h"
+#import "GDIPageIndicator.h"
 
 // ui kit categories
 #import "UIAlertView+GDIAdditions.h"
