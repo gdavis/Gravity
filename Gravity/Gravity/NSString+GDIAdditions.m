@@ -105,7 +105,7 @@
 + (BOOL)isValidPhoneNumber:(NSString *)phoneNumber
 {
     NSError *error = nil;
-    NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypePhoneNumber
+    NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:(NSTextCheckingTypePhoneNumber|NSTextCheckingTypePhoneNumber)
                                                                error:&error];
     NSUInteger numberOfMatches = [detector numberOfMatchesInString:phoneNumber
                                                            options:0
