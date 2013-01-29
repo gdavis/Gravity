@@ -11,6 +11,11 @@
 
 @interface GDIProgressiveMigration : NSObject
 
++ (BOOL)shouldMigrateURL:(NSURL *)sourceStoreURL
+                  ofType:(NSString*)type
+                 toModel:(NSManagedObjectModel *)finalModel
+                   error:(NSError **)error;
+
 + (BOOL)progressivelyMigrateURL:(NSURL*)sourceStoreURL
                          ofType:(NSString*)type
                         toModel:(NSManagedObjectModel*)finalModel

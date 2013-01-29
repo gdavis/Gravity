@@ -10,7 +10,23 @@
 
 @implementation GDIProgressiveMigration
 
+
 #pragma mark - Progressive Core Data Model Migrations
+
++ (BOOL)shouldMigrateURL:(NSURL *)sourceStoreURL
+                  ofType:(NSString*)type
+                 toModel:(NSManagedObjectModel *)finalModel
+                   error:(NSError **)error
+{
+    NSDictionary *sourceMetadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:type
+                                                                                              URL:sourceStoreURL
+                                                                                            error:error];
+    if (!sourceMetadata) return YES;
+    
+    return ![finalModel isConfiguration:nil
+            compatibleWithStoreMetadata:sourceMetadata];
+}
+
 
 + (BOOL)progressivelyMigrateURL:(NSURL*)sourceStoreURL
                          ofType:(NSString*)type
@@ -100,6 +116,7 @@
     NSLog(@"Performing migration from source model version: %@\nto target model version: %@",
           [sourceModel versionIdentifiers],
           [targetModel versionIdentifiers]);
+    
     if (![manager migrateStoreFromURL:sourceStoreURL
                                  type:type
                               options:nil
