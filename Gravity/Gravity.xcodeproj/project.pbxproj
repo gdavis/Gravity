@@ -23,6 +23,8 @@
 		7771953C15B9BFD400EEE868 /* UIFont+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7771953A15B9BFD400EEE868 /* UIFont+GDIAdditions.m */; };
 		7772C64B158AAE2400A8AF93 /* NSObject+PerformBlockAfterDelay.h in Headers */ = {isa = PBXBuildFile; fileRef = 7772C649158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7772C64C158AAE2400A8AF93 /* NSObject+PerformBlockAfterDelay.m in Sources */ = {isa = PBXBuildFile; fileRef = 7772C64A158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.m */; };
+		7776030316F7A4D40042319C /* NSManagedObject+Clone.h in Headers */ = {isa = PBXBuildFile; fileRef = 7776030116F7A4D40042319C /* NSManagedObject+Clone.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7776030416F7A4D40042319C /* NSManagedObject+Clone.m in Sources */ = {isa = PBXBuildFile; fileRef = 7776030216F7A4D40042319C /* NSManagedObject+Clone.m */; };
 		7783437115D584C400A0D362 /* GDIPhoneNumberFormatting.h in Headers */ = {isa = PBXBuildFile; fileRef = 7783436F15D584C400A0D362 /* GDIPhoneNumberFormatting.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7783437215D584C400A0D362 /* GDIPhoneNumberFormatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 7783437015D584C400A0D362 /* GDIPhoneNumberFormatting.m */; };
 		77C64BBA158FCC5D00D18066 /* GDIBoundTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 77C64BB8158FCC5D00D18066 /* GDIBoundTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -115,6 +117,8 @@
 		7771953A15B9BFD400EEE868 /* UIFont+GDIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+GDIAdditions.m"; sourceTree = "<group>"; };
 		7772C649158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PerformBlockAfterDelay.h"; sourceTree = "<group>"; };
 		7772C64A158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PerformBlockAfterDelay.m"; sourceTree = "<group>"; };
+		7776030116F7A4D40042319C /* NSManagedObject+Clone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Clone.h"; sourceTree = "<group>"; };
+		7776030216F7A4D40042319C /* NSManagedObject+Clone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Clone.m"; sourceTree = "<group>"; };
 		7783436F15D584C400A0D362 /* GDIPhoneNumberFormatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIPhoneNumberFormatting.h; sourceTree = "<group>"; };
 		7783437015D584C400A0D362 /* GDIPhoneNumberFormatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIPhoneNumberFormatting.m; sourceTree = "<group>"; };
 		77C64BB8158FCC5D00D18066 /* GDIBoundTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIBoundTextField.h; sourceTree = "<group>"; };
@@ -232,6 +236,8 @@
 				77D1DEC116976B5B008CD85C /* GDIProgressiveMigration.m */,
 				77F60C8F15CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.h */,
 				77F60C9015CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.m */,
+				7776030116F7A4D40042319C /* NSManagedObject+Clone.h */,
+				7776030216F7A4D40042319C /* NSManagedObject+Clone.m */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -462,6 +468,7 @@
 				77CE14FD169B7F8100C7F7F2 /* UIApplication+GDIAddtions.h in Headers */,
 				77DAECCC15790F3C0035EFC5 /* CoreGraphics+GDIAdditions.h in Headers */,
 				776A5338161A6164007D17B0 /* GDIXMLReader.h in Headers */,
+				7776030316F7A4D40042319C /* NSManagedObject+Clone.h in Headers */,
 				77EDB8C11614B414007F6CFE /* GDIPickerView.h in Headers */,
 				77DAECCE15790F3C0035EFC5 /* GDIMath.h in Headers */,
 				77CB6FB116ACA806003BCA38 /* GDIPageIndicator.h in Headers */,
@@ -601,6 +608,7 @@
 				77D1DEC316976B5B008CD85C /* GDIProgressiveMigration.m in Sources */,
 				77CE14FE169B7F8100C7F7F2 /* UIApplication+GDIAddtions.m in Sources */,
 				77CB6FB216ACA806003BCA38 /* GDIPageIndicator.m in Sources */,
+				7776030416F7A4D40042319C /* NSManagedObject+Clone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

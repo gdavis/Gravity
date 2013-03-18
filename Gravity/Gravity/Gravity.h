@@ -65,6 +65,7 @@
 
 // core data categories
 #import "NSManagedObject+GDIOrderedSetAccessors.h"
+#import "NSManagedObject+Clone.h"
 #import "GDIProgressiveMigration.h"
 
 // utility
