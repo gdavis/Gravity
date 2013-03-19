@@ -27,6 +27,8 @@
 		7776030416F7A4D40042319C /* NSManagedObject+Clone.m in Sources */ = {isa = PBXBuildFile; fileRef = 7776030216F7A4D40042319C /* NSManagedObject+Clone.m */; };
 		7783437115D584C400A0D362 /* GDIPhoneNumberFormatting.h in Headers */ = {isa = PBXBuildFile; fileRef = 7783436F15D584C400A0D362 /* GDIPhoneNumberFormatting.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7783437215D584C400A0D362 /* GDIPhoneNumberFormatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 7783437015D584C400A0D362 /* GDIPhoneNumberFormatting.m */; };
+		77850A2A16F8E7A300006A35 /* GDIServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 77850A2816F8E7A300006A35 /* GDIServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77850A2B16F8E7A300006A35 /* GDIServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 77850A2916F8E7A300006A35 /* GDIServer.m */; };
 		77C64BBA158FCC5D00D18066 /* GDIBoundTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 77C64BB8158FCC5D00D18066 /* GDIBoundTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77C64BBB158FCC5D00D18066 /* GDIBoundTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C64BB9158FCC5D00D18066 /* GDIBoundTextField.m */; };
 		77CB6FB116ACA806003BCA38 /* GDIPageIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 77CB6FAF16ACA806003BCA38 /* GDIPageIndicator.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -121,6 +123,8 @@
 		7776030216F7A4D40042319C /* NSManagedObject+Clone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Clone.m"; sourceTree = "<group>"; };
 		7783436F15D584C400A0D362 /* GDIPhoneNumberFormatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIPhoneNumberFormatting.h; sourceTree = "<group>"; };
 		7783437015D584C400A0D362 /* GDIPhoneNumberFormatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIPhoneNumberFormatting.m; sourceTree = "<group>"; };
+		77850A2816F8E7A300006A35 /* GDIServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIServer.h; sourceTree = "<group>"; };
+		77850A2916F8E7A300006A35 /* GDIServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIServer.m; sourceTree = "<group>"; };
 		77C64BB8158FCC5D00D18066 /* GDIBoundTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIBoundTextField.h; sourceTree = "<group>"; };
 		77C64BB9158FCC5D00D18066 /* GDIBoundTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIBoundTextField.m; sourceTree = "<group>"; };
 		77CB6FAF16ACA806003BCA38 /* GDIPageIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIPageIndicator.h; sourceTree = "<group>"; };
@@ -229,6 +233,15 @@
 			name = XMLReader;
 			sourceTree = "<group>";
 		};
+		77850A2716F8E76C00006A35 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				77850A2816F8E7A300006A35 /* GDIServer.h */,
+				77850A2916F8E7A300006A35 /* GDIServer.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
 		77D1DEBF16976B35008CD85C /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +294,7 @@
 				77DAECD615790F7E0035EFC5 /* Core Animation */,
 				77DAECD515790F7A0035EFC5 /* Foundation */,
 				77DAECD415790F750035EFC5 /* UIKit */,
+				77850A2716F8E76C00006A35 /* Networking */,
 				776A5333161A6153007D17B0 /* Vendor */,
 				77DAEC5B15790DE80035EFC5 /* Gravity.h */,
 				77DAECD215790F560035EFC5 /* Components */,
@@ -471,6 +485,7 @@
 				7776030316F7A4D40042319C /* NSManagedObject+Clone.h in Headers */,
 				77EDB8C11614B414007F6CFE /* GDIPickerView.h in Headers */,
 				77DAECCE15790F3C0035EFC5 /* GDIMath.h in Headers */,
+				77850A2A16F8E7A300006A35 /* GDIServer.h in Headers */,
 				77CB6FB116ACA806003BCA38 /* GDIPageIndicator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,6 +624,7 @@
 				77CE14FE169B7F8100C7F7F2 /* UIApplication+GDIAddtions.m in Sources */,
 				77CB6FB216ACA806003BCA38 /* GDIPageIndicator.m in Sources */,
 				7776030416F7A4D40042319C /* NSManagedObject+Clone.m in Sources */,
+				77850A2B16F8E7A300006A35 /* GDIServer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
