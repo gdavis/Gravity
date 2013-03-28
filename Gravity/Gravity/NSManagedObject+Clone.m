@@ -34,32 +34,14 @@
         [cloned setValue:[source valueForKey:attr] forKey:attr];
     }
     
-    //Loop through all relationships, and clone them.
+    // copy relationships
     NSDictionary *relationships = [[NSEntityDescription
                                     entityForName:entityName
                                     inManagedObjectContext:context] relationshipsByName];
     NSArray *relationshipKeys = [relationships allKeys];
-    
     for (NSString *keyName in relationshipKeys ) {
-        NSRelationshipDescription *rel = [relationships objectForKey:keyName];
-        
-        if ([rel isToMany]) {
-            //get a set of all objects in the relationship
-            NSMutableSet *sourceSet = [source mutableSetValueForKey:keyName];
-            NSMutableSet *clonedSet = [cloned mutableSetValueForKey:keyName];
-            NSEnumerator *e = [sourceSet objectEnumerator];
-            NSManagedObject *relatedObject;
-            while (relatedObject = [e nextObject]){
-                //Clone it, and add clone to set
-                NSManagedObject *clonedRelatedObject = [NSManagedObject clone:relatedObject
-                                                                    inContext:context];
-                [clonedSet addObject:clonedRelatedObject];
-            }
-        }
-        else {
-            NSManagedObject *relatedObject = [source valueForKey:keyName];
-            [cloned setValue:relatedObject forKey:keyName];
-        }
+        NSManagedObject *relatedObject = [source valueForKey:keyName];
+        [cloned setValue:relatedObject forKey:keyName];
     }
     
     return cloned;
