@@ -14,4 +14,8 @@
 // adopted from: http://mobiledevelopertips.com/core-services/create-md5-hash-from-nsstring-nsdata-or-file.html
 - (NSString *)MD5;
 
+- (NSData *)gzipInflate;
+
+- (NSData *)gzipDeflate;
+
 @end
