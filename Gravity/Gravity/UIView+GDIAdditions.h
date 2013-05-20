@@ -38,6 +38,9 @@
 @property (nonatomic) CGPoint frameOrigin;
 @property (nonatomic) CGSize frameSize;
 
+- (void)toggleDebugOutline:(BOOL)onOff;
+- (void)toggleDebugOutline:(BOOL)onOff color:(UIColor *)color;
+
 
 /**
  * Removes all child subviews
@@ -48,6 +51,7 @@
  * @returns a UIImage of the view's current state
  */
 - (UIImage*)imageOfView;
+
 
 /**
  * @returns the first view within the specified nib. 

@@ -126,6 +126,24 @@
 }
 
 
+- (void)toggleDebugOutline:(BOOL)onOff
+{
+    [self toggleDebugOutline:onOff color:[UIColor colorWithRed:1.f green:0.f blue:1.f alpha:1.f]];
+}
+
+- (void)toggleDebugOutline:(BOOL)onOff color:(UIColor *)color
+{
+    if (onOff) {
+        self.layer.borderColor = color.CGColor;
+        self.layer.borderWidth = 4.0;
+    }
+    else {
+        self.layer.borderColor = nil;
+        self.layer.borderWidth = 0.f;
+    }
+}
+
+
 #pragma mark - Instance Methods
 
 - (void)removeAllSubviews
