@@ -282,24 +282,28 @@
 
 // returns a rect representing the area of the screen that is not taken
 // up by the keyboard when it displays
-// TODO: Abstract sizes for different interface idioms
 - (CGRect)viewableAreaForOrientation:(UIInterfaceOrientation)orientation
 {
-    CGRect keyboardFrame = [[GDIKeyboardObserver sharedObserver] keyboardFrame];    
-    if (![[GDIKeyboardObserver sharedObserver] isDocked]) {
+    CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarHidden ? 0.f : 20.f;
+    CGRect keyboardFrame = [[GDIKeyboardObserver sharedObserver] keyboardFrame];
+    
+    // user an empty frame if the keyboard is not docked while on ipad.
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad
+        && ![[GDIKeyboardObserver sharedObserver] isDocked]) {
         keyboardFrame = CGRectZero;
     }
     
+    CGRect windowSize = [[[[UIApplication sharedApplication] delegate] window] frame];
     CGRect viewableArea = CGRectZero;
     switch (orientation) {
         case UIInterfaceOrientationPortrait:
         case UIInterfaceOrientationPortraitUpsideDown: {
-            viewableArea = CGRectMake(0, 0, 768, 1024 - keyboardFrame.size.height);
+            viewableArea = CGRectMake(0, 0, windowSize.size.width, windowSize.size.height - keyboardFrame.size.height - statusBarHeight);
             break;
         }
         case UIInterfaceOrientationLandscapeLeft:
         case UIInterfaceOrientationLandscapeRight: {
-            viewableArea = CGRectMake(0, 0, 1024, 768 - keyboardFrame.size.height);
+            viewableArea = CGRectMake(0, 0, windowSize.size.height, windowSize.size.width - keyboardFrame.size.height - statusBarHeight);
             break;
         }
         default:

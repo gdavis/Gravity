@@ -51,26 +51,33 @@ NSString * const UIKeyboardDidUndockNotification = @"GDIKeyboardDidUndockNotific
     if (CGRectIntersectsRect(rootView.bounds, _keyboardFrame)) {
         
         _isVisible = YES;
-        
-        UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-        CGFloat dockedHeight = UIInterfaceOrientationIsPortrait(orientation) ? 264.f : 352.f;
-        CGFloat screenHeight = UIInterfaceOrientationIsPortrait(orientation) ? 1024.f : 768.f;
-        
-        _isFitToBottom = _keyboardFrame.origin.y + _keyboardFrame.size.height == screenHeight;
-        
-        if (_isFitToBottom &&
-            (_keyboardFrame.size.width == dockedHeight || _keyboardFrame.size.height == dockedHeight)) {
-
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            
+            UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+            CGFloat dockedHeight = UIInterfaceOrientationIsPortrait(orientation) ? 264.f : 352.f;
+            CGFloat screenHeight = UIInterfaceOrientationIsPortrait(orientation) ? 1024.f : 768.f;
+            
+            _isFitToBottom = _keyboardFrame.origin.y + _keyboardFrame.size.height == screenHeight;
+            
+            if (_isFitToBottom &&
+                (_keyboardFrame.size.width == dockedHeight || _keyboardFrame.size.height == dockedHeight)) {
+                
                 // Keyboard is docked
                 _isDocked = YES;
                 [[NSNotificationCenter defaultCenter] postNotificationName:UIKeyboardDidDockNotification object:nil];
-        } else {
-            // Keyboard is split or undocked
+            } else {
+                // Keyboard is split or undocked
+                _isDocked = NO;
+                [[NSNotificationCenter defaultCenter] postNotificationName:UIKeyboardDidUndockNotification object:nil];
+            }
+        }
+        else {
+            _isFitToBottom = YES;
             _isDocked = NO;
-            [[NSNotificationCenter defaultCenter] postNotificationName:UIKeyboardDidUndockNotification object:nil];
         }
     }
     else _isVisible = NO;
+    
 }
 
 
