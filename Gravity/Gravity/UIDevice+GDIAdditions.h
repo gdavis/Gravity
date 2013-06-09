@@ -23,4 +23,8 @@ typedef enum GDIDeviceScreenSize {
 + (BOOL)isRetina;
 + (GDIDeviceScreenSize)deviceScreenSize;
 
+// adopted from StackOverflow: http://stackoverflow.com/a/3950748/189292
++ (NSString *)platform;
++ (NSString *)platformString;
+
 @end
