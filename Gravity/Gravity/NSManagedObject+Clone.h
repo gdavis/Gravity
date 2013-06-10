@@ -12,7 +12,11 @@
 
 @interface NSManagedObject (Clone)
 
-- (NSManagedObject *)clone;
-+ (NSManagedObject *)clone:(NSManagedObject *)source inContext:(NSManagedObjectContext *)context;
+// returns a copy of the NSManagedObject with only the attributes values copied from the original
+- (NSManagedObject *)cloneShallow;
+
+// returns a copy of the NSManagedObject, as well as copies of all child relationship objects
+- (NSManagedObject *)cloneInContext:(NSManagedObjectContext *)context
+                    excludeEntities:(NSArray *)namesOfEntitiesToExclude;
 
 @end
