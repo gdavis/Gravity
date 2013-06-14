@@ -44,6 +44,7 @@
 // this is a helper method that returns the first letter of a string. this is used
 // when displaying CoreData results using an NSFetchedResultsController. you can use
 // this as the keypath for any string to sort by that group.
+// adopted from: http://stackoverflow.com/a/10022171
 - (NSString *)stringGroupByFirstInitial;
 
 + (BOOL)isValidPhoneNumber:(NSString *)phoneNumber;
