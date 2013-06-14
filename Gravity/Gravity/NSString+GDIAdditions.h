@@ -41,6 +41,11 @@
 // adopted from: http://mobiledevelopertips.com/core-services/create-md5-hash-from-nsstring-nsdata-or-file.html
 - (NSString *)MD5;
 
+// this is a helper method that returns the first letter of a string. this is used
+// when displaying CoreData results using an NSFetchedResultsController. you can use
+// this as the keypath for any string to sort by that group.
+- (NSString *)stringGroupByFirstInitial;
+
 + (BOOL)isValidPhoneNumber:(NSString *)phoneNumber;
 + (BOOL)isValidEmail:(NSString *)string;
 

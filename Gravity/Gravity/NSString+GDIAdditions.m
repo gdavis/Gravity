@@ -138,4 +138,12 @@
 	return validated;
 }
 
+
+- (NSString *)stringGroupByFirstInitial
+{
+    if (!self.length || self.length == 1)
+        return self;
+    return [self substringToIndex:1];
+}
+
 @end
