@@ -98,6 +98,12 @@
 
 - (UIImage *)imageWithTintColor:(UIColor *)color
 {
+    return [self imageWithTintColor:color useImageAlpha:YES];
+}
+
+
+- (UIImage *)imageWithTintColor:(UIColor *)color useImageAlpha:(BOOL)useAlphaMask
+{
     UIGraphicsBeginImageContext(self.size);
     
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -110,7 +116,9 @@
     CGContextDrawImage(context, imageRect, [self CGImage]);
     
     // then use the image as a mask to fill a color in.
-    CGContextClipToMask(context, imageRect, [self CGImage]);
+    if (useAlphaMask) CGContextClipToMask(context, imageRect, [self CGImage]);
+    
+    // apply tint color
     [color set];
     CGContextFillRect(context, imageRect);
     

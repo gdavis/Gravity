@@ -32,6 +32,7 @@
 
 // returns an image with a tint color applied over the top if it
 - (UIImage *)imageWithTintColor:(UIColor *)color;
+- (UIImage *)imageWithTintColor:(UIColor *)color useImageAlpha:(BOOL)useAlphaMask;
 
 // returns an image of the receiever cropped to the specified rectangle
 - (UIImage *)imageCroppedToRect:(CGRect)rect;
