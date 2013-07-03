@@ -104,7 +104,7 @@
 
 - (UIImage *)imageWithTintColor:(UIColor *)color useImageAlpha:(BOOL)useAlphaMask
 {
-    UIGraphicsBeginImageContext(self.size);
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0);
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGRect imageRect = CGRectMake(0, 0, self.size.width, self.size.height);
@@ -250,7 +250,7 @@
 	
 	// this is actually the interesting part:
 	
-	UIGraphicsBeginImageContext(targetSize);
+	UIGraphicsBeginImageContextWithOptions(targetSize, NO, 0.f);
 	
 	CGRect thumbnailRect = CGRectZero;
 	thumbnailRect.origin = thumbnailPoint;
@@ -397,7 +397,7 @@
             
     }
     
-    UIGraphicsBeginImageContext(bounds.size);
+    UIGraphicsBeginImageContextWithOptions(bounds.size, NO, 0.f);
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     if ((orient == UIImageOrientationDown) || (orient == UIImageOrientationRight) || (orient == UIImageOrientationUp)){
@@ -452,7 +452,7 @@
 
 + (UIImage*)imageOfView:(UIView*)view
 {
-	UIGraphicsBeginImageContext(view.bounds.size);    
+	UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, 0.f);
 	[view.layer renderInContext:UIGraphicsGetCurrentContext()];
 	UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
