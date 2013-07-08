@@ -175,4 +175,18 @@
     return view;
 }
 
+
++ (UIView *)viewFromNib:(NSString *)nibName withClass:(Class)klass
+{
+    NSArray *nibItems = [[NSBundle mainBundle] loadNibNamed:nibName owner:nil options:nil];
+    UIView *view = nil;
+    for (UIView *nibView in nibItems) {
+        if ([nibView isKindOfClass:klass]) {
+            view = nibView;
+            break;
+        }
+    }
+    return view;
+}
+
 @end

@@ -57,6 +57,7 @@
  * @returns the first view within the specified nib. 
  */
 + (UIView *)viewFromNib:(NSString*)nibName;
++ (UIView *)viewFromNib:(NSString *)nibName withClass:(Class)klass;
 
 
 @end
