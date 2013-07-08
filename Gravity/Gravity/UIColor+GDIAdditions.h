@@ -32,5 +32,6 @@
 + (UIColor *)colorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha rgbDivisor:(CGFloat)divisor;
 + (UIColor *)randomColor;
 + (UIColor *)randomColorWithAlpha:(CGFloat)alpha;
++ (UIColor *)interpolateBetweenColor:(UIColor *)color1 color:(UIColor *)color2 amount:(CGFloat)amount;
 
 @end

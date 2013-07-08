@@ -23,6 +23,7 @@
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import "UIColor+GDIAdditions.h"
+#import "GDIMath.h"
 
 @implementation UIColor (GDIAdditions)
 
@@ -69,5 +70,26 @@
     CGFloat green = (CGFloat)random()/(CGFloat)RAND_MAX;
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
+
++ (UIColor *)interpolateBetweenColor:(UIColor *)color1 color:(UIColor *)color2 amount:(CGFloat)amount
+{
+    CGFloat red1;
+    CGFloat red2;
+    CGFloat green1;
+    CGFloat green2;
+    CGFloat blue1;
+    CGFloat blue2;
+    CGFloat alpha1;
+    CGFloat alpha2;
+    
+    [color1 getRed:&red1 green:&green1 blue:&blue1 alpha:&alpha1];
+    [color2 getRed:&red2 green:&green2 blue:&blue2 alpha:&alpha2];
+    
+    return [UIColor colorWithRed:interp(red1, red2, amount)
+                           green:interp(green1, green2, amount)
+                            blue:interp(blue1, blue2, amount)
+                           alpha:interp(alpha1, alpha2, amount)];
+}
+
 
 @end
