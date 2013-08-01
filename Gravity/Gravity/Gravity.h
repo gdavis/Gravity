@@ -50,6 +50,7 @@
 #import "UIView+GDIAnimation.h"
 #import "UIFont+GDIAdditions.h"
 #import "UIApplication+GDIAddtions.h"
+#import "UIScrollView+GDIAdditions.h"
 
 // foundation categories
 #import "NSObject+PerformBlockAfterDelay.h"
