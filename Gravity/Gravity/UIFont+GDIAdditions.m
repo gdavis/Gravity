@@ -13,8 +13,12 @@
 + (void)logInstalledFonts
 {
     NSArray *fonts = [UIFont familyNames];
-    for (NSString *fontName in fonts) {
-        NSLog(@"%@", fontName);
+    for (NSString *familyName in fonts) {
+        NSArray *fontNamesInFamily = [UIFont fontNamesForFamilyName:familyName];
+        NSLog(@"%@ Family (%i)", familyName, fontNamesInFamily.count);
+        for (NSString *fontName in fontNamesInFamily) {
+            NSLog(@"\t - %@", fontName);
+        }
     }
 }
 

@@ -9,8 +9,8 @@ How to setup Gravity as Static Linked Library
 Add the libGravity.a file
 • Add user search paths
 - Click Build Settings, in the search type 'user header'
-- Add this as a header search path: 
-  "$(PROJECT_TEMP_DIR)/../UninstalledProducts/include"
+- Add this line to the "User Header Search Paths": 
+  "$(BUILT_PRODUCTS_DIR)/../../Headers"
 - Set 'Always Search Header Paths' to YES
 • Add Gravity to the new project's scheme.
 - Edit Scheme, Choose Build. Click + and add Gravity. Drag Gravity to be above the application target. Check both "Run" and "Archive".
