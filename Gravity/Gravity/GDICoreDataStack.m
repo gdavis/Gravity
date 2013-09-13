@@ -27,7 +27,7 @@ NSString * const CORE_DATA_STACK_DID_REBUILD_DATABASE = @"CORE_DATA_STACK_DID_RE
 {
     if (self = [super init]) {
         _storeName = storeName;
-        _seedPath = [[NSBundle mainBundle] pathForResource:seedName ofType:nil];
+        _seedPath = seedName != nil ? [[NSBundle mainBundle] pathForResource:seedName ofType:nil] : nil;
         _configuration = config;
         _shouldRebuildDatabaseIfPersistentStoreSetupFails = YES;
     }
