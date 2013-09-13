@@ -88,4 +88,15 @@
     return platform;
 }
 
++ (BOOL)isOS7OrLater
+{
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+        // Load resources for iOS 6.1 or earlier
+        return NO;
+    } else {
+        // Load resources for iOS 7 or later
+        return YES;
+    }
+}
+
 @end
