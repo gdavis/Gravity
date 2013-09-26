@@ -30,6 +30,45 @@
 		7772C64C158AAE2400A8AF93 /* NSObject+PerformBlockAfterDelay.m in Sources */ = {isa = PBXBuildFile; fileRef = 7772C64A158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.m */; };
 		7776030316F7A4D40042319C /* NSManagedObject+Clone.h in Headers */ = {isa = PBXBuildFile; fileRef = 7776030116F7A4D40042319C /* NSManagedObject+Clone.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7776030416F7A4D40042319C /* NSManagedObject+Clone.m in Sources */ = {isa = PBXBuildFile; fileRef = 7776030216F7A4D40042319C /* NSManagedObject+Clone.m */; };
+		777B265317F484380035CE13 /* GDICoreDataStack.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 775DCDC517E29CFD008C7D91 /* GDICoreDataStack.h */; };
+		777B265417F484380035CE13 /* GDIProgressiveMigration.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77D1DEC016976B5B008CD85C /* GDIProgressiveMigration.h */; };
+		777B265517F484380035CE13 /* NSManagedObject+GDIOrderedSetAccessors.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77F60C8F15CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.h */; };
+		777B265617F484380035CE13 /* NSManagedObject+Clone.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7776030116F7A4D40042319C /* NSManagedObject+Clone.h */; };
+		777B265717F484380035CE13 /* CoreGraphics+GDIAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77DAECA615790F3C0035EFC5 /* CoreGraphics+GDIAdditions.h */; };
+		777B265817F484380035CE13 /* CAAnimation+Blocks.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77DAECA415790F3C0035EFC5 /* CAAnimation+Blocks.h */; };
+		777B265917F484380035CE13 /* NSData+GDIAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77DAEC9E15790F3C0035EFC5 /* NSData+GDIAdditions.h */; };
+		777B265A17F484380035CE13 /* NSDate+GDIAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77DAECA015790F3C0035EFC5 /* NSDate+GDIAdditions.h */; };
+		777B265B17F484380035CE13 /* NSString+GDIAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77DAECA215790F3C0035EFC5 /* NSString+GDIAdditions.h */; };
+		777B265C17F484380035CE13 /* NSObject+PerformBlockAfterDelay.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7772C649158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.h */; };
+		777B265D17F484730035CE13 /* UIAlertView+GDIAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77DAEC8E15790F3C0035EFC5 /* UIAlertView+GDIAdditions.h */; };
+		777B265E17F484730035CE13 /* UIColor+GDIAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77DAEC9015790F3C0035EFC5 /* UIColor+GDIAdditions.h */; };
+		777B265F17F484730035CE13 /* UIDevice+GDIAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77DAEC9215790F3C0035EFC5 /* UIDevice+GDIAdditions.h */; };
+		777B266017F484730035CE13 /* UIImage+GDIAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77DAEC9415790F3C0035EFC5 /* UIImage+GDIAdditions.h */; };
+		777B266117F484730035CE13 /* UIImageView+GDIAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77DAEC9615790F3C0035EFC5 /* UIImageView+GDIAdditions.h */; };
+		777B266217F484730035CE13 /* UILabel+GDIAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77DAEC9815790F3C0035EFC5 /* UILabel+GDIAdditions.h */; };
+		777B266317F484730035CE13 /* UISearchBar+GDIAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77DAEC9A15790F3C0035EFC5 /* UISearchBar+GDIAdditions.h */; };
+		777B266417F484730035CE13 /* UIView+GDIAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77DAEC9C15790F3C0035EFC5 /* UIView+GDIAdditions.h */; };
+		777B266517F484730035CE13 /* UIView+GDIAnimation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 771773CF15B0737F0024B32E /* UIView+GDIAnimation.h */; };
+		777B266617F484730035CE13 /* UIFont+GDIAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7771953915B9BFD400EEE868 /* UIFont+GDIAdditions.h */; };
+		777B266717F484730035CE13 /* UIApplication+GDIAddtions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77CE14FB169B7F8100C7F7F2 /* UIApplication+GDIAddtions.h */; };
+		777B266817F484730035CE13 /* UIScrollView+GDIAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 773F064F17AB0CE400799365 /* UIScrollView+GDIAdditions.h */; };
+		777B266917F484730035CE13 /* GDIServer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77850A2816F8E7A300006A35 /* GDIServer.h */; };
+		777B266A17F484730035CE13 /* GDIXMLReader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 776A5336161A6164007D17B0 /* GDIXMLReader.h */; };
+		777B266B17F484730035CE13 /* Gravity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77DAEC5B15790DE80035EFC5 /* Gravity.h */; };
+		777B266C17F484730035CE13 /* GDIPageIndicator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77CB6FAF16ACA806003BCA38 /* GDIPageIndicator.h */; };
+		777B266D17F484730035CE13 /* GDIKeyboardObserver.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 776E78DE165AEB7500B9C524 /* GDIKeyboardObserver.h */; };
+		777B266E17F484730035CE13 /* GDITouchProxyView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77DAEC8A15790F3C0035EFC5 /* GDITouchProxyView.h */; };
+		777B266F17F484730035CE13 /* GDISignatureCaptureView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77DAEC8C15790F3C0035EFC5 /* GDISignatureCaptureView.h */; };
+		777B267017F484730035CE13 /* GDIAutoFocusingScrollViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7703A373158AEEA400CF326C /* GDIAutoFocusingScrollViewController.h */; };
+		777B267117F484730035CE13 /* GDIBoundTextField.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77C64BB8158FCC5D00D18066 /* GDIBoundTextField.h */; };
+		777B267217F484730035CE13 /* GDIBoundTextView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 774679AB1592305C00D5DF6D /* GDIBoundTextView.h */; };
+		777B267317F484730035CE13 /* GDIDatePicker.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77414AED15D560CA0048B157 /* GDIDatePicker.h */; };
+		777B267417F484730035CE13 /* GDIPickerView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77EDB8BF1614B414007F6CFE /* GDIPickerView.h */; };
+		777B267517F484730035CE13 /* SharedImageCache.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77DAEC8415790F3B0035EFC5 /* SharedImageCache.h */; };
+		777B267617F484730035CE13 /* ImageCacheObject.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77DAEC8615790F3B0035EFC5 /* ImageCacheObject.h */; };
+		777B267717F484730035CE13 /* ImageCache.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77DAEC8815790F3C0035EFC5 /* ImageCache.h */; };
+		777B267817F484730035CE13 /* GDIMath.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77DAECA815790F3C0035EFC5 /* GDIMath.h */; };
+		777B267917F484730035CE13 /* GDIPhoneNumberFormatting.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7783436F15D584C400A0D362 /* GDIPhoneNumberFormatting.h */; };
 		7783437115D584C400A0D362 /* GDIPhoneNumberFormatting.h in Headers */ = {isa = PBXBuildFile; fileRef = 7783436F15D584C400A0D362 /* GDIPhoneNumberFormatting.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7783437215D584C400A0D362 /* GDIPhoneNumberFormatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 7783437015D584C400A0D362 /* GDIPhoneNumberFormatting.m */; };
 		77850A2A16F8E7A300006A35 /* GDIServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 77850A2816F8E7A300006A35 /* GDIServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -106,6 +145,57 @@
 			remoteInfo = Gravity;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		777B265217F4841A0035CE13 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = include/$PRODUCT_NAME;
+			dstSubfolderSpec = 16;
+			files = (
+				777B265D17F484730035CE13 /* UIAlertView+GDIAdditions.h in CopyFiles */,
+				777B265E17F484730035CE13 /* UIColor+GDIAdditions.h in CopyFiles */,
+				777B265F17F484730035CE13 /* UIDevice+GDIAdditions.h in CopyFiles */,
+				777B266017F484730035CE13 /* UIImage+GDIAdditions.h in CopyFiles */,
+				777B266117F484730035CE13 /* UIImageView+GDIAdditions.h in CopyFiles */,
+				777B266217F484730035CE13 /* UILabel+GDIAdditions.h in CopyFiles */,
+				777B266317F484730035CE13 /* UISearchBar+GDIAdditions.h in CopyFiles */,
+				777B266417F484730035CE13 /* UIView+GDIAdditions.h in CopyFiles */,
+				777B266517F484730035CE13 /* UIView+GDIAnimation.h in CopyFiles */,
+				777B266617F484730035CE13 /* UIFont+GDIAdditions.h in CopyFiles */,
+				777B266717F484730035CE13 /* UIApplication+GDIAddtions.h in CopyFiles */,
+				777B266817F484730035CE13 /* UIScrollView+GDIAdditions.h in CopyFiles */,
+				777B266917F484730035CE13 /* GDIServer.h in CopyFiles */,
+				777B266A17F484730035CE13 /* GDIXMLReader.h in CopyFiles */,
+				777B266B17F484730035CE13 /* Gravity.h in CopyFiles */,
+				777B266C17F484730035CE13 /* GDIPageIndicator.h in CopyFiles */,
+				777B266D17F484730035CE13 /* GDIKeyboardObserver.h in CopyFiles */,
+				777B266E17F484730035CE13 /* GDITouchProxyView.h in CopyFiles */,
+				777B266F17F484730035CE13 /* GDISignatureCaptureView.h in CopyFiles */,
+				777B267017F484730035CE13 /* GDIAutoFocusingScrollViewController.h in CopyFiles */,
+				777B267117F484730035CE13 /* GDIBoundTextField.h in CopyFiles */,
+				777B267217F484730035CE13 /* GDIBoundTextView.h in CopyFiles */,
+				777B267317F484730035CE13 /* GDIDatePicker.h in CopyFiles */,
+				777B267417F484730035CE13 /* GDIPickerView.h in CopyFiles */,
+				777B267517F484730035CE13 /* SharedImageCache.h in CopyFiles */,
+				777B267617F484730035CE13 /* ImageCacheObject.h in CopyFiles */,
+				777B267717F484730035CE13 /* ImageCache.h in CopyFiles */,
+				777B267817F484730035CE13 /* GDIMath.h in CopyFiles */,
+				777B267917F484730035CE13 /* GDIPhoneNumberFormatting.h in CopyFiles */,
+				777B265317F484380035CE13 /* GDICoreDataStack.h in CopyFiles */,
+				777B265417F484380035CE13 /* GDIProgressiveMigration.h in CopyFiles */,
+				777B265517F484380035CE13 /* NSManagedObject+GDIOrderedSetAccessors.h in CopyFiles */,
+				777B265617F484380035CE13 /* NSManagedObject+Clone.h in CopyFiles */,
+				777B265717F484380035CE13 /* CoreGraphics+GDIAdditions.h in CopyFiles */,
+				777B265817F484380035CE13 /* CAAnimation+Blocks.h in CopyFiles */,
+				777B265917F484380035CE13 /* NSData+GDIAdditions.h in CopyFiles */,
+				777B265A17F484380035CE13 /* NSDate+GDIAdditions.h in CopyFiles */,
+				777B265B17F484380035CE13 /* NSString+GDIAdditions.h in CopyFiles */,
+				777B265C17F484380035CE13 /* NSObject+PerformBlockAfterDelay.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7703A373158AEEA400CF326C /* GDIAutoFocusingScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIAutoFocusingScrollViewController.h; sourceTree = "<group>"; };
@@ -518,6 +608,7 @@
 				77DAEC4F15790DE80035EFC5 /* Sources */,
 				77DAEC5015790DE80035EFC5 /* Frameworks */,
 				77DAEC5115790DE80035EFC5 /* Headers */,
+				777B265217F4841A0035CE13 /* CopyFiles */,
 			);
 			buildRules = (
 			);
