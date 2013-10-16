@@ -10,6 +10,7 @@
 #import "UIView+GDIAdditions.h"
 #import "GDIKeyboardObserver.h"
 #import "NSObject+PerformBlockAfterDelay.h"
+#import "UIDevice+GDIAdditions.h"
 
 @interface GDIAutoFocusingScrollViewController () {
     BOOL _isRotating;
@@ -284,7 +285,13 @@
 // up by the keyboard when it displays
 - (CGRect)viewableAreaForOrientation:(UIInterfaceOrientation)orientation
 {
-    CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarHidden ? 0.f : 20.f;
+    CGFloat statusBarHeight;
+    if ([UIDevice isOS7OrLater] || [UIApplication sharedApplication].statusBarHidden) {
+        statusBarHeight = 0.f;
+    }
+    else {
+        statusBarHeight = 20.f;
+    }
     CGRect keyboardFrame = [[GDIKeyboardObserver sharedObserver] keyboardFrame];
     
     // user an empty frame if the keyboard is not docked while on ipad.
