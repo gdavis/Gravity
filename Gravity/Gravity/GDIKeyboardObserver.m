@@ -10,8 +10,8 @@
 
 @implementation GDIKeyboardObserver
 
-NSString * const UIKeyboardDidDockNotification = @"GDIKeyboardDidDockNotification";
-NSString * const UIKeyboardDidUndockNotification = @"GDIKeyboardDidUndockNotification";
+NSString * const GDIKeyboardDidDockNotification = @"GDIKeyboardDidDockNotification";
+NSString * const GDIKeyboardDidUndockNotification = @"GDIKeyboardDidUndockNotification";
 
 - (id)init
 {

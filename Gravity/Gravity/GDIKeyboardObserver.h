@@ -12,8 +12,8 @@
 
 @interface GDIKeyboardObserver : NSObject
 
-extern NSString * const UIKeyboardDidDockNotification;
-extern NSString * const UIKeyboardDidUndockNotification;
+extern NSString * const GDIKeyboardDidDockNotification;
+extern NSString * const GDIKeyboardDidUndockNotification;
 
 @property (readonly) BOOL isDocked;
 @property (readonly) BOOL isVisible;

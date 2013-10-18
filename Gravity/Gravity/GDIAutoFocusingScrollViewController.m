@@ -62,8 +62,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardDidDock) name:UIKeyboardDidDockNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardDidUndock) name:UIKeyboardDidUndockNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardDidDock) name:GDIKeyboardDidDockNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardDidUndock) name:GDIKeyboardDidUndockNotification object:nil];
 }
 
 
@@ -72,8 +72,8 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
     
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidDockNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidUndockNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:GDIKeyboardDidDockNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:GDIKeyboardDidUndockNotification object:nil];
     
     _referenceView = nil;
     [self setContentScrollView:nil];
