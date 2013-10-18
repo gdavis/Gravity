@@ -64,11 +64,11 @@ NSString * const GDIKeyboardDidUndockNotification = @"GDIKeyboardDidUndockNotifi
                 
                 // Keyboard is docked
                 _isDocked = YES;
-                [[NSNotificationCenter defaultCenter] postNotificationName:UIKeyboardDidDockNotification object:nil];
+                [[NSNotificationCenter defaultCenter] postNotificationName:GDIKeyboardDidDockNotification object:nil];
             } else {
                 // Keyboard is split or undocked
                 _isDocked = NO;
-                [[NSNotificationCenter defaultCenter] postNotificationName:UIKeyboardDidUndockNotification object:nil];
+                [[NSNotificationCenter defaultCenter] postNotificationName:GDIKeyboardDidUndockNotification object:nil];
             }
         }
         else {
