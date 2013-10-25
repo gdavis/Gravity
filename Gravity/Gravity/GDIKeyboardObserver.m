@@ -33,18 +33,10 @@ NSString * const GDIKeyboardDidUndockNotification = @"GDIKeyboardDidUndockNotifi
 
 - (void)handleKeyboardFrameChange:(NSNotification *)n
 {
-    CGRect keyboardFrame = [[[n userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    
+    CGRect endKeyboardFrame = [[[n userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     UIView *rootView = [[[[UIApplication sharedApplication] keyWindow] rootViewController] view];
-    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
     
-//    NSLog(@"****");
-//    NSLog(@"keyboard changed to: %@", NSStringFromCGRect(_keyboardFrame));
-//    NSLog(@"window bounds: %@", NSStringFromCGRect([window bounds]));
-//    NSLog(@"root view bounds: %@", NSStringFromCGRect(rootView.bounds));
-    
-    _keyboardFrame = [rootView convertRect:keyboardFrame fromView:window];
-//    NSLog(@"relative keyboard bounds: %@", NSStringFromCGRect(_keyboardFrame));
+    _keyboardFrame = endKeyboardFrame;
     
     // first check to see if the keyboard intersects the main window.
     // if it does, we know the keyboard is visible and we can detect is position
@@ -76,8 +68,9 @@ NSString * const GDIKeyboardDidUndockNotification = @"GDIKeyboardDidUndockNotifi
             _isDocked = NO;
         }
     }
-    else _isVisible = NO;
-    
+    else {
+        _isVisible = NO;
+    }
 }
 
 
