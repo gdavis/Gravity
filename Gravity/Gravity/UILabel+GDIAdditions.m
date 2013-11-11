@@ -62,4 +62,25 @@
     self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, labelSize.height);
 }
 
++ (UILabel *)labelForSizing
+{
+    static UILabel *label;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        label = [[UILabel alloc] initWithFrame:CGRectZero];
+    });
+    label.textAlignment = NSTextAlignmentLeft;
+    label.lineBreakMode = NSLineBreakByWordWrapping;
+    label.numberOfLines = 0;
+    return label;
+}
+
++ (UILabel *)labelForSizingWithFont:(UIFont *)font text:(NSString *)text
+{
+    UILabel *label = [UILabel labelForSizing];
+    label.font = font;
+    label.text = text;
+    return label;
+}
+
 @end

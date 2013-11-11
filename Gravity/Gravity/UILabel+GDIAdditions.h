@@ -36,4 +36,8 @@
 // use to adjust the height of a multi-line text field
 - (void)adjustHeightToFitText;
 
+// returns a single instance of a UILabel to be used as a quick way to use sizeThatFits
++ (UILabel *)labelForSizing;
++ (UILabel *)labelForSizingWithFont:(UIFont *)font text:(NSString *)text;
+
 @end
