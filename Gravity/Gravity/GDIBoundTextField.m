@@ -135,16 +135,23 @@
         }
         
         if (![storedValue isEqualToString:finalText]) {
-            _isSettingText = YES;
-            
-            if (![NSString isNullString:finalText]) {
-                [_boundObject setValue:finalText forKeyPath:_boundKeypath];
+            @try {
+                _isSettingText = YES;
+                
+                if (![NSString isNullString:finalText]) {
+                    [_boundObject setValue:finalText forKeyPath:_boundKeypath];
+                }
+                else {
+                    [_boundObject setValue:nil forKeyPath:_boundKeypath];
+                }
             }
-            else {
-                [_boundObject setValue:nil forKeyPath:_boundKeypath];
+            @catch (NSException *exception) {
+                // silently handle the error
+                NSLog(@"Encountered an errow updating the bound object value: %@", exception);
             }
-
-            _isSettingText = NO;
+            @finally {
+                _isSettingText = NO;
+            }
         }
     }
 }

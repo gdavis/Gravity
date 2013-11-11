@@ -116,18 +116,24 @@
     if (_boundObject && _boundKeypath && ![self.text isEqualToString:self.placeholder]) {
         NSString *storedValue = [_boundObject valueForKey:_boundKeypath];
         if (![storedValue isEqualToString:self.text] && ![NSString isNullString:self.text]) {
-            _isSettingText = YES;
-            
-            if (![NSString isNullString:self.text]) {
-                NSString *text = shouldTrimInput ? [self.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]
-                : self.text;
-                [_boundObject setValue:text forKeyPath:_boundKeypath];
+            @try {
+                _isSettingText = YES;
+                if (![NSString isNullString:self.text]) {
+                    NSString *text = shouldTrimInput ? [self.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]
+                    : self.text;
+                    [_boundObject setValue:text forKeyPath:_boundKeypath];
+                }
+                else {
+                    [_boundObject setValue:nil forKeyPath:_boundKeypath];
+                }
             }
-            else {
-                [_boundObject setValue:nil forKeyPath:_boundKeypath];
+            @catch (NSException *exception) {
+                // silently handle the error
+                NSLog(@"Encountered an errow updating the bound object value: %@", exception);
             }
-            
-            _isSettingText = NO;
+            @finally {
+                _isSettingText = NO;
+            }
         }
     }
 }
