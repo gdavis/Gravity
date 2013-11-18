@@ -1,18 +1,4 @@
 [README]
-This document will soon be updated with much better instruction. For now, here are my crib notes on how to install Gravity as a static library with Xcode 4 using a Workspace.
+Gravity is a collection of categories, components, and utility methods brought together into a single library. I use this library for all of my iOS project to aid in development. It is named "Gravity" because it pulls in the most commonly used tidbits and puts them all together into a single library.
 
-How to setup Gravity as Static Linked Library
-
-• Add git submodule
-• Create workspace, add Gravity and the new project using it. 
-• Create a library dependency by selecting the the new project, Build Phase, Link with Libraries. 
-Add the libGravity.a file
-• Add user search paths
-- Click Build Settings, in the search type 'user header'
-- Add this line to the "User Header Search Paths": 
-  "$(BUILT_PRODUCTS_DIR)/../../Headers"
-- Set 'Always Search Header Paths' to YES
-• Add Gravity to the new project's scheme.
-- Edit Scheme, Choose Build. Click + and add Gravity. Drag Gravity to be above the application target. Check both "Run" and "Archive".
-• Import <Gravity/Gravity.h> to classes needing the framework, or your pch file.
-• Start using Gravity!
+To install Gravity, follow the Apple Developer Guide for linking against static libraries here: https://developer.apple.com/library/ios/technotes/iOSStaticLibraries/Articles/configuration.html#//apple_ref/doc/uid/TP40012554-CH3-SW1
