@@ -7,28 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7703A375158AEEA400CF326C /* GDIAutoFocusingScrollViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7703A373158AEEA400CF326C /* GDIAutoFocusingScrollViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7703A376158AEEA400CF326C /* GDIAutoFocusingScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7703A374158AEEA400CF326C /* GDIAutoFocusingScrollViewController.m */; };
-		771773D115B0737F0024B32E /* UIView+GDIAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 771773CF15B0737F0024B32E /* UIView+GDIAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		771773D215B0737F0024B32E /* UIView+GDIAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 771773D015B0737F0024B32E /* UIView+GDIAnimation.m */; };
-		773F065117AB0CE400799365 /* UIScrollView+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 773F064F17AB0CE400799365 /* UIScrollView+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		773F065217AB0CE400799365 /* UIScrollView+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 773F065017AB0CE400799365 /* UIScrollView+GDIAdditions.m */; };
-		77414AEF15D560CA0048B157 /* GDIDatePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 77414AED15D560CA0048B157 /* GDIDatePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77414AF015D560CA0048B157 /* GDIDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 77414AEE15D560CA0048B157 /* GDIDatePicker.m */; };
-		774679AD1592305C00D5DF6D /* GDIBoundTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 774679AB1592305C00D5DF6D /* GDIBoundTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		774679AE1592305C00D5DF6D /* GDIBoundTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 774679AC1592305C00D5DF6D /* GDIBoundTextView.m */; };
-		775DCDC717E29CFD008C7D91 /* GDICoreDataStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 775DCDC517E29CFD008C7D91 /* GDICoreDataStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		775DCDC817E29CFD008C7D91 /* GDICoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 775DCDC617E29CFD008C7D91 /* GDICoreDataStack.m */; };
 		775DCDCA17E29EF2008C7D91 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775DCDC917E29EF2008C7D91 /* CoreData.framework */; };
-		776A5338161A6164007D17B0 /* GDIXMLReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 776A5336161A6164007D17B0 /* GDIXMLReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		776A5339161A6164007D17B0 /* GDIXMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 776A5337161A6164007D17B0 /* GDIXMLReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		776E78E0165AEB7500B9C524 /* GDIKeyboardObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 776E78DE165AEB7500B9C524 /* GDIKeyboardObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		776E78E1165AEB7500B9C524 /* GDIKeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 776E78DF165AEB7500B9C524 /* GDIKeyboardObserver.m */; };
-		7771953B15B9BFD400EEE868 /* UIFont+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7771953915B9BFD400EEE868 /* UIFont+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7771953C15B9BFD400EEE868 /* UIFont+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7771953A15B9BFD400EEE868 /* UIFont+GDIAdditions.m */; };
-		7772C64B158AAE2400A8AF93 /* NSObject+PerformBlockAfterDelay.h in Headers */ = {isa = PBXBuildFile; fileRef = 7772C649158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7772C64C158AAE2400A8AF93 /* NSObject+PerformBlockAfterDelay.m in Sources */ = {isa = PBXBuildFile; fileRef = 7772C64A158AAE2300A8AF93 /* NSObject+PerformBlockAfterDelay.m */; };
-		7776030316F7A4D40042319C /* NSManagedObject+Clone.h in Headers */ = {isa = PBXBuildFile; fileRef = 7776030116F7A4D40042319C /* NSManagedObject+Clone.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7776030416F7A4D40042319C /* NSManagedObject+Clone.m in Sources */ = {isa = PBXBuildFile; fileRef = 7776030216F7A4D40042319C /* NSManagedObject+Clone.m */; };
 		777B265317F484380035CE13 /* GDICoreDataStack.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 775DCDC517E29CFD008C7D91 /* GDICoreDataStack.h */; };
 		777B265417F484380035CE13 /* GDIProgressiveMigration.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77D1DEC016976B5B008CD85C /* GDIProgressiveMigration.h */; };
@@ -69,17 +58,11 @@
 		777B267717F484730035CE13 /* ImageCache.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77DAEC8815790F3C0035EFC5 /* ImageCache.h */; };
 		777B267817F484730035CE13 /* GDIMath.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77DAECA815790F3C0035EFC5 /* GDIMath.h */; };
 		777B267917F484730035CE13 /* GDIPhoneNumberFormatting.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7783436F15D584C400A0D362 /* GDIPhoneNumberFormatting.h */; };
-		7783437115D584C400A0D362 /* GDIPhoneNumberFormatting.h in Headers */ = {isa = PBXBuildFile; fileRef = 7783436F15D584C400A0D362 /* GDIPhoneNumberFormatting.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7783437215D584C400A0D362 /* GDIPhoneNumberFormatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 7783437015D584C400A0D362 /* GDIPhoneNumberFormatting.m */; };
-		77850A2A16F8E7A300006A35 /* GDIServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 77850A2816F8E7A300006A35 /* GDIServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77850A2B16F8E7A300006A35 /* GDIServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 77850A2916F8E7A300006A35 /* GDIServer.m */; };
-		77C64BBA158FCC5D00D18066 /* GDIBoundTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 77C64BB8158FCC5D00D18066 /* GDIBoundTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77C64BBB158FCC5D00D18066 /* GDIBoundTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C64BB9158FCC5D00D18066 /* GDIBoundTextField.m */; };
-		77CB6FB116ACA806003BCA38 /* GDIPageIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 77CB6FAF16ACA806003BCA38 /* GDIPageIndicator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77CB6FB216ACA806003BCA38 /* GDIPageIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CB6FB016ACA806003BCA38 /* GDIPageIndicator.m */; };
-		77CE14FD169B7F8100C7F7F2 /* UIApplication+GDIAddtions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77CE14FB169B7F8100C7F7F2 /* UIApplication+GDIAddtions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77CE14FE169B7F8100C7F7F2 /* UIApplication+GDIAddtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CE14FC169B7F8100C7F7F2 /* UIApplication+GDIAddtions.m */; };
-		77D1DEC216976B5B008CD85C /* GDIProgressiveMigration.h in Headers */ = {isa = PBXBuildFile; fileRef = 77D1DEC016976B5B008CD85C /* GDIProgressiveMigration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77D1DEC316976B5B008CD85C /* GDIProgressiveMigration.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D1DEC116976B5B008CD85C /* GDIProgressiveMigration.m */; };
 		77DAEC5715790DE80035EFC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAEC5615790DE80035EFC5 /* Foundation.framework */; };
 		77DAEC6515790DE80035EFC5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAEC6415790DE80035EFC5 /* SenTestingKit.framework */; };
@@ -87,52 +70,30 @@
 		77DAEC6B15790DE80035EFC5 /* libGravity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAEC5315790DE80035EFC5 /* libGravity.a */; };
 		77DAEC7115790DE80035EFC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77DAEC6F15790DE80035EFC5 /* InfoPlist.strings */; };
 		77DAEC7415790DE80035EFC5 /* GravityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC7315790DE80035EFC5 /* GravityTests.m */; };
-		77DAECAA15790F3C0035EFC5 /* SharedImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC8415790F3B0035EFC5 /* SharedImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECAB15790F3C0035EFC5 /* SharedImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC8515790F3B0035EFC5 /* SharedImageCache.m */; };
-		77DAECAC15790F3C0035EFC5 /* ImageCacheObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC8615790F3B0035EFC5 /* ImageCacheObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECAD15790F3C0035EFC5 /* ImageCacheObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC8715790F3C0035EFC5 /* ImageCacheObject.m */; };
-		77DAECAE15790F3C0035EFC5 /* ImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC8815790F3C0035EFC5 /* ImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECAF15790F3C0035EFC5 /* ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC8915790F3C0035EFC5 /* ImageCache.m */; };
-		77DAECB015790F3C0035EFC5 /* GDITouchProxyView.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC8A15790F3C0035EFC5 /* GDITouchProxyView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECB115790F3C0035EFC5 /* GDITouchProxyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC8B15790F3C0035EFC5 /* GDITouchProxyView.m */; };
-		77DAECB215790F3C0035EFC5 /* GDISignatureCaptureView.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC8C15790F3C0035EFC5 /* GDISignatureCaptureView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECB315790F3C0035EFC5 /* GDISignatureCaptureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC8D15790F3C0035EFC5 /* GDISignatureCaptureView.m */; };
-		77DAECB415790F3C0035EFC5 /* UIAlertView+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC8E15790F3C0035EFC5 /* UIAlertView+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECB515790F3C0035EFC5 /* UIAlertView+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC8F15790F3C0035EFC5 /* UIAlertView+GDIAdditions.m */; };
-		77DAECB615790F3C0035EFC5 /* UIColor+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9015790F3C0035EFC5 /* UIColor+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECB715790F3C0035EFC5 /* UIColor+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC9115790F3C0035EFC5 /* UIColor+GDIAdditions.m */; };
-		77DAECB815790F3C0035EFC5 /* UIDevice+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9215790F3C0035EFC5 /* UIDevice+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECB915790F3C0035EFC5 /* UIDevice+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC9315790F3C0035EFC5 /* UIDevice+GDIAdditions.m */; };
-		77DAECBA15790F3C0035EFC5 /* UIImage+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9415790F3C0035EFC5 /* UIImage+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECBB15790F3C0035EFC5 /* UIImage+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC9515790F3C0035EFC5 /* UIImage+GDIAdditions.m */; };
-		77DAECBC15790F3C0035EFC5 /* UIImageView+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9615790F3C0035EFC5 /* UIImageView+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECBD15790F3C0035EFC5 /* UIImageView+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC9715790F3C0035EFC5 /* UIImageView+GDIAdditions.m */; };
-		77DAECBE15790F3C0035EFC5 /* UILabel+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9815790F3C0035EFC5 /* UILabel+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECBF15790F3C0035EFC5 /* UILabel+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC9915790F3C0035EFC5 /* UILabel+GDIAdditions.m */; };
-		77DAECC015790F3C0035EFC5 /* UISearchBar+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9A15790F3C0035EFC5 /* UISearchBar+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECC115790F3C0035EFC5 /* UISearchBar+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC9B15790F3C0035EFC5 /* UISearchBar+GDIAdditions.m */; };
-		77DAECC215790F3C0035EFC5 /* UIView+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9C15790F3C0035EFC5 /* UIView+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECC315790F3C0035EFC5 /* UIView+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC9D15790F3C0035EFC5 /* UIView+GDIAdditions.m */; };
-		77DAECC415790F3C0035EFC5 /* NSData+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC9E15790F3C0035EFC5 /* NSData+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECC515790F3C0035EFC5 /* NSData+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAEC9F15790F3C0035EFC5 /* NSData+GDIAdditions.m */; };
-		77DAECC615790F3C0035EFC5 /* NSDate+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAECA015790F3C0035EFC5 /* NSDate+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECC715790F3C0035EFC5 /* NSDate+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAECA115790F3C0035EFC5 /* NSDate+GDIAdditions.m */; };
-		77DAECC815790F3C0035EFC5 /* NSString+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAECA215790F3C0035EFC5 /* NSString+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECC915790F3C0035EFC5 /* NSString+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAECA315790F3C0035EFC5 /* NSString+GDIAdditions.m */; };
-		77DAECCA15790F3C0035EFC5 /* CAAnimation+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAECA415790F3C0035EFC5 /* CAAnimation+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECCB15790F3C0035EFC5 /* CAAnimation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAECA515790F3C0035EFC5 /* CAAnimation+Blocks.m */; };
-		77DAECCC15790F3C0035EFC5 /* CoreGraphics+GDIAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAECA615790F3C0035EFC5 /* CoreGraphics+GDIAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECCD15790F3C0035EFC5 /* CoreGraphics+GDIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAECA715790F3C0035EFC5 /* CoreGraphics+GDIAdditions.m */; };
-		77DAECCE15790F3C0035EFC5 /* GDIMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAECA815790F3C0035EFC5 /* GDIMath.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77DAECCF15790F3C0035EFC5 /* GDIMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DAECA915790F3C0035EFC5 /* GDIMath.m */; };
 		77DAECDD15790FEC0035EFC5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAECDA15790FEC0035EFC5 /* QuartzCore.framework */; };
 		77DAECDE15790FEC0035EFC5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAECDB15790FEC0035EFC5 /* CoreGraphics.framework */; };
 		77DAECE11579104E0035EFC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAECE01579104E0035EFC5 /* UIKit.framework */; };
 		77DAECE2157910770035EFC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAECE01579104E0035EFC5 /* UIKit.framework */; };
-		77DAECF1157918CC0035EFC5 /* Gravity.h in Headers */ = {isa = PBXBuildFile; fileRef = 77DAEC5B15790DE80035EFC5 /* Gravity.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		77EDB8C11614B414007F6CFE /* GDIPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 77EDB8BF1614B414007F6CFE /* GDIPickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77EDB8C21614B414007F6CFE /* GDIPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EDB8C01614B414007F6CFE /* GDIPickerView.m */; };
-		77F60C9115CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.h in Headers */ = {isa = PBXBuildFile; fileRef = 77F60C8F15CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77F60C9215CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F60C9015CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.m */; };
 /* End PBXBuildFile section */
 
@@ -551,55 +512,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		77DAEC5115790DE80035EFC5 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				77DAECAA15790F3C0035EFC5 /* SharedImageCache.h in Headers */,
-				77DAECAC15790F3C0035EFC5 /* ImageCacheObject.h in Headers */,
-				77DAECAE15790F3C0035EFC5 /* ImageCache.h in Headers */,
-				77DAECB015790F3C0035EFC5 /* GDITouchProxyView.h in Headers */,
-				77DAECB215790F3C0035EFC5 /* GDISignatureCaptureView.h in Headers */,
-				77DAECB415790F3C0035EFC5 /* UIAlertView+GDIAdditions.h in Headers */,
-				77DAECB615790F3C0035EFC5 /* UIColor+GDIAdditions.h in Headers */,
-				77DAECB815790F3C0035EFC5 /* UIDevice+GDIAdditions.h in Headers */,
-				77DAECBA15790F3C0035EFC5 /* UIImage+GDIAdditions.h in Headers */,
-				77DAECBC15790F3C0035EFC5 /* UIImageView+GDIAdditions.h in Headers */,
-				77DAECBE15790F3C0035EFC5 /* UILabel+GDIAdditions.h in Headers */,
-				7772C64B158AAE2400A8AF93 /* NSObject+PerformBlockAfterDelay.h in Headers */,
-				77DAECF1157918CC0035EFC5 /* Gravity.h in Headers */,
-				77DAECC015790F3C0035EFC5 /* UISearchBar+GDIAdditions.h in Headers */,
-				77C64BBA158FCC5D00D18066 /* GDIBoundTextField.h in Headers */,
-				7771953B15B9BFD400EEE868 /* UIFont+GDIAdditions.h in Headers */,
-				774679AD1592305C00D5DF6D /* GDIBoundTextView.h in Headers */,
-				77DAECC215790F3C0035EFC5 /* UIView+GDIAdditions.h in Headers */,
-				7703A375158AEEA400CF326C /* GDIAutoFocusingScrollViewController.h in Headers */,
-				771773D115B0737F0024B32E /* UIView+GDIAnimation.h in Headers */,
-				77F60C9115CF212F000AFF56 /* NSManagedObject+GDIOrderedSetAccessors.h in Headers */,
-				776E78E0165AEB7500B9C524 /* GDIKeyboardObserver.h in Headers */,
-				7783437115D584C400A0D362 /* GDIPhoneNumberFormatting.h in Headers */,
-				77414AEF15D560CA0048B157 /* GDIDatePicker.h in Headers */,
-				77DAECC415790F3C0035EFC5 /* NSData+GDIAdditions.h in Headers */,
-				77DAECC615790F3C0035EFC5 /* NSDate+GDIAdditions.h in Headers */,
-				77DAECC815790F3C0035EFC5 /* NSString+GDIAdditions.h in Headers */,
-				77DAECCA15790F3C0035EFC5 /* CAAnimation+Blocks.h in Headers */,
-				77D1DEC216976B5B008CD85C /* GDIProgressiveMigration.h in Headers */,
-				77CE14FD169B7F8100C7F7F2 /* UIApplication+GDIAddtions.h in Headers */,
-				775DCDC717E29CFD008C7D91 /* GDICoreDataStack.h in Headers */,
-				77DAECCC15790F3C0035EFC5 /* CoreGraphics+GDIAdditions.h in Headers */,
-				776A5338161A6164007D17B0 /* GDIXMLReader.h in Headers */,
-				7776030316F7A4D40042319C /* NSManagedObject+Clone.h in Headers */,
-				773F065117AB0CE400799365 /* UIScrollView+GDIAdditions.h in Headers */,
-				77EDB8C11614B414007F6CFE /* GDIPickerView.h in Headers */,
-				77DAECCE15790F3C0035EFC5 /* GDIMath.h in Headers */,
-				77850A2A16F8E7A300006A35 /* GDIServer.h in Headers */,
-				77CB6FB116ACA806003BCA38 /* GDIPageIndicator.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		77DAEC5215790DE80035EFC5 /* Gravity */ = {
 			isa = PBXNativeTarget;
@@ -607,7 +519,6 @@
 			buildPhases = (
 				77DAEC4F15790DE80035EFC5 /* Sources */,
 				77DAEC5015790DE80035EFC5 /* Frameworks */,
-				77DAEC5115790DE80035EFC5 /* Headers */,
 				777B265217F4841A0035CE13 /* CopyFiles */,
 			);
 			buildRules = (
