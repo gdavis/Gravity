@@ -39,6 +39,18 @@ extern NSString * const CORE_DATA_STACK_DID_REBUILD_DATABASE;
  */
 - (id)initWithStoreName:(NSString *)storeName seedName:(NSString *)seedName configuration:(NSString *)config;
 
+/**
+ *  Initializes a new instance. The CoreData stack is not yet available after instantiating this object
+ *  and needs to be created with the `setupCoreDataStackWithCompletion:` method. If a seed database name
+ *  is provided, this class will attempt to make a copy of that seed database to act as the new core data
+ *  database.
+ *  @param model                The ManagedObjectModel to use for the CoreData store.
+ *  @param storeName            Name for the CoreData sqlite file
+ *  @param seedName             [Optional] Name for the seed database sqlite in the application bundle.
+ *  @param configuration        [Optional] Option configuration name to use when creating the persistent store coordinator.
+ */
+- (id)initWithManagedObjectModel:(NSManagedObjectModel *)model storeName:(NSString *)storeName seedName:(NSString *)seedName configuration:(NSString *)config;
+
 
 /**
  *  Performs the synchronous setup of the CoreData stack on a separate background thread. This method will block

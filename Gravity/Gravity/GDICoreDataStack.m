@@ -34,6 +34,18 @@ NSString * const CORE_DATA_STACK_DID_REBUILD_DATABASE = @"CORE_DATA_STACK_DID_RE
     return self;
 }
 
+- (id)initWithManagedObjectModel:(NSManagedObjectModel *)model storeName:(NSString *)storeName seedName:(NSString *)seedName configuration:(NSString *)config;
+{
+    if (self = [super init]) {
+        _managedObjectModel = model;
+        _storeName = storeName;
+        _seedPath = seedName != nil ? [[NSBundle mainBundle] pathForResource:seedName ofType:nil] : nil;
+        _configuration = config;
+        _shouldRebuildDatabaseIfPersistentStoreSetupFails = YES;
+    }
+    return self;
+}
+
 
 - (NSPersistentStoreCoordinator *)setupCoreDataStackWithCompletion:(void (^)(BOOL success, NSError *error))completion
 {
@@ -153,9 +165,7 @@ NSString * const CORE_DATA_STACK_DID_REBUILD_DATABASE = @"CORE_DATA_STACK_DID_RE
 - (NSManagedObjectContext *)newContextWithMergePolicy:(id)mergePolicy
                                       concurrencyType:(NSManagedObjectContextConcurrencyType)type
 {
-    NSAssert([NSThread isMainThread], @"This method must be accessed on the main thread!");
     NSManagedObjectContext *context;
-    
     if (self.persistentStoreCoordinator != nil) {
         context = [[NSManagedObjectContext alloc] initWithConcurrencyType:type];
         context.persistentStoreCoordinator = self.persistentStoreCoordinator;
