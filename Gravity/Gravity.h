@@ -68,5 +68,4 @@
 // utility
 #import "GDIMath.h"
 #import "GDIPhoneNumberFormatting.h"
-#import "GDIXMLReader.h"
 
