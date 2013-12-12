@@ -1,7 +1,5 @@
-## Gravity
+# Gravity
 Authored by [Grant Davis](http://www.grantdavisinteractive.com).
-
-======================
 
 Gravity is a collection of categories, components, and utility methods
 brought together into a single library.
