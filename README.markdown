@@ -6,22 +6,22 @@ brought together into a single library.
 
 It includes additions for view management...
 
-* [UIView+GDIAdditions](https://github.com/atomos86/Gravity/blob/master/Gravity/UIView%2BGDIAdditions.h)
+* [UIView+GDIAdditions](https://github.com/gdavis/Gravity/blob/master/Gravity/UIView%2BGDIAdditions.h)
   (custom frame management and debug mode)
-* [UIView+GDIAnimation](https://github.com/atomos86/Gravity/blob/master/Gravity/UIView%2BGDIAnimation.h)
+* [UIView+GDIAnimation](https://github.com/gdavis/Gravity/blob/master/Gravity/UIView%2BGDIAnimation.h)
   (fadeIn/fadeOut animations)
-* [UIColor+GDIAdditions](https://github.com/atomos86/Gravity/blob/master/Gravity/UIColor%2BGDIAdditions.h)
+* [UIColor+GDIAdditions](https://github.com/gdavis/Gravity/blob/master/Gravity/UIColor%2BGDIAdditions.h)
   (color interpolation and custom initializers)
 
 Working with data...
 
-* [NSData+GDIAdditions](https://github.com/atomos86/Gravity/blob/master/Gravity/NSData%2BGDIAdditions.h)
+* [NSData+GDIAdditions](https://github.com/gdavis/Gravity/blob/master/Gravity/NSData%2BGDIAdditions.h)
   (with md5 and gzip)
-* [NSManagedObject+Clone](https://github.com/atomos86/Gravity/blob/master/Gravity/NSManagedObject%2BClone.h) 
-* [NSManagedObject+GDIOrderedSetAccessors](https://github.com/atomos86/Gravity/blob/master/Gravity/NSManagedObject%2BGDIOrderedSetAccessors.h)
+* [NSManagedObject+Clone](https://github.com/gdavis/Gravity/blob/master/Gravity/NSManagedObject%2BClone.h) 
+* [NSManagedObject+GDIOrderedSetAccessors](https://github.com/gdavis/Gravity/blob/master/Gravity/NSManagedObject%2BGDIOrderedSetAccessors.h)
 
 And much
-[more](https://github.com/atomos86/Gravity/tree/master/Gravity).  
+[more](https://github.com/gdavis/Gravity/tree/master/Gravity).  
 
 
 ### Using Gravity
