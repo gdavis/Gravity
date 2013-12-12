@@ -103,12 +103,6 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGRect imageRect = CGRectMake(0, 0, self.size.width, self.size.height);
     
-    CGContextScaleCTM(context, 1, -1);
-    CGContextTranslateCTM(context, 0, -imageRect.size.height);
-    
-    // draw the image first
-    CGContextDrawImage(context, imageRect, [self CGImage]);
-    
     // then use the image as a mask to fill a color in.
     if (useAlphaMask) CGContextClipToMask(context, imageRect, [self CGImage]);
     
