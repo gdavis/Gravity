@@ -23,6 +23,10 @@
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #import <UIKit/UIKit.h>
 
+#define ARC4RANDOM_MAX      0x100000000
+#define FEET_PER_METERS     3.280839895
+#define KILOMETERS_PER_MILE  1.609
+
 CGFloat distanceInMilesFromLatitude1(CGFloat lat1, CGFloat long1, CGFloat lat2, CGFloat long2);
 CGFloat kilometersToMiles(CGFloat kilometers);
 CGFloat milesToKilometers(CGFloat miles);

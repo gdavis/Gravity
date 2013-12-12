@@ -26,12 +26,6 @@
 #include "math.h"
 #include "stdlib.h"
 
-
-#define ARC4RANDOM_MAX      0x100000000
-#define FEET_PER_METERS     3.280839895
-
-#define KILOMETERS_PER_MILE  1.609
-
 CGFloat distanceInMilesFromLatitude1(CGFloat lat1, CGFloat long1, CGFloat lat2, CGFloat long2)
 {
     /*

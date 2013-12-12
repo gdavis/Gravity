@@ -56,18 +56,18 @@
 
 + (UIColor *)randomColor
 {
-    CGFloat red =  (CGFloat)random()/(CGFloat)RAND_MAX;
-    CGFloat blue = (CGFloat)random()/(CGFloat)RAND_MAX;
-    CGFloat green = (CGFloat)random()/(CGFloat)RAND_MAX;
+    CGFloat red =  (CGFloat)arc4random()/(CGFloat)ARC4RANDOM_MAX;
+    CGFloat blue = (CGFloat)arc4random()/(CGFloat)ARC4RANDOM_MAX;
+    CGFloat green = (CGFloat)arc4random()/(CGFloat)ARC4RANDOM_MAX;
     return [UIColor colorWithRed:red green:green blue:blue alpha:1.f];
 }
 
 
 + (UIColor *)randomColorWithAlpha:(CGFloat)alpha
 {
-    CGFloat red =  (CGFloat)random()/(CGFloat)RAND_MAX;
-    CGFloat blue = (CGFloat)random()/(CGFloat)RAND_MAX;
-    CGFloat green = (CGFloat)random()/(CGFloat)RAND_MAX;
+    CGFloat red =  (CGFloat)arc4random()/(CGFloat)ARC4RANDOM_MAX;
+    CGFloat blue = (CGFloat)arc4random()/(CGFloat)ARC4RANDOM_MAX;
+    CGFloat green = (CGFloat)arc4random()/(CGFloat)ARC4RANDOM_MAX;
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
