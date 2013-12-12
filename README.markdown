@@ -1,4 +1,4 @@
-# Gravity
+## Gravity
 Authored by [Grant Davis](http://www.grantdavisinteractive.com).
 
 ======================
@@ -12,7 +12,7 @@ It includes additions for view management...
   (custom frame management and debug mode)
 * [UIView+GDIAnimation](https://github.com/atomos86/Gravity/blob/master/Gravity/UIView%2BGDIAnimation.h)
   (fadeIn/fadeOut animations)
-* [UIColor+GDIAditions](https://github.com/atomos86/Gravity/blob/master/Gravity/UIColor%2BGDIAdditions.h)
+* [UIColor+GDIAdditions](https://github.com/atomos86/Gravity/blob/master/Gravity/UIColor%2BGDIAdditions.h)
   (color interpolation and custom initializers)
 
 Working with data...
