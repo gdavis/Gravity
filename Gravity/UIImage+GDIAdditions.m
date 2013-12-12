@@ -101,14 +101,21 @@
     UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0);
     
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGRect imageRect = CGRectMake(0, 0, self.size.width, self.size.height);
+    CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
     
-    // then use the image as a mask to fill a color in.
-    if (useAlphaMask) CGContextClipToMask(context, imageRect, [self CGImage]);
+    CGContextScaleCTM(context, 1, -1);
+    CGContextTranslateCTM(context, 0, -rect.size.height);
     
-    // apply tint color
-    [color set];
-    CGContextFillRect(context, imageRect);
+    // draw tint color
+    CGContextSetBlendMode(context, kCGBlendModeNormal);
+    [color setFill];
+    CGContextFillRect(context, rect);
+    
+    // mask by alpha values of original image
+    if (useAlphaMask) {
+        CGContextSetBlendMode(context, kCGBlendModeDestinationIn);
+        CGContextDrawImage(context, rect, self.CGImage);
+    }
     
     // create and return the new image
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
