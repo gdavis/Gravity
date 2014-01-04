@@ -40,7 +40,7 @@
 - (void)testIsiOS7
 {
     BOOL isiOS7 = [UIDevice isOS7OrLater];
-    BOOL expectedValue = floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1;
+    BOOL expectedValue = !floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1;
     XCTAssertTrue(expectedValue == isiOS7, @"iOS7 flag does not match expected value");
 }
 
