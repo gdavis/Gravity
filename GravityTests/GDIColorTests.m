@@ -90,4 +90,40 @@
                   && (expectedAlpha == actualAlpha), @"Expected color components do not match result components.");
 }
 
+
+- (BOOL)isValue:(CGFloat)value betweenStart:(CGFloat)start end:(CGFloat)end
+{
+    return value >= start && value <= end;
+}
+
+
+- (void)testRandomColor
+{
+    UIColor *randomColor = [UIColor randomColor];
+    CGFloat actualRed;
+    CGFloat actualGreen;
+    CGFloat actualBlue;
+    CGFloat actualAlpha;
+    [randomColor getRed:&actualRed green:&actualGreen blue:&actualBlue alpha:&actualAlpha];
+    XCTAssertTrue([self isValue:actualRed betweenStart:0.f end:1.f], @"Unexpected color components");
+    XCTAssertTrue([self isValue:actualBlue betweenStart:0.f end:1.f], @"Unexpected color components");
+    XCTAssertTrue([self isValue:actualGreen betweenStart:0.f end:1.f], @"Unexpected color components");
+    XCTAssertTrue(actualAlpha == 1.f, @"Unexpected color components");
+}
+
+- (void)testRandomColorWithAlpha
+{
+    CGFloat expectedAlpha = .645f;
+    UIColor *randomColor = [UIColor randomColorWithAlpha:expectedAlpha];
+    CGFloat actualRed;
+    CGFloat actualGreen;
+    CGFloat actualBlue;
+    CGFloat actualAlpha;
+    [randomColor getRed:&actualRed green:&actualGreen blue:&actualBlue alpha:&actualAlpha];
+    XCTAssertTrue([self isValue:actualRed betweenStart:0.f end:1.f], @"Unexpected color components");
+    XCTAssertTrue([self isValue:actualBlue betweenStart:0.f end:1.f], @"Unexpected color components");
+    XCTAssertTrue([self isValue:actualGreen betweenStart:0.f end:1.f], @"Unexpected color components");
+    XCTAssertTrue(actualAlpha == expectedAlpha, @"Unexpected color components");
+}
+
 @end
