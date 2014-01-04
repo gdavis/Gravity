@@ -1,5 +1,6 @@
 # Gravity - An iOS Toolkit 
 [![Build Status](https://travis-ci.org/gdavis/Gravity.png?branch=master)](https://travis-ci.org/gdavis/Gravity)
+
 Authored by [Grant Davis](http://www.grantdavisinteractive.com).
 
 Gravity is a collection of categories, components, and utility methods
