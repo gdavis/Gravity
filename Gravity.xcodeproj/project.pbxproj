@@ -61,6 +61,7 @@
 		77850A2B16F8E7A300006A35 /* GDIServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 77850A2916F8E7A300006A35 /* GDIServer.m */; };
 		77A1CE441877C28800550F4C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A1CE431877C28800550F4C /* XCTest.framework */; };
 		77A1CE451877C30A00550F4C /* GDIColorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7763238E185E8C9C0093EC82 /* GDIColorTests.m */; };
+		77A1CE471877CB9800550F4C /* GDIDeviceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A1CE461877CB9800550F4C /* GDIDeviceTests.m */; };
 		77C64BBB158FCC5D00D18066 /* GDIBoundTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C64BB9158FCC5D00D18066 /* GDIBoundTextField.m */; };
 		77CB6FB216ACA806003BCA38 /* GDIPageIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CB6FB016ACA806003BCA38 /* GDIPageIndicator.m */; };
 		77CE14FE169B7F8100C7F7F2 /* UIApplication+GDIAddtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CE14FC169B7F8100C7F7F2 /* UIApplication+GDIAddtions.m */; };
@@ -179,6 +180,8 @@
 		77850A2816F8E7A300006A35 /* GDIServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIServer.h; sourceTree = "<group>"; };
 		77850A2916F8E7A300006A35 /* GDIServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIServer.m; sourceTree = "<group>"; };
 		77A1CE431877C28800550F4C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		77A1CE461877CB9800550F4C /* GDIDeviceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIDeviceTests.m; sourceTree = "<group>"; };
+		77A1CE481877CC9900550F4C /* GravityTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GravityTests-Prefix.pch"; sourceTree = "<group>"; };
 		77C64BB8158FCC5D00D18066 /* GDIBoundTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIBoundTextField.h; sourceTree = "<group>"; };
 		77C64BB9158FCC5D00D18066 /* GDIBoundTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIBoundTextField.m; sourceTree = "<group>"; };
 		77CB6FAF16ACA806003BCA38 /* GDIPageIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIPageIndicator.h; sourceTree = "<group>"; };
@@ -352,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				7763238E185E8C9C0093EC82 /* GDIColorTests.m */,
+				77A1CE461877CB9800550F4C /* GDIDeviceTests.m */,
 				77DAEC6D15790DE80035EFC5 /* Supporting Files */,
 			);
 			path = GravityTests;
@@ -362,6 +366,7 @@
 			children = (
 				77DAEC6E15790DE80035EFC5 /* GravityTests-Info.plist */,
 				77DAEC6F15790DE80035EFC5 /* InfoPlist.strings */,
+				77A1CE481877CC9900550F4C /* GravityTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -611,6 +616,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77A1CE471877CB9800550F4C /* GDIDeviceTests.m in Sources */,
 				77A1CE451877C30A00550F4C /* GDIColorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -697,10 +703,13 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Gravity/Gravity-Prefix.pch";
+				GCC_PREFIX_HEADER = "GravityTests/GravityTests-Prefix.pch";
 				INFOPLIST_FILE = "GravityTests/GravityTests-Info.plist";
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "AdHoc Distribution";
@@ -822,10 +831,13 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Gravity/Gravity-Prefix.pch";
+				GCC_PREFIX_HEADER = "GravityTests/GravityTests-Prefix.pch";
 				INFOPLIST_FILE = "GravityTests/GravityTests-Info.plist";
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -840,10 +852,13 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Gravity/Gravity-Prefix.pch";
+				GCC_PREFIX_HEADER = "GravityTests/GravityTests-Prefix.pch";
 				INFOPLIST_FILE = "GravityTests/GravityTests-Info.plist";
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

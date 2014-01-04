@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "77DAEC6215790DE80035EFC5"
-               BuildableName = "GravityTests.octest"
+               BuildableName = "GravityTests.xctest"
                BlueprintName = "GravityTests"
                ReferencedContainer = "container:Gravity.xcodeproj">
             </BuildableReference>

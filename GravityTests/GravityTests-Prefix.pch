@@ -1,0 +1,9 @@
+//
+// Prefix header for all source files of the 'GravityTests' target in the 'Gravity' project
+//
+
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <Gravity/Gravity.h>
+#endif
