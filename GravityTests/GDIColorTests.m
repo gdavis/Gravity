@@ -70,4 +70,24 @@
                  && (expectedAlpha == actualAlpha), @"Expected color components do not match result components.");
 }
 
+
+- (void)testRGBColorWithDivisor
+{
+    CGFloat max = 255.f;
+    CGFloat expectedRed = 88.f/max;
+    CGFloat expectedGreen = 154.f/max;
+    CGFloat expectedBlue = 147.f/max;
+    CGFloat expectedAlpha = 102.f/max;
+    CGFloat actualRed;
+    CGFloat actualGreen;
+    CGFloat actualBlue;
+    CGFloat actualAlpha;
+    UIColor *color = [UIColor colorWithRed:88.f green:154.f blue:147.f alpha:102.f rgbDivisor:max];
+    [color getRed:&actualRed green:&actualGreen blue:&actualBlue alpha:&actualAlpha];
+    XCTAssertTrue((expectedRed == actualRed)
+                  && (expectedGreen == actualGreen)
+                  && (expectedBlue == actualBlue)
+                  && (expectedAlpha == actualAlpha), @"Expected color components do not match result components.");
+}
+
 @end

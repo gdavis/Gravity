@@ -49,7 +49,7 @@
 
 + (UIColor *)colorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha rgbDivisor:(CGFloat)divisor
 {
-    return [UIColor colorWithRed:red/divisor green:green/divisor blue:blue/divisor alpha:alpha];
+    return [UIColor colorWithRed:red/divisor green:green/divisor blue:blue/divisor alpha:alpha/divisor];
 }
 
 + (UIColor *)randomColor
