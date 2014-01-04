@@ -14,7 +14,6 @@ typedef enum GDIDeviceScreenSize {
     GDIDeviceScreenSize320x480 = 0,     // standard iphone, ipod touch size
     GDIDeviceScreenSize320x568,         // iphone 5
     GDIDeviceScreenSize768x1024,        // ipad
-                                        // ipad mini
     GDIDeviceScreenSizeUnknown
 } GDIDeviceScreenSize;
 
