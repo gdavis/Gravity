@@ -1,0 +1,3 @@
+language: objective-c
+xcode_project: Gravity.xcodeproj
+xcode_scheme: Gravity
