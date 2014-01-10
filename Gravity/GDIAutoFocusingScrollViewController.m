@@ -67,6 +67,7 @@
     [super viewDidLoad];
     
     // listen for keyboard events
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -78,6 +79,7 @@
 
 - (void)viewDidUnload
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
@@ -174,6 +176,14 @@
     }
 }
 
+- (void)handleKeyboardWillShow:(NSNotification *)n
+{
+    NSLog(@"handleKeyboardWillShow");
+    if (_tempView) {
+        [self scrollContentViewWithFocusOnSubview:_tempView animation:YES];
+        _tempView = nil;
+    }
+}
 
 - (void)handleKeyboardDidShow:(NSNotification *)n
 {
@@ -201,14 +211,23 @@
 {
     // resize the content scroll view so the bottom of the frame only
     // goes as high as the top of the keyboard frame, if allowed
+    NSInteger animationCurve = [[n.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
+    CGFloat animationDuration = [[n.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
     if (self.shouldResizeScrollViewWhenKeyboardIsPresent) {
-        NSInteger animationCurve = [[n.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
-        CGFloat animationDuration = [[n.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
         [UIView animateWithDuration:animationDuration
                               delay:0.f
                             options:animationCurve
                          animations:^{
                              [self restoreContentScrollViewFrame];
+                         } completion:nil];
+    }
+    
+    if (CGPointEqualToPoint(self.contentScrollView.contentOffset, _originalOffset) == NO) {
+        [UIView animateWithDuration:animationDuration ? animationDuration : .25f
+                              delay:0.f
+                            options:animationCurve
+                         animations:^{
+                             self.contentScrollView.contentOffset = _originalOffset;
                          } completion:nil];
     }
 }
@@ -290,7 +309,17 @@
         CGPoint finalOffset = CGPointMake(0, currentOffset.y - dy);
         
         // set new offset
-        [self.contentScrollView setContentOffset:finalOffset animated:animate];
+        if (animate) {
+            [UIView animateWithDuration:_animationDuration ? _animationDuration : .25f
+                                  delay:0.f
+                                options:0
+                             animations:^{
+                                 self.contentScrollView.contentOffset = finalOffset;
+                             } completion:nil];
+        }
+        else {
+            self.contentScrollView.contentOffset = finalOffset;
+        }
     }
     
     // resize the content scroll view so the bottom of the frame only
@@ -298,9 +327,9 @@
     if (self.shouldResizeScrollViewWhenKeyboardIsPresent) {
         
         if (animate) {
-            [UIView animateWithDuration:_animationDuration ? _animationDuration : .25f 
-                                  delay:0.f 
-                                options:0  
+            [UIView animateWithDuration:_animationDuration ? _animationDuration : .25f
+                                  delay:0.f
+                                options:0
                              animations:^{
                                  self.contentScrollView.frameHeight = viewableArea.size.height;
                              } completion:nil];
@@ -360,7 +389,9 @@
 - (void)restoreContentScrollViewFrame
 {    
     // restore scroll frame
-    self.contentScrollView.frame = self.referenceView.frame;
+    if (self.shouldResizeScrollViewWhenKeyboardIsPresent) {
+        self.contentScrollView.frame = self.referenceView.frame;
+    }
 }
 
 
