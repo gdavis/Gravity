@@ -25,7 +25,6 @@
 + (GDIDeviceScreenSize)deviceScreenSize
 {
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
-    NSLog(@"screen size: %@", NSStringFromCGSize(screenSize));
     if (CGSizeEqualToSize(screenSize, CGSizeMake(320.f, 480.f))) {
         return GDIDeviceScreenSize320x480;
     }
