@@ -19,7 +19,11 @@ NSString * const GDIKeyboardDidUndockNotification = @"GDIKeyboardDidUndockNotifi
     if (self) {
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(handleKeyboardFrameChange:)
-                                                     name:UIKeyboardDidChangeFrameNotification
+                                                     name:UIKeyboardWillShowNotification
+                                                   object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(handleKeyboardFrameChange:)
+                                                     name:UIKeyboardWillHideNotification
                                                    object:nil];
     }
     return self;
@@ -34,8 +38,13 @@ NSString * const GDIKeyboardDidUndockNotification = @"GDIKeyboardDidUndockNotifi
 - (void)handleKeyboardFrameChange:(NSNotification *)n
 {
     CGRect endKeyboardFrame = [[[n userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    [self updateWithKeyboardFrame:endKeyboardFrame];
+}
+
+
+- (void)updateWithKeyboardFrame:(CGRect)endKeyboardFrame
+{
     UIView *rootView = [[[[UIApplication sharedApplication] keyWindow] rootViewController] view];
-    
     _keyboardFrame = endKeyboardFrame;
     
     // first check to see if the keyboard intersects the main window.
