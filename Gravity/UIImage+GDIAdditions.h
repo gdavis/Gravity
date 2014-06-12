@@ -33,14 +33,8 @@
 
 
 // returns an image with a tint color applied over the top if it
-//- (UIImage *)imageWithTintColor:(UIColor *)color;
-//- (UIImage *)imageWithTintColor:(UIColor *)color useImageAlpha:(BOOL)useAlphaMask;
-
-- (UIImage *)imageMaskedToAlphaChannelWithTintColor:(UIColor *)tintColor;
-
-- (UIImage *)imageOverlayedWithTintColor:(UIColor *)tintColor;
-
-- (UIImage *)imageWithTintColor:(UIColor *)tintColor blendMode:(CGBlendMode)blendMode maskAlpha:(BOOL)maskAlpha;
+- (UIImage *)imageWithTintColor:(UIColor *)color;
+- (UIImage *)imageWithTintColor:(UIColor *)tintColor useImageAlpha:(BOOL)useImageAlpha;
 
 
 

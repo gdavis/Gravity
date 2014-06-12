@@ -89,13 +89,13 @@
     return resultUIImage;
 }
 
-/*
 - (UIImage *)imageWithTintColor:(UIColor *)color
 {
     return [self imageWithTintColor:color useImageAlpha:YES];
 }
 
 
+/*
 - (UIImage *)imageWithTintColor:(UIColor *)color useImageAlpha:(BOOL)useAlphaMask
 {
     UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0);
@@ -127,15 +127,63 @@
 */
 
 
-- (UIImage *)imageMaskedToAlphaChannelWithTintColor:(UIColor *)tintColor
+- (UIImage *)imageWithTintColor:(UIColor *)tintColor useImageAlpha:(BOOL)useImageAlpha
 {
-    return [self imageWithTintColor:tintColor blendMode:kCGBlendModeDestinationIn maskAlpha:YES];
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0f);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextTranslateCTM(context, 0, self.size.height);
+    CGContextScaleCTM(context, 1.0, -1.0);
+    
+    // tint code...
+    
+    CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
+    
+    if (useImageAlpha) {
+        // draw black background to preserve color of transparent pixels
+        CGContextSetBlendMode(context, kCGBlendModeNormal);
+        [[UIColor blackColor] setFill];
+        CGContextFillRect(context, rect);
+        
+        // draw original image
+        CGContextSetBlendMode(context, kCGBlendModeNormal);
+        CGContextDrawImage(context, rect, self.CGImage);
+        
+        // tint image (loosing alpha) - the luminosity of the original image is preserved
+        CGContextSetBlendMode(context, kCGBlendModeColor);
+        [tintColor setFill];
+        CGContextFillRect(context, rect);
+        
+        // mask by alpha values of original image
+        CGContextSetBlendMode(context, kCGBlendModeDestinationIn);
+        CGContextDrawImage(context, rect, self.CGImage);
+    }
+    else {
+        // draw tint color
+        CGContextSetBlendMode(context, kCGBlendModeNormal);
+        [tintColor setFill];
+        CGContextFillRect(context, rect);
+        
+        // replace luminosity of background (ignoring alpha)
+        CGContextSetBlendMode(context, kCGBlendModeLuminosity);
+        CGContextDrawImage(context, rect, self.CGImage);
+        
+        // mask by alpha values of original image
+        CGContextSetBlendMode(context, kCGBlendModeDestinationIn);
+        CGContextDrawImage(context, rect, self.CGImage);
+    }
+    
+    // ...end tint code
+    
+    UIImage *tintedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return tintedImage;
 }
 
-
-- (UIImage *)imageOverlayedWithTintColor:(UIColor *)tintColor
+- (UIImage *)grayscaleImageTintedWithColor:(UIColor *)tintColor useImageAlpha:(BOOL)useImageAlpha
 {
-    return [self imageWithTintColor:tintColor blendMode:kCGBlendModeOverlay maskAlpha:YES];
+    return self;
 }
 
 
