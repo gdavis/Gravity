@@ -89,7 +89,7 @@
     return resultUIImage;
 }
 
-
+/*
 - (UIImage *)imageWithTintColor:(UIColor *)color
 {
     return [self imageWithTintColor:color useImageAlpha:YES];
@@ -123,6 +123,41 @@
     UIGraphicsEndImageContext();
     
     return  newImage;
+}
+*/
+
+
+- (UIImage *)imageMaskedToAlphaChannelWithTintColor:(UIColor *)tintColor
+{
+    return [self imageWithTintColor:tintColor blendMode:kCGBlendModeDestinationIn maskAlpha:YES];
+}
+
+
+- (UIImage *)imageOverlayedWithTintColor:(UIColor *)tintColor
+{
+    return [self imageWithTintColor:tintColor blendMode:kCGBlendModeOverlay maskAlpha:YES];
+}
+
+
+- (UIImage *)imageWithTintColor:(UIColor *)tintColor blendMode:(CGBlendMode)blendMode maskAlpha:(BOOL)maskAlpha
+{
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0f);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
+
+    CGContextTranslateCTM(context, 0, self.size.height);
+    CGContextScaleCTM(context, 1.0, -1.0);
+    
+    // tint code...
+    
+    
+    // ...end tint code
+    
+    
+    UIImage *tintedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return tintedImage;
 }
 
 

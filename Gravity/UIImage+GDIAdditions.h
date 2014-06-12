@@ -30,9 +30,21 @@
 // returns an image converted to grayscale
 - (UIImage *)imageByConvertingToGrayscale;
 
+
+
 // returns an image with a tint color applied over the top if it
-- (UIImage *)imageWithTintColor:(UIColor *)color;
-- (UIImage *)imageWithTintColor:(UIColor *)color useImageAlpha:(BOOL)useAlphaMask;
+//- (UIImage *)imageWithTintColor:(UIColor *)color;
+//- (UIImage *)imageWithTintColor:(UIColor *)color useImageAlpha:(BOOL)useAlphaMask;
+
+- (UIImage *)imageMaskedToAlphaChannelWithTintColor:(UIColor *)tintColor;
+
+- (UIImage *)imageOverlayedWithTintColor:(UIColor *)tintColor;
+
+- (UIImage *)imageWithTintColor:(UIColor *)tintColor blendMode:(CGBlendMode)blendMode maskAlpha:(BOOL)maskAlpha;
+
+
+
+
 
 // returns an image of the receiever cropped to the specified rectangle
 - (UIImage *)imageCroppedToRect:(CGRect)rect;
