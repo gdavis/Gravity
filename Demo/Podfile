@@ -1,0 +1,4 @@
+platform :ios, 6.0
+xcodeproj 'GravityDemo.xcodeproj'
+
+pod 'Gravity', :path => '../Gravity.podspec'
