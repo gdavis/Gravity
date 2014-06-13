@@ -25,36 +25,42 @@
 #import "UIColor+GDIAdditions.h"
 #import "GDIMath.h"
 
+
 @implementation UIColor (GDIAdditions)
+
 
 + (UIColor *)colorWithRGBHex:(uint)hex
 {
-    return [UIColor colorWithRGBHex:hex alpha:1.f];
+    return [UIColor colorWithRGBHex:hex alpha:1.0f];
 }
+
 
 + (UIColor *)colorWithRGBHex:(uint)hex alpha:(CGFloat)alpha
 {
-    return [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16))/255.0 
-                           green:((float)((hex & 0xFF00) >> 8))/255.0 
+    return [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16))/255.0f
+                           green:((float)((hex & 0xFF00) >> 8))/255.0f
                             blue:((float)(hex & 0xFF))/255.0 alpha:alpha];
 }
 
+
 + (UIColor *)colorWithARGBHex:(uint)hex
 {
-    float alpha = ((float)((hex & 0xFF000000) >> 24))/255.0;
-    return [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16))/255.0 
-                           green:((float)((hex & 0xFF00) >> 8))/255.0 
-                            blue:((float)(hex & 0xFF))/255.0 alpha:alpha];
+    float alpha = ((float)((hex & 0xFF000000) >> 24))/255.0f;
+    return [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16))/255.0f
+                           green:((float)((hex & 0xFF00) >> 8))/255.0f
+                            blue:((float)(hex & 0xFF))/255.0f alpha:alpha];
 }
+
 
 + (UIColor *)colorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha rgbDivisor:(CGFloat)divisor
 {
     return [UIColor colorWithRed:red/divisor green:green/divisor blue:blue/divisor alpha:alpha/divisor];
 }
 
+
 + (UIColor *)randomColor
 {
-    return [UIColor randomColorWithAlpha:1.f];
+    return [UIColor randomColorWithAlpha:1.0f];
 }
 
 
@@ -65,6 +71,7 @@
     CGFloat green = (CGFloat)arc4random()/(CGFloat)ARC4RANDOM_MAX;
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
+
 
 + (UIColor *)interpolateBetweenColor:(UIColor *)color1 color:(UIColor *)color2 amount:(CGFloat)amount
 {
