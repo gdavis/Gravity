@@ -25,9 +25,12 @@
 #import "UIImage+GDIAdditions.h"
 #import <QuartzCore/QuartzCore.h>
 
+
 @implementation UIImage (GDIAdditions)
 
-#pragma mark - Image Manipulation
+
+#pragma mark - Coloring
+
 
 - (UIImage *)imageByConvertingToGrayscale
 {
@@ -89,46 +92,25 @@
     return resultUIImage;
 }
 
-- (UIImage *)imageWithTintColor:(UIColor *)color
+
+- (UIImage *)imageWithColor:(UIColor *)color
 {
-    return [self imageWithTintColor:color useImageAlpha:YES];
+    return [self imageWithColor:color useImageAlpha:YES];
 }
 
 
-/*
-- (UIImage *)imageWithTintColor:(UIColor *)color useImageAlpha:(BOOL)useAlphaMask
+- (UIImage *)imageWithColor:(UIColor *)color useImageAlpha:(BOOL)useImageAlpha
 {
-    UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0);
+    return [self imageWithColor:color blendMode:kCGBlendModeColor useImageAlpha:useImageAlpha];
+}
+
+
+- (UIImage *)imageWithColor:(UIColor *)color blendMode:(CGBlendMode)blendMode useImageAlpha:(BOOL)useImageAlpha
+{
+    NSParameterAssert(color);
     
-    CGContextRef context = UIGraphicsGetCurrentContext();
     CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
     
-    CGContextScaleCTM(context, 1, -1);
-    CGContextTranslateCTM(context, 0, -rect.size.height);
-    
-    // draw tint color
-    CGContextSetBlendMode(context, kCGBlendModeNormal);
-    [color setFill];
-    CGContextFillRect(context, rect);
-    
-    // mask by alpha values of original image
-    if (useAlphaMask) {
-        CGContextSetBlendMode(context, kCGBlendModeDestinationIn);
-        CGContextDrawImage(context, rect, self.CGImage);
-    }
-    
-    // create and return the new image
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
-    
-    return  newImage;
-}
-*/
-
-
-- (UIImage *)imageWithTintColor:(UIColor *)tintColor useImageAlpha:(BOOL)useImageAlpha
-{
     UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0f);
     CGContextRef context = UIGraphicsGetCurrentContext();
     
@@ -136,38 +118,25 @@
     CGContextScaleCTM(context, 1.0, -1.0);
     
     // tint code...
-    
-    CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
     
     if (useImageAlpha) {
         // draw black background to preserve color of transparent pixels
         CGContextSetBlendMode(context, kCGBlendModeNormal);
         [[UIColor blackColor] setFill];
         CGContextFillRect(context, rect);
-        
-        // draw original image
-        CGContextSetBlendMode(context, kCGBlendModeNormal);
-        CGContextDrawImage(context, rect, self.CGImage);
-        
-        // tint image (loosing alpha) - the luminosity of the original image is preserved
-        CGContextSetBlendMode(context, kCGBlendModeColor);
-        [tintColor setFill];
-        CGContextFillRect(context, rect);
-        
-        // mask by alpha values of original image
-        CGContextSetBlendMode(context, kCGBlendModeDestinationIn);
-        CGContextDrawImage(context, rect, self.CGImage);
     }
-    else {
-        // draw tint color
-        CGContextSetBlendMode(context, kCGBlendModeNormal);
-        [tintColor setFill];
-        CGContextFillRect(context, rect);
-        
-        // replace luminosity of background (ignoring alpha)
-        CGContextSetBlendMode(context, kCGBlendModeLuminosity);
-        CGContextDrawImage(context, rect, self.CGImage);
-        
+    
+    // draw original image
+    CGContextSetBlendMode(context, kCGBlendModeNormal);
+    CGContextDrawImage(context, rect, self.CGImage);
+    
+    // draw color with blend mode
+    // tint image (loosing alpha) - the luminosity of the original image is preserved
+    CGContextSetBlendMode(context, blendMode);
+    [color setFill];
+    CGContextFillRect(context, rect);
+    
+    if (useImageAlpha) {
         // mask by alpha values of original image
         CGContextSetBlendMode(context, kCGBlendModeDestinationIn);
         CGContextDrawImage(context, rect, self.CGImage);
@@ -175,38 +144,14 @@
     
     // ...end tint code
     
-    UIImage *tintedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIImage *blendedImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    return tintedImage;
-}
-
-- (UIImage *)grayscaleImageTintedWithColor:(UIColor *)tintColor useImageAlpha:(BOOL)useImageAlpha
-{
-    return self;
+    return blendedImage;
 }
 
 
-- (UIImage *)imageWithTintColor:(UIColor *)tintColor blendMode:(CGBlendMode)blendMode maskAlpha:(BOOL)maskAlpha
-{
-    UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0f);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
-
-    CGContextTranslateCTM(context, 0, self.size.height);
-    CGContextScaleCTM(context, 1.0, -1.0);
-    
-    // tint code...
-    
-    
-    // ...end tint code
-    
-    
-    UIImage *tintedImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return tintedImage;
-}
+#pragma mark - Cropping
 
 
 - (UIImage *)imageCroppedToRect:(CGRect)rect
@@ -224,6 +169,9 @@
     UIGraphicsEndImageContext();
     return image;
 }
+
+
+#pragma mark - Scaling
 
 
 - (UIImage *)imageByScalingToSize:(CGSize)targetSize
@@ -278,8 +226,6 @@
 	UIImage *sourceImage = self;
 	UIImage *newImage = nil;
 	
-    
-	
 	CGSize imageSize = sourceImage.size;
 	CGFloat width = imageSize.width;
 	CGFloat height = imageSize.height;
@@ -321,7 +267,6 @@
         }
 	}
 	
-	
 	// this is actually the interesting part:
 	
 	UIGraphicsBeginImageContextWithOptions(targetSize, NO, 0.f);
@@ -338,15 +283,15 @@
 	
 	if(newImage == nil) NSLog(@"could not scale image");
 	
-	
 	return newImage ;
 }
 
 
-#pragma mark Convenience Functions for Image Picking
+#pragma mark - Rotation
 
-- (UIImage *)fixOrientation {
-    
+
+- (UIImage *)fixOrientation
+{
     // No-op if the orientation is already correct
     if (self.imageOrientation == UIImageOrientationUp) return self;
     
@@ -424,6 +369,7 @@
     CGImageRelease(cgimg);
     return img;
 }
+
 
 + (UIImage *)rotateImage:(UIImage*)img imageOrientation:(UIImageOrientation)orient
 {
@@ -524,6 +470,7 @@
 
 #pragma mark - Class Methods
 
+
 + (UIImage*)imageOfView:(UIView*)view
 {
 	UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, 0.f);
@@ -539,5 +486,6 @@
     NSString *filePath = [[NSBundle mainBundle] pathForResource:filename ofType:nil];
     return [UIImage imageWithContentsOfFile:filePath];
 }
+
 
 @end

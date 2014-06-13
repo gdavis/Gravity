@@ -24,21 +24,19 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface UIImage (GDIAdditions)
+
 
 // adopted from: http://stackoverflow.com/a/1300589/189292
 // returns an image converted to grayscale
 - (UIImage *)imageByConvertingToGrayscale;
 
-
-
-// returns an image with a tint color applied over the top if it
-- (UIImage *)imageWithTintColor:(UIColor *)color;
-- (UIImage *)imageWithTintColor:(UIColor *)tintColor useImageAlpha:(BOOL)useImageAlpha;
-
-
-
-
+// adopted from: http://stackoverflow.com/a/7377827/189292
+// returns an image of the receiver and a custom color drawn using the specified blend mode and cropped to the image's alpha channel. defaults to kCGBlendModeColor when none is specified
+- (UIImage *)imageWithColor:(UIColor *)color;
+- (UIImage *)imageWithColor:(UIColor *)color useImageAlpha:(BOOL)useImageAlpha;
+- (UIImage *)imageWithColor:(UIColor *)color blendMode:(CGBlendMode)blendMode useImageAlpha:(BOOL)useImageAlpha;
 
 // returns an image of the receiever cropped to the specified rectangle
 - (UIImage *)imageCroppedToRect:(CGRect)rect;
