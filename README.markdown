@@ -1,6 +1,6 @@
 # Gravity - An iOS Toolkit 
 [![Build Status](https://travis-ci.org/gdavis/Gravity.png?branch=master)](https://travis-ci.org/gdavis/Gravity)
-[![Pod version](https://badge.fury.io/co/Gravity.png)](http://badge.fury.io/co/Gravity)
+[![Pod version](https://cocoapod-badges.herokuapp.com/v/Gravity/badge.png)](https://github.com/gdavis/Gravity)
 
 Authored by [Grant Davis](http://www.grantdavisinteractive.com).
 
