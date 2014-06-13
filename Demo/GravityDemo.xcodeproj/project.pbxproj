@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7703B458194A478D00B48A15 /* quintessence_of_transmutation-grayscale.png in Resources */ = {isa = PBXBuildFile; fileRef = 7703B457194A478D00B48A15 /* quintessence_of_transmutation-grayscale.png */; };
+		7703B45B194B441F00B48A15 /* item-set-items-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7703B459194B441F00B48A15 /* item-set-items-btn.png */; };
+		7703B45C194B441F00B48A15 /* item-set-items-btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7703B45A194B441F00B48A15 /* item-set-items-btn@2x.png */; };
 		770DADBF194A33FA00224FF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 770DADBE194A33FA00224FF4 /* Foundation.framework */; };
 		770DADC1194A33FA00224FF4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 770DADC0194A33FA00224FF4 /* CoreGraphics.framework */; };
 		770DADC3194A33FA00224FF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 770DADC2194A33FA00224FF4 /* UIKit.framework */; };
@@ -43,6 +46,9 @@
 
 /* Begin PBXFileReference section */
 		6F23D23A89E044EA85256B7C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7703B457194A478D00B48A15 /* quintessence_of_transmutation-grayscale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "quintessence_of_transmutation-grayscale.png"; sourceTree = "<group>"; };
+		7703B459194B441F00B48A15 /* item-set-items-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-set-items-btn.png"; sourceTree = "<group>"; };
+		7703B45A194B441F00B48A15 /* item-set-items-btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "item-set-items-btn@2x.png"; sourceTree = "<group>"; };
 		770DADBB194A33FA00224FF4 /* GravityDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GravityDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		770DADBE194A33FA00224FF4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		770DADC0194A33FA00224FF4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -149,7 +155,10 @@
 		770DADC5194A33FA00224FF4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7703B459194B441F00B48A15 /* item-set-items-btn.png */,
+				7703B45A194B441F00B48A15 /* item-set-items-btn@2x.png */,
 				770DADFA194A3B8300224FF4 /* quintessence_of_transmutation.png */,
+				7703B457194A478D00B48A15 /* quintessence_of_transmutation-grayscale.png */,
 				770DADFE194A3D2600224FF4 /* Cassiopeia_Square_0_greyscale.png */,
 				770DADFC194A3BB800224FF4 /* Cassiopeia_Square_0.png */,
 				770DAE00194A3DA400224FF4 /* ability-point-frame-grayscale.png */,
@@ -273,9 +282,12 @@
 				770DADD5194A33FA00224FF4 /* Main_iPad.storyboard in Resources */,
 				770DAE02194A3DA400224FF4 /* ability-point-frame-grayscale.png in Resources */,
 				770DADFD194A3BB800224FF4 /* Cassiopeia_Square_0.png in Resources */,
+				7703B458194A478D00B48A15 /* quintessence_of_transmutation-grayscale.png in Resources */,
+				7703B45B194B441F00B48A15 /* item-set-items-btn.png in Resources */,
 				770DADDA194A33FA00224FF4 /* Images.xcassets in Resources */,
 				770DADD2194A33FA00224FF4 /* Main_iPhone.storyboard in Resources */,
 				770DADC9194A33FA00224FF4 /* InfoPlist.strings in Resources */,
+				7703B45C194B441F00B48A15 /* item-set-items-btn@2x.png in Resources */,
 				770DAE03194A3DA400224FF4 /* ability-point-frame.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
