@@ -2,3 +2,6 @@ language: objective-c
 xcode_project: Gravity.xcodeproj
 xcode_scheme: Gravity
 xcode_sdk: iphonesimulator
+before_script:
+    - brew update
+    - brew upgrade xctool
