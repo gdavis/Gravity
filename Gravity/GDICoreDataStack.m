@@ -181,7 +181,13 @@ NSString * const CORE_DATA_STACK_DID_REBUILD_DATABASE = @"CORE_DATA_STACK_DID_RE
     NSManagedObjectContext *moc = [notification object];
     if (moc != _mainContext && moc.persistentStoreCoordinator == _mainContext.persistentStoreCoordinator) {
         [_mainContext performBlock:^{
-            [_mainContext mergeChangesFromContextDidSaveNotification:notification];
+            @try {
+                [_mainContext mergeChangesFromContextDidSaveNotification:notification];
+            }
+            @catch (NSException *exception) {
+                NSLog(@"****** Caught an exception while merging changes from context did save notification: \n%@", exception);
+            }
+            @finally {}
         }];
     }
 }
