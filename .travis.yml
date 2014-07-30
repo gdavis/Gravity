@@ -4,4 +4,4 @@ xcode_scheme: Gravity
 xcode_sdk: iphonesimulator
 before_script:
     - brew update
-    - brew upgrade xctool
+#    - brew upgrade xctool
