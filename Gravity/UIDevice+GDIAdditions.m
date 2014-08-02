@@ -95,15 +95,17 @@
     return platform;
 }
 
+
 + (BOOL)isOS7OrLater
 {
-    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
-        // Load resources for iOS 6.1 or earlier
-        return NO;
-    } else {
-        // Load resources for iOS 7 or later
-        return YES;
-    }
+    return [self isOSGreaterOrEqualToVersion:@"7.0"];
 }
+
+
++ (BOOL)isOSGreaterOrEqualToVersion:(NSString *)version
+{
+    return [[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] != NSOrderedAscending;
+}
+
 
 @end

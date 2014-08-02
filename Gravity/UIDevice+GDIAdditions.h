@@ -27,5 +27,6 @@ typedef enum GDIDeviceScreenSize {
 + (NSString *)platformString;
 
 + (BOOL)isOS7OrLater;
++ (BOOL)isOSGreaterOrEqualToVersion:(NSString *)version;
 
 @end
