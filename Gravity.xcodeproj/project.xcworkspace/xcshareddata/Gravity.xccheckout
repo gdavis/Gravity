@@ -10,29 +10,29 @@
 	<string>Gravity</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>B54EFC69-7B97-441E-8547-FF4643B0EBB4</key>
-		<string>ssh://github.com/gdavis/Gravity.git</string>
+		<key>1109C243DE63CF4106F76093EDB23CBFBCB6B992</key>
+		<string>https://github.com/dwieringa/Gravity.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Gravity/Gravity.xcodeproj/project.xcworkspace</string>
+	<string>Gravity.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>B54EFC69-7B97-441E-8547-FF4643B0EBB4</key>
-		<string>../../..</string>
+		<key>1109C243DE63CF4106F76093EDB23CBFBCB6B992</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/gdavis/Gravity.git</string>
+	<string>https://github.com/dwieringa/Gravity.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>B54EFC69-7B97-441E-8547-FF4643B0EBB4</string>
+	<string>1109C243DE63CF4106F76093EDB23CBFBCB6B992</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>B54EFC69-7B97-441E-8547-FF4643B0EBB4</string>
+			<string>1109C243DE63CF4106F76093EDB23CBFBCB6B992</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Gravity</string>
 		</dict>
