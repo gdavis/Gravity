@@ -93,14 +93,14 @@
     mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"-" withString:@""];
     mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"+" withString:@""];
     
-    int length = [mobileNumber length];
+    NSUInteger length = [mobileNumber length];
     if(length > 10) {
         mobileNumber = [mobileNumber substringFromIndex: length-10];
     }
     return mobileNumber;
 }
 
-
+//TODO: Why doesn't getLength return a NSUInteger?
 + (int)getLength:(NSString*)mobileNumber
 {
     mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"(" withString:@""];
@@ -109,7 +109,7 @@
     mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"-" withString:@""];
     mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"+" withString:@""];
     
-    int length = [mobileNumber length];
+    int length = (int)[mobileNumber length];
     return length;
 }
 
