@@ -1,25 +1,31 @@
 //
 //  GDICoreDataStack.h
-//  Gravity
+//  GDICoreDataKit
 //
 //  Created by Grant Davis on 9/12/13.
-//  Copyright (c) 2013 Grant Davis Interactive, LLC. All rights reserved.
+//  Copyright (c) 2014 Grant Davis Interactive, LLC. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-extern NSString * const CORE_DATA_STACK_DID_REBUILD_DATABASE;
+
+extern NSString * const GDICoreDataStackDidRebuildDatabase;
+
 
 @interface GDICoreDataStack : NSObject
 
+
 /**
  *  Main CoreData stack properties
+ *  TODO: finish documentation for each
  */
 @property (readonly, strong, nonatomic) NSManagedObjectContext *mainContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (readonly, strong, nonatomic) NSURL *storeURL;
+@property (nonatomic, readonly, getter=isReady) BOOL ready;
+
 
 /**
  *  If the setupCoreDataStackWithCompletion method fails during its first attempt to add the
@@ -27,6 +33,7 @@ extern NSString * const CORE_DATA_STACK_DID_REBUILD_DATABASE;
  *  and create a new one. Defaults to YES.
  */
 @property (nonatomic) BOOL shouldRebuildDatabaseIfPersistentStoreSetupFails;
+
 
 /**
  *  Initializes a new instance. The CoreData stack is not yet available after instantiating this object
@@ -38,6 +45,7 @@ extern NSString * const CORE_DATA_STACK_DID_REBUILD_DATABASE;
  *  @param configuration        [Optional] Option configuration name to use when creating the persistent store coordinator.
  */
 - (id)initWithStoreName:(NSString *)storeName seedName:(NSString *)seedName configuration:(NSString *)config;
+
 
 /**
  *  Initializes a new instance. The CoreData stack is not yet available after instantiating this object
@@ -53,21 +61,15 @@ extern NSString * const CORE_DATA_STACK_DID_REBUILD_DATABASE;
 
 
 /**
- *  Performs the synchronous setup of the CoreData stack on a separate background thread. This method will block
- *  until the operation has completed.
+ *  Performs the synchronous setup of the CoreData stack. This method will block the current thread
+ *  until the operation has completed. It is recommended to call this method in a background thread that
+ *  you manage.
  *
+ *  @param options    A dictionary containing key-value pairs that specifies options used when calling addPersistentStoreWithType:configuration:configurationURL:options:error: on the persistent store coordinator.
  *  @param competion a block fired at the end of the setup method while still on the background thread.
  *  @return a reference to the newly created persistent store coordinator.
  */
-- (NSPersistentStoreCoordinator *)setupCoreDataStackWithCompletion:(void (^)(BOOL success, NSError *error))completion;
-
-
-/**
- *  Performs a save operation on the main context of the core data stack. This will also catch any errors thrown
- *  by the save operation and log the error to the console.
- *  @return a boolean indicating if the save is successful. 
- */
-- (BOOL)save;
+- (NSPersistentStoreCoordinator *)setupCoreDataStackWithOptions:(NSDictionary *)options completion:(void (^)(BOOL success, NSError *error))completion;
 
 
 /** 
@@ -76,9 +78,29 @@ extern NSString * const CORE_DATA_STACK_DID_REBUILD_DATABASE;
  *
  *  @return a new context with the persistent store.
  */
-- (NSManagedObjectContext *)newContext;
-- (NSManagedObjectContext *)newContextWithMergePolicy:(id)mergePolicy;
-- (NSManagedObjectContext *)newContextWithMergePolicy:(id)mergePolicy
-                                      concurrencyType:(NSManagedObjectContextConcurrencyType)type;
+- (NSManagedObjectContext *)createPrivateContext;
+
+
+/**
+ *  Creates a new context with the stack's persistent store coordinator.
+ *
+ *  @param mergePolicy The merge policy used to configure the new context.
+ *
+ *  @return a new context configured with private queue concurrency type.
+ */
+- (NSManagedObjectContext *)createPrivateContextWithMergePolicy:(id)mergePolicy;
+
+
+/**
+ *  Creates a new context with the specified options.
+ *
+ *  @param mergePolicy The merge policy used to configure the new context.
+ *  @param type        The concurrency type used to configure the managed object context.
+ *
+ *  @return a new context
+ */
+- (NSManagedObjectContext *)createContextWithMergePolicy:(id)mergePolicy
+                                         concurrencyType:(NSManagedObjectContextConcurrencyType)type;
+
 
 @end

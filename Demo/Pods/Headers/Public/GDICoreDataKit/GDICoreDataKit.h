@@ -1,0 +1,1 @@
+../../../GDICoreDataKit/Pod/Classes/GDICoreDataKit.h

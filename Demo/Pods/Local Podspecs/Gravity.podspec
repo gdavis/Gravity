@@ -18,4 +18,8 @@ Pod::Spec.new do |s|
   s.subspec 'Color' do |ss|
    ss.dependency 'GDIColor', '~> 0.1'
   end
+  
+  s.subspec 'CoreData' do |ss|
+   ss.dependency 'GDICoreDataKit', '~> 0.1'
+  end
 end

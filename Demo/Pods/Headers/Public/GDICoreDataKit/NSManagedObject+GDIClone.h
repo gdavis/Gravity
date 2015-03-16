@@ -1,0 +1,1 @@
+../../../GDICoreDataKit/Pod/Classes/NSManagedObject+GDIClone.h

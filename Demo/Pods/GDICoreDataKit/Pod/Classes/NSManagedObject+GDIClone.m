@@ -1,12 +1,13 @@
 //
-//  NSManagedObject+Clone.m
+//  NSManagedObject+GDIClone.m
 //  Gravity
 //
 //  Created by Grant Davis on 3/18/13.
-//  Copyright (c) 2013 Grant Davis Interactive, LLC. All rights reserved.
+//  Copyright (c) 2014 Grant Davis Interactive, LLC. All rights reserved.
 //
 
-#import "NSManagedObject+Clone.h"
+#import "NSManagedObject+GDIClone.h"
+
 
 @interface NSManagedObject (ClonePrivate)
 - (NSManagedObject *)cloneInContext:(NSManagedObjectContext *)context
@@ -15,7 +16,8 @@
 @end
 
 
-@implementation NSManagedObject (Clone)
+@implementation NSManagedObject (GDIClone)
+
 
 - (NSManagedObject *)cloneShallow
 {
@@ -37,7 +39,6 @@
     
     return cloned;
 }
-
 
 
 // adopted from: http://stackoverflow.com/a/9546227
@@ -118,6 +119,7 @@
     }
     return cloned;
 }
+
 
 - (NSManagedObject *)cloneInContext:(NSManagedObjectContext *)context
                     excludeEntities:(NSArray *)namesOfEntitiesToExclude

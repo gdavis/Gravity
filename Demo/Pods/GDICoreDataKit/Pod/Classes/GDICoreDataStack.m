@@ -1,6 +1,6 @@
 //
 //  GDICoreDataStack.m
-//  Gravity
+//  GDICoreDataKit
 //
 //  Created by Grant Davis on 9/12/13.
 //  Copyright (c) 2013 Grant Davis Interactive, LLC. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import "GDICoreDataStack.h"
 
-NSString * const CORE_DATA_STACK_DID_REBUILD_DATABASE = @"CORE_DATA_STACK_DID_REBUILD_DATABASE";
+NSString * const GDICoreDataStackDidRebuildDatabase = @"GDICoreDataStackDidRebuildDatabase";
 
 @implementation GDICoreDataStack {
     NSString *_storeName;
@@ -23,6 +23,7 @@ NSString * const CORE_DATA_STACK_DID_REBUILD_DATABASE = @"CORE_DATA_STACK_DID_RE
 
 #pragma mark - Public API
 
+
 - (id)initWithStoreName:(NSString *)storeName seedName:(NSString *)seedName configuration:(NSString *)config
 {
     if (self = [super init]) {
@@ -33,6 +34,7 @@ NSString * const CORE_DATA_STACK_DID_REBUILD_DATABASE = @"CORE_DATA_STACK_DID_RE
     }
     return self;
 }
+
 
 - (id)initWithManagedObjectModel:(NSManagedObjectModel *)model storeName:(NSString *)storeName seedName:(NSString *)seedName configuration:(NSString *)config;
 {
@@ -47,7 +49,7 @@ NSString * const CORE_DATA_STACK_DID_REBUILD_DATABASE = @"CORE_DATA_STACK_DID_RE
 }
 
 
-- (NSPersistentStoreCoordinator *)setupCoreDataStackWithCompletion:(void (^)(BOOL success, NSError *error))completion
+- (NSPersistentStoreCoordinator *)setupCoreDataStackWithOptions:(NSDictionary *)options completion:(void (^)(BOOL success, NSError *error))completion
 {
     NSError *error = nil;
     if (_seedPath) {
@@ -65,8 +67,6 @@ NSString * const CORE_DATA_STACK_DID_REBUILD_DATABASE = @"CORE_DATA_STACK_DID_RE
     }
     
     if (_persistentStoreCoordinator == nil) {
-        NSDictionary *options = @{ NSMigratePersistentStoresAutomaticallyOption: @YES,
-                                   NSInferMappingModelAutomaticallyOption: @YES };
         _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
         if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
                                                        configuration:_configuration
@@ -89,7 +89,7 @@ NSString * const CORE_DATA_STACK_DID_REBUILD_DATABASE = @"CORE_DATA_STACK_DID_RE
                                                                                                  error:&error];
                     
                     if (store != nil) {
-                        [[NSNotificationCenter defaultCenter] postNotificationName:CORE_DATA_STACK_DID_REBUILD_DATABASE object:self];
+                        [[NSNotificationCenter defaultCenter] postNotificationName:GDICoreDataStackDidRebuildDatabase object:self];
                     }
                     else {
                         NSLog(@"error opening persistent store, giving up");
@@ -99,37 +99,18 @@ NSString * const CORE_DATA_STACK_DID_REBUILD_DATABASE = @"CORE_DATA_STACK_DID_RE
         }
     }
     
+    _ready = (_persistentStoreCoordinator != nil);
+    
     if (completion) {
-        completion(_persistentStoreCoordinator != nil, error);
+        completion(_ready, error);
     }
     
     return _persistentStoreCoordinator;
 }
 
 
-- (BOOL)save
-{
-    BOOL success = NO;
-    
-    NSError *error = nil;
-    @try {
-        success = [self.mainContext save:&error];
-    }
-    @catch (NSException *exception) {
-        // This handles the case of exception causing events like validation failures that would otherwise
-        // crasp the app.
-        NSLog(@"Exception in CoreData save:\n%@\nUserInfo:\n%@", exception, exception.userInfo);
-    }
-    
-    if (!success && error != nil ) {
-        NSLog(@"%@", error.localizedDescription);
-    }
-    
-    return success;
-}
-
-
 #pragma mark - Worker Methods
+
 
 - (BOOL)copySeedDatabaseIfNecessaryFromPath:(NSString *)seedPath toPath:(NSString *)storePath error:(NSError **)error
 {
@@ -148,22 +129,23 @@ NSString * const CORE_DATA_STACK_DID_REBUILD_DATABASE = @"CORE_DATA_STACK_DID_RE
 
 #pragma mark - Context
 
-- (NSManagedObjectContext *)newContext
+
+- (NSManagedObjectContext *)createPrivateContext
 {
-    return [self newContextWithMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy
-                           concurrencyType:NSPrivateQueueConcurrencyType];
+    return [self createContextWithMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy
+                              concurrencyType:NSPrivateQueueConcurrencyType];
 }
 
 
-- (NSManagedObjectContext *)newContextWithMergePolicy:(id)mergePolicy
+- (NSManagedObjectContext *)createPrivateContextWithMergePolicy:(id)mergePolicy
 {
-    return [self newContextWithMergePolicy:mergePolicy
-                           concurrencyType:NSPrivateQueueConcurrencyType];
+    return [self createContextWithMergePolicy:mergePolicy
+                              concurrencyType:NSPrivateQueueConcurrencyType];
 }
 
 
-- (NSManagedObjectContext *)newContextWithMergePolicy:(id)mergePolicy
-                                      concurrencyType:(NSManagedObjectContextConcurrencyType)type
+- (NSManagedObjectContext *)createContextWithMergePolicy:(id)mergePolicy
+                                         concurrencyType:(NSManagedObjectContextConcurrencyType)type
 {
     NSManagedObjectContext *context;
     if (self.persistentStoreCoordinator != nil) {
@@ -176,24 +158,8 @@ NSString * const CORE_DATA_STACK_DID_REBUILD_DATABASE = @"CORE_DATA_STACK_DID_RE
 }
 
 
-- (void)mergeChangesFromContextDidSaveNotification:(NSNotification *)notification
-{
-    NSManagedObjectContext *moc = [notification object];
-    if (moc != _mainContext && moc.persistentStoreCoordinator == _mainContext.persistentStoreCoordinator) {
-        [_mainContext performBlock:^{
-            @try {
-                [_mainContext mergeChangesFromContextDidSaveNotification:notification];
-            }
-            @catch (NSException *exception) {
-                NSLog(@"****** Caught an exception while merging changes from context did save notification: \n%@", exception);
-            }
-            @finally {}
-        }];
-    }
-}
-
-
 #pragma mark - Accessors
+
 
 - (NSURL *)storeURL
 {
@@ -216,16 +182,13 @@ NSString * const CORE_DATA_STACK_DID_REBUILD_DATABASE = @"CORE_DATA_STACK_DID_RE
     if (_mainContext == nil) {
         NSPersistentStoreCoordinator *coordinator = self.persistentStoreCoordinator;
         if (coordinator != nil) {
-            _mainContext = [self newContextWithMergePolicy:NSMergeByPropertyStoreTrumpMergePolicy
-                                           concurrencyType:NSMainQueueConcurrencyType];
-            [[NSNotificationCenter defaultCenter] addObserver:self
-                                                     selector:@selector(mergeChangesFromContextDidSaveNotification:)
-                                                         name:NSManagedObjectContextDidSaveNotification
-                                                       object:nil];
+            _mainContext = [self createContextWithMergePolicy:NSMergeByPropertyStoreTrumpMergePolicy
+                                              concurrencyType:NSMainQueueConcurrencyType];
         }
     }
     return _mainContext;
 }
+
 
 /**
  Returns the URL to the application's Documents directory.

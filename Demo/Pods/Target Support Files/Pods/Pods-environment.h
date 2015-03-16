@@ -12,6 +12,12 @@
 #define COCOAPODS_VERSION_MINOR_GDIColor 1
 #define COCOAPODS_VERSION_PATCH_GDIColor 0
 
+// GDICoreDataKit
+#define COCOAPODS_POD_AVAILABLE_GDICoreDataKit
+#define COCOAPODS_VERSION_MAJOR_GDICoreDataKit 0
+#define COCOAPODS_VERSION_MINOR_GDICoreDataKit 1
+#define COCOAPODS_VERSION_PATCH_GDICoreDataKit 0
+
 // Gravity
 #define COCOAPODS_POD_AVAILABLE_Gravity
 #define COCOAPODS_VERSION_MAJOR_Gravity 2
@@ -23,4 +29,10 @@
 #define COCOAPODS_VERSION_MAJOR_Gravity_Color 2
 #define COCOAPODS_VERSION_MINOR_Gravity_Color 0
 #define COCOAPODS_VERSION_PATCH_Gravity_Color 0
+
+// Gravity/CoreData
+#define COCOAPODS_POD_AVAILABLE_Gravity_CoreData
+#define COCOAPODS_VERSION_MAJOR_Gravity_CoreData 2
+#define COCOAPODS_VERSION_MINOR_Gravity_CoreData 0
+#define COCOAPODS_VERSION_PATCH_Gravity_CoreData 0
 
