@@ -58,11 +58,6 @@
 // core animation categories
 #import "CAAnimation+Blocks.h"
 
-// core data
-#import "NSManagedObject+GDIOrderedSetAccessors.h"
-#import "NSManagedObject+Clone.h"
-#import "GDIProgressiveMigration.h"
-
 // utility
 #import "GDIMath.h"
 #import "GDIPhoneNumberFormatting.h"
