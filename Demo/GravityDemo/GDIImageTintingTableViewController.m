@@ -7,6 +7,7 @@
 //
 
 #import "GDIImageTintingTableViewController.h"
+#import <GDIColor/UIColor+GDIAdditions.h>
 
 
 static NSString * const ImageCellReuseIdentifier = @"imageTintCell";

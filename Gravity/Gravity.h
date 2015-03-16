@@ -35,7 +35,6 @@
 
 // ui kit categories
 #import "UIAlertView+GDIAdditions.h"
-#import "UIColor+GDIAdditions.h"
 #import "UIDevice+GDIAdditions.h"
 #import "UIImage+GDIAdditions.h"
 #import "UIImageView+GDIAdditions.h"

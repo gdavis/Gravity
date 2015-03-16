@@ -1,0 +1,1 @@
+PODS_GRAVITY_OTHER_LDFLAGS = -l"z" -framework "CoreData" -framework "CoreGraphics" -framework "QuartzCore"
