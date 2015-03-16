@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name     = 'Gravity'
-  s.version  = '1.1.2'
-  s.platform = :ios, '5.0'
+  s.version  = '2.0.0'
+  s.platform = :ios, '6.0'
   s.license  = 'MIT'
   s.summary  = 'A robust set of tools commonly used during iOS development.'
   s.homepage = 'https://github.com/gdavis/Gravity'
@@ -14,4 +14,8 @@ Pod::Spec.new do |s|
   s.frameworks   = 'QuartzCore','CoreData','CoreGraphics'
   s.libraries = 'z'
   s.requires_arc = true
+  
+  s.subspec 'Color' do |ss|
+   ss.dependency 'GDIColor', '~> 0.1'
+  end
 end

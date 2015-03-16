@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'Gravity'
-  s.version  = '1.0.3'
+  s.version  = '1.1.3'
   s.platform = :ios, '5.0'
   s.license  = 'MIT'
   s.summary  = 'A robust set of tools commonly used during iOS development.'
@@ -14,4 +14,7 @@ Pod::Spec.new do |s|
   s.frameworks   = 'QuartzCore','CoreData','CoreGraphics'
   s.libraries = 'z'
   s.requires_arc = true
+  
+  #s.dependency = 'GDIColor', :path => '../GDIColor/GDIColor.podspec'
+  s.dependency = 'GDIColor', :git => 'https://github.com/gdavis/GDIColor.git', :tag => '0.1.0'
 end
