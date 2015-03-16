@@ -59,7 +59,6 @@
 		7783437215D584C400A0D362 /* GDIPhoneNumberFormatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 7783437015D584C400A0D362 /* GDIPhoneNumberFormatting.m */; };
 		77850A2B16F8E7A300006A35 /* GDIServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 77850A2916F8E7A300006A35 /* GDIServer.m */; };
 		77A1CE441877C28800550F4C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A1CE431877C28800550F4C /* XCTest.framework */; };
-		77A1CE451877C30A00550F4C /* GDIColorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7763238E185E8C9C0093EC82 /* GDIColorTests.m */; };
 		77A1CE471877CB9800550F4C /* GDIDeviceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A1CE461877CB9800550F4C /* GDIDeviceTests.m */; };
 		77C64BBB158FCC5D00D18066 /* GDIBoundTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C64BB9158FCC5D00D18066 /* GDIBoundTextField.m */; };
 		77CB6FB216ACA806003BCA38 /* GDIPageIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CB6FB016ACA806003BCA38 /* GDIPageIndicator.m */; };
@@ -162,7 +161,6 @@
 		775DCDC517E29CFD008C7D91 /* GDICoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDICoreDataStack.h; sourceTree = "<group>"; };
 		775DCDC617E29CFD008C7D91 /* GDICoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDICoreDataStack.m; sourceTree = "<group>"; };
 		775DCDC917E29EF2008C7D91 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		7763238E185E8C9C0093EC82 /* GDIColorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIColorTests.m; sourceTree = "<group>"; };
 		77632393185E90B10093EC82 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		776E78DE165AEB7500B9C524 /* GDIKeyboardObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIKeyboardObserver.h; sourceTree = "<group>"; };
 		776E78DF165AEB7500B9C524 /* GDIKeyboardObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIKeyboardObserver.m; sourceTree = "<group>"; };
@@ -349,7 +347,6 @@
 		77DAEC6C15790DE80035EFC5 /* GravityTests */ = {
 			isa = PBXGroup;
 			children = (
-				7763238E185E8C9C0093EC82 /* GDIColorTests.m */,
 				77A1CE461877CB9800550F4C /* GDIDeviceTests.m */,
 				77DAEC6D15790DE80035EFC5 /* Supporting Files */,
 			);
@@ -609,7 +606,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				77A1CE471877CB9800550F4C /* GDIDeviceTests.m in Sources */,
-				77A1CE451877C30A00550F4C /* GDIColorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
