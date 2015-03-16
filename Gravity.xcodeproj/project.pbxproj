@@ -251,6 +251,13 @@
 			name = Services;
 			sourceTree = "<group>";
 		};
+		77CE04B51AB79FB6006A6A25 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
 		77DAEC4815790DE80035EFC5 = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +294,7 @@
 		77DAEC5815790DE80035EFC5 /* Gravity */ = {
 			isa = PBXGroup;
 			children = (
+				77CE04B51AB79FB6006A6A25 /* Core */,
 				77DAECD715790F820035EFC5 /* Core Graphics */,
 				77DAECD615790F7E0035EFC5 /* Core Animation */,
 				77DAECD515790F7A0035EFC5 /* Foundation */,

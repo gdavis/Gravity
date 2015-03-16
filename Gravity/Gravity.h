@@ -59,7 +59,6 @@
 #import "CAAnimation+Blocks.h"
 
 // core data
-#import "GDICoreDataStack.h"
 #import "NSManagedObject+GDIOrderedSetAccessors.h"
 #import "NSManagedObject+Clone.h"
 #import "GDIProgressiveMigration.h"
