@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.description = 'Gravity is a collection of commonly used categories, components, and helpers to perform a variety of tasks from drawing gradient fills, resizing scroll views for keyboards, generating colors with hex values, and much more.'
 
   s.source_files = 'Gravity/*.{h,m}'
-  s.frameworks   = 'QuartzCore','CoreData','CoreGraphics'
+  s.frameworks   = 'QuartzCore','CoreGraphics'
   s.libraries = 'z'
   s.requires_arc = true
   
