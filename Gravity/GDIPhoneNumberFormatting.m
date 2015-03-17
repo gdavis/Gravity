@@ -13,7 +13,7 @@
 @interface GDIPhoneNumberFormatting ()
 
 + (NSString*)formatNumber:(NSString*)mobileNumber;
-+ (int)getLength:(NSString*)mobileNumber;
++ (NSInteger)getLength:(NSString*)mobileNumber;
 
 @end
 
@@ -31,7 +31,7 @@
         return NO;
     }
     
-    int length = [GDIPhoneNumberFormatting getLength:textField.text];
+    NSInteger length = [GDIPhoneNumberFormatting getLength:textField.text];
     
     if(length == 10) {
         if(range.length == 0)
@@ -62,7 +62,7 @@
         return NO;
     }
     
-    int length = [GDIPhoneNumberFormatting getLength:textView.text];
+    NSInteger length = [GDIPhoneNumberFormatting getLength:textView.text];
     
     if(length == 10) {
         if(range.length == 0)
@@ -93,7 +93,7 @@
     mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"-" withString:@""];
     mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"+" withString:@""];
     
-    int length = [mobileNumber length];
+    NSInteger length = [mobileNumber length];
     if(length > 10) {
         mobileNumber = [mobileNumber substringFromIndex: length-10];
     }
@@ -101,7 +101,7 @@
 }
 
 
-+ (int)getLength:(NSString*)mobileNumber
++ (NSInteger)getLength:(NSString*)mobileNumber
 {
     mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"(" withString:@""];
     mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@")" withString:@""];
@@ -109,7 +109,7 @@
     mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"-" withString:@""];
     mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"+" withString:@""];
     
-    int length = [mobileNumber length];
+    NSInteger length = [mobileNumber length];
     return length;
 }
 
@@ -118,7 +118,7 @@
     NSString *cleanNumber = [[GDIPhoneNumberFormatting formatNumber:phoneNumber]
                              stringByTrimmingCharactersInSet:[NSCharacterSet letterCharacterSet]];
     
-    int length = [GDIPhoneNumberFormatting getLength:cleanNumber];
+    NSInteger length = [GDIPhoneNumberFormatting getLength:cleanNumber];
     
     if (length < 3) {
         return cleanNumber;

@@ -56,6 +56,7 @@
 		77A1CE471877CB9800550F4C /* GDIDeviceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A1CE461877CB9800550F4C /* GDIDeviceTests.m */; };
 		77C64BBB158FCC5D00D18066 /* GDIBoundTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C64BB9158FCC5D00D18066 /* GDIBoundTextField.m */; };
 		77CB6FB216ACA806003BCA38 /* GDIPageIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CB6FB016ACA806003BCA38 /* GDIPageIndicator.m */; };
+		77CE04CA1AB7D8B1006A6A25 /* Gravity.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 77CE04C91AB7D8B1006A6A25 /* Gravity.podspec */; };
 		77CE14FE169B7F8100C7F7F2 /* UIApplication+GDIAddtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CE14FC169B7F8100C7F7F2 /* UIApplication+GDIAddtions.m */; };
 		77DAEC5715790DE80035EFC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAEC5615790DE80035EFC5 /* Foundation.framework */; };
 		77DAEC6815790DE80035EFC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DAEC5615790DE80035EFC5 /* Foundation.framework */; };
@@ -165,6 +166,7 @@
 		77C64BB9158FCC5D00D18066 /* GDIBoundTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIBoundTextField.m; sourceTree = "<group>"; };
 		77CB6FAF16ACA806003BCA38 /* GDIPageIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDIPageIndicator.h; sourceTree = "<group>"; };
 		77CB6FB016ACA806003BCA38 /* GDIPageIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDIPageIndicator.m; sourceTree = "<group>"; };
+		77CE04C91AB7D8B1006A6A25 /* Gravity.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gravity.podspec; sourceTree = SOURCE_ROOT; };
 		77CE14FB169B7F8100C7F7F2 /* UIApplication+GDIAddtions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+GDIAddtions.h"; sourceTree = "<group>"; };
 		77CE14FC169B7F8100C7F7F2 /* UIApplication+GDIAddtions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+GDIAddtions.m"; sourceTree = "<group>"; };
 		77DAEC5315790DE80035EFC5 /* libGravity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGravity.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -294,6 +296,7 @@
 		77DAEC5815790DE80035EFC5 /* Gravity */ = {
 			isa = PBXGroup;
 			children = (
+				77CE04C91AB7D8B1006A6A25 /* Gravity.podspec */,
 				77CE04B51AB79FB6006A6A25 /* Core */,
 				77DAECD715790F820035EFC5 /* Core Graphics */,
 				77DAECD615790F7E0035EFC5 /* Core Animation */,
@@ -511,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77DAEC7115790DE80035EFC5 /* InfoPlist.strings in Resources */,
+				77CE04CA1AB7D8B1006A6A25 /* Gravity.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
