@@ -12,7 +12,7 @@
 
 @protocol GDIServerDelegate;
 
-NSString * const GDIServerErrorDomain;
+extern NSString *GDIServerErrorDomain;
 
 typedef enum {
     kGDIServerCouldNotBindToIPv4Address = 1,

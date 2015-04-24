@@ -14,7 +14,7 @@
 #include <CFNetwork/CFSocketStream.h>
 
 
-NSString * const GDIServerErrorDomain = @"GDIServerErrorDomain";
+NSString * GDIServerErrorDomain = @"GDIServerErrorDomain";
 
 @interface GDIServer () {
 	uint32_t protocolFamily;
