@@ -44,6 +44,6 @@ I'm currently in the process of breaking Gravity out into smaller modules. I've 
 
 This project will slowly be phased out in favor of the new pared down, more focused repos. Below are the repos that have already been broken out:
 
-[GDIColor](https://github.com/gdavis/GDIColor)
-[GDIImageOperation](https://github.com/gdavis/GDIImageOperation)
-[GDICoreDataKit](https://github.com/gdavis/GDICoreDataKit)
+* [GDIColor](https://github.com/gdavis/GDIColor)
+* [GDIImageOperation](https://github.com/gdavis/GDIImageOperation)
+* [GDICoreDataKit](https://github.com/gdavis/GDICoreDataKit)
