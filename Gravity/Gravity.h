@@ -45,6 +45,7 @@
 #import "UIFont+GDIAdditions.h"
 #import "UIApplication+GDIAddtions.h"
 #import "UIScrollView+GDIAdditions.h"
+#import "NSLayoutConstraint+GDIAdditions.h"
 
 // foundation categories
 #import "NSObject+PerformBlockAfterDelay.h"

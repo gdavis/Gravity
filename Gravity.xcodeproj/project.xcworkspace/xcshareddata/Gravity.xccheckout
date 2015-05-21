@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>B8B11339-5657-4F31-8164-B693332E1B02</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Gravity</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1109C243DE63CF4106F76093EDB23CBFBCB6B992</key>
 		<string>github.com:gdavis/Gravity.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Gravity.xcodeproj</string>
+	<string>Gravity.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1109C243DE63CF4106F76093EDB23CBFBCB6B992</key>
