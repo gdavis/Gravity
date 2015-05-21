@@ -37,3 +37,13 @@ by adding the following line to you project's Podfile:
 To manually install Gravity, follow the Apple Developer Guide for
 linking against static libraries here:
 https://developer.apple.com/library/ios/technotes/iOSStaticLibraries/Articles/configuration.html#//apple_ref/doc/uid/TP40012554-CH3-SW1
+
+### Status
+
+I'm currently in the process of breaking Gravity out into smaller modules. I've learned over time its not a great idea to have a big "toolbox" repository such as this one. I typically probably use 20-40% of the library, and that is not ideal. 
+
+This project will slowly be phased out in favor of the new pared down, more focused repos. Below are the repos that have already been broken out:
+
+* [GDIColor](https://github.com/gdavis/GDIColor)
+* [GDIImageOperation](https://github.com/gdavis/GDIImageOperation)
+* [GDICoreDataKit](https://github.com/gdavis/GDICoreDataKit)
