@@ -23,6 +23,8 @@
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import "UILabel+GDIAdditions.h"
+#import "UIView+GDIAdditions.h"
+
 
 @implementation UILabel (GDIAdditions)
 
@@ -86,11 +88,12 @@
     return label;
 }
 
-+ (UILabel *)labelForSizingWithFont:(UIFont *)font text:(NSString *)text
++ (UILabel *)labelForSizingWithFont:(UIFont *)font text:(NSString *)text width:(CGFloat)width
 {
     UILabel *label = [UILabel labelForSizing];
     label.font = font;
     label.text = text;
+    label.frameWidth = width;
     return label;
 }
 
