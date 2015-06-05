@@ -88,6 +88,15 @@
     return label;
 }
 
++ (UILabel *)labelForSizingWithFont:(UIFont *)font text:(NSString *)text
+{
+    UILabel *label = [UILabel labelForSizing];
+    label.font = font;
+    label.text = text;
+    [label sizeToFit];
+    return label;
+}
+
 + (UILabel *)labelForSizingWithFont:(UIFont *)font text:(NSString *)text width:(CGFloat)width
 {
     UILabel *label = [UILabel labelForSizing];
