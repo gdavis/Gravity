@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'Gravity'
-  s.version  = '1.2.0'
+  s.version  = '1.2.1'
   s.platform = :ios, '7.0'
   s.license  = 'MIT'
   s.summary  = 'A robust set of tools commonly used during iOS development.'
@@ -20,6 +20,6 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'CoreData' do |ss|
-   ss.dependency 'GDICoreDataKit', '~> 0.1'
+   ss.dependency 'GDICoreDataKit', '~> 0.1.1'
   end
 end
