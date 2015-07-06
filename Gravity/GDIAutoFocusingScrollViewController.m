@@ -16,6 +16,7 @@
     BOOL _isRotating;
     CGPoint _originalOffset;
     UIEdgeInsets _originalContentInset;
+    UIEdgeInsets _originalScrollInset;
     CGFloat _animationDuration;
     UIView *_currentView;
     UIView *_tempView;
@@ -57,6 +58,7 @@
     _shouldResizeScrollViewWhenKeyboardIsPresent = YES;
     _animationDuration = .25f;
     _originalContentInset = UIEdgeInsetsZero;
+    _originalScrollInset = UIEdgeInsetsZero;
 }
 
 
@@ -221,6 +223,7 @@
     if (prevView == nil) {
         _originalOffset = self.contentScrollView.contentOffset;
         _originalContentInset = self.contentScrollView.contentInset;
+        _originalScrollInset = self.contentScrollView.scrollIndicatorInsets;
     }
     
     // do the scroll
@@ -309,10 +312,12 @@
                                 options:0
                              animations:^{
                                  weakSelf.contentScrollView.contentInset = insets;
+                                 weakSelf.contentScrollView.scrollIndicatorInsets = insets;
                              } completion:nil];
         }
         else {
             self.contentScrollView.contentInset = insets;
+            self.contentScrollView.scrollIndicatorInsets = insets;
         }
     }
 }
