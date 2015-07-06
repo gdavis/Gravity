@@ -15,21 +15,16 @@
 @interface GDIAutoFocusingScrollViewController () {
     BOOL _isRotating;
     CGPoint _originalOffset;
+    UIEdgeInsets _originalContentInset;
     CGFloat _animationDuration;
     UIView *_currentView;
     UIView *_tempView;
 }
 
-@property (strong, nonatomic) UIView *referenceView;
-
-- (void)restoreContentScrollViewFrame;
-- (void)scrollToView:(UIView *)subview animation:(BOOL)animate;
-
 @end
 
+
 @implementation GDIAutoFocusingScrollViewController
-@synthesize contentScrollView;
-@synthesize shouldResizeScrollViewWhenKeyboardIsPresent;
 
 #pragma mark - UIViewController Methods
 
@@ -42,6 +37,7 @@
     return self;
 }
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -51,14 +47,16 @@
     return self;
 }
 
+
 - (void)setup
 {
     // ensure the keyboard observer is listening for events
     [GDIKeyboardObserver sharedObserver];
     
     // set defaults
-    shouldResizeScrollViewWhenKeyboardIsPresent = YES;
+    _shouldResizeScrollViewWhenKeyboardIsPresent = YES;
     _animationDuration = .25f;
+    _originalContentInset = UIEdgeInsetsZero;
 }
 
 
@@ -77,51 +75,11 @@
 }
 
 
-- (void)viewDidUnload
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:GDIKeyboardDidDockNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:GDIKeyboardDidUndockNotification object:nil];
-    
-    self.referenceView = nil;
-    [self setContentScrollView:nil];
-    [super viewDidUnload];
-}
-
-
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    // create a view with the same autosize properties as our scroll view.
-    // this allows us to adjust the size of the scroll view frame while 
-    // keyboard is showing and use this view as a reference as to how the 
-    // scroll view's frame would have changed in response to rotations
-    // if we weren't taking over the sizing of the scroll view.
-    [self.contentScrollView.superview insertSubview:self.referenceView
-                                       belowSubview:self.contentScrollView];
-}
-
-- (UIView *)referenceView
-{
-    if (_referenceView == nil) {
-        _referenceView = [[UIView alloc] initWithFrame:self.contentScrollView.frame];
-        _referenceView.backgroundColor = [UIColor clearColor];
-        _referenceView.autoresizingMask = self.contentScrollView.autoresizingMask;
-        _referenceView.userInteractionEnabled = NO;
-    }
-    return _referenceView;
-}
 
 - (BOOL)disablesAutomaticKeyboardDismissal
 {
@@ -136,11 +94,6 @@
     [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
     
     _isRotating = YES;
-    
-    // resize our content scroll view for the rotation
-    // when we finish, we can resize it again to position
-    // once more on the current view, if there is one.
-    self.contentScrollView.frame = self.referenceView.frame;
 }
 
 
@@ -161,35 +114,49 @@
 
 - (void)handleKeyboardDidDock
 {
-    if (_currentView) {
-        [self scrollToView:_currentView animation:YES];
-    }
+    [self scrollToCurrentView];
 }
 
 
 - (void)handleKeyboardDidUndock
 {
-    [self restoreContentScrollViewFrame];
+    [self restoreContentScrollViewInsets];
     
-    if (_currentView) {
-        [self scrollToView:_currentView animation:YES];
-    }
+    [self scrollToCurrentView];
 }
+
 
 - (void)handleKeyboardWillShow:(NSNotification *)n
 {
-    NSLog(@"handleKeyboardWillShow");
-    if (_tempView) {
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [weakSelf scrollToTempView];
+    });
+}
+
+
+- (void)handleKeyboardDidShow:(NSNotification *)n
+{
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [weakSelf scrollToTempView];
+    });
+}
+
+
+- (void)scrollToTempView
+{
+    if (_tempView != nil) {
         [self scrollContentViewWithFocusOnSubview:_tempView animation:YES];
         _tempView = nil;
     }
 }
 
-- (void)handleKeyboardDidShow:(NSNotification *)n
+
+- (void)scrollToCurrentView
 {
-    if (_tempView) {
-        [self scrollContentViewWithFocusOnSubview:_tempView animation:YES];
-        _tempView = nil;
+    if (_currentView) {
+        [self scrollToView:_currentView animation:YES];
     }
 }
 
@@ -201,16 +168,18 @@
     BOOL changedByUser = [[[n userInfo] objectForKey:@"UIKeyboardFrameChangedByUserInteraction"] boolValue];
     if (!changedByUser) {
         if (_currentView && !_isRotating) {
-            [self restoreContentScrollViewFrame];
+            [self restoreContentScrollViewInsets];
             _currentView = nil;
         }
     }
 }
 
+
 - (void)handleKeyboardWillHide:(NSNotification *)n
 {
     // resize the content scroll view so the bottom of the frame only
     // goes as high as the top of the keyboard frame, if allowed
+    __weak typeof(self) weakSelf = self;
     NSInteger animationCurve = [[n.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
     CGFloat animationDuration = [[n.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
     if (self.shouldResizeScrollViewWhenKeyboardIsPresent) {
@@ -218,7 +187,7 @@
                               delay:0.f
                             options:animationCurve
                          animations:^{
-                             [self restoreContentScrollViewFrame];
+                             [weakSelf restoreContentScrollViewInsets];
                          } completion:nil];
     }
     
@@ -227,7 +196,7 @@
                               delay:0.f
                             options:animationCurve
                          animations:^{
-                             self.contentScrollView.contentOffset = _originalOffset;
+                             weakSelf.contentScrollView.contentOffset = _originalOffset;
                          } completion:nil];
     }
 }
@@ -236,7 +205,7 @@
 #pragma mark - Public Methods
 
 - (void)scrollContentViewWithFocusOnSubview:(UIView *)subview animation:(BOOL)animate
-{    
+{
     UIView *prevView = _currentView;
     
     if (![[GDIKeyboardObserver sharedObserver] isVisible]) {
@@ -248,9 +217,10 @@
     _currentView = subview;
     
     // store the original scrollview offset if this is the first
-    // time we are adjusting the scroll view. 
+    // time we are adjusting the scroll view.
     if (prevView == nil) {
         _originalOffset = self.contentScrollView.contentOffset;
+        _originalContentInset = self.contentScrollView.contentInset;
     }
     
     // do the scroll
@@ -276,7 +246,7 @@
     // by first getting global frame positions for the subuview and scroll view
     CGRect globalSubviewFrame = [subview convertRect:subview.bounds toView:window];
     CGRect globalScrollViewFrame = [self.contentScrollView convertRect:self.contentScrollView.bounds toView:window];
-
+    
     // determine the viewable area by taking the total available area
     // and the global rect of the subview to see if its currently in view.
     CGRect viewableArea = CGRectIntersection(totalAvailableArea, globalScrollViewFrame);
@@ -310,11 +280,12 @@
         
         // set new offset
         if (animate) {
+            __weak typeof(self) weakSelf = self;
             [UIView animateWithDuration:_animationDuration ? _animationDuration : .25f
                                   delay:0.f
                                 options:0
                              animations:^{
-                                 self.contentScrollView.contentOffset = finalOffset;
+                                 weakSelf.contentScrollView.contentOffset = finalOffset;
                              } completion:nil];
         }
         else {
@@ -326,20 +297,25 @@
     // goes as high as the top of the keyboard frame, if allowed
     if (self.shouldResizeScrollViewWhenKeyboardIsPresent) {
         
+        CGRect globalKeyboardFrame = [[GDIKeyboardObserver sharedObserver] keyboardFrame];
+        CGRect keyboardOverlapRect = CGRectIntersection(globalScrollViewFrame, globalKeyboardFrame);
+        UIEdgeInsets insets = _originalContentInset;
+        insets.bottom += CGRectGetHeight(keyboardOverlapRect);
+        
         if (animate) {
+            __weak typeof(self) weakSelf = self;
             [UIView animateWithDuration:_animationDuration ? _animationDuration : .25f
                                   delay:0.f
                                 options:0
                              animations:^{
-                                 self.contentScrollView.frameHeight = viewableArea.size.height;
+                                 weakSelf.contentScrollView.contentInset = insets;
                              } completion:nil];
         }
         else {
-            self.contentScrollView.frameHeight = viewableArea.size.height;
+            self.contentScrollView.contentInset = insets;
         }
     }
 }
-
 
 // returns a rect representing the area of the screen that is not taken
 // up by the keyboard when it displays
@@ -367,7 +343,7 @@
         case UIInterfaceOrientationPortraitUpsideDown: {
             viewableArea = CGRectMake(0,
                                       statusBarHeight,
-                                      windowSize.size.width, 
+                                      windowSize.size.width,
                                       windowSize.size.height - keyboardFrame.size.height - statusBarHeight);
             break;
         }
@@ -386,13 +362,11 @@
 }
 
 
-- (void)restoreContentScrollViewFrame
-{    
-    // restore scroll frame
+- (void)restoreContentScrollViewInsets
+{
     if (self.shouldResizeScrollViewWhenKeyboardIsPresent) {
-        self.contentScrollView.frame = self.referenceView.frame;
+        self.contentScrollView.contentInset = _originalContentInset;
     }
 }
-
 
 @end
