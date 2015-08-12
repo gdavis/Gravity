@@ -141,6 +141,7 @@
 {
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
+        [weakSelf adjustTableContentInsetsWithAnimation:YES];
         [weakSelf scrollToTempView];
     });
 }
@@ -299,26 +300,7 @@
     // resize the content scroll view so the bottom of the frame only
     // goes as high as the top of the keyboard frame, if allowed
     if (self.shouldResizeScrollViewWhenKeyboardIsPresent) {
-        
-        CGRect globalKeyboardFrame = [[GDIKeyboardObserver sharedObserver] keyboardFrame];
-        CGRect keyboardOverlapRect = CGRectIntersection(globalScrollViewFrame, globalKeyboardFrame);
-        UIEdgeInsets insets = _originalContentInset;
-        insets.bottom += CGRectGetHeight(keyboardOverlapRect);
-        
-        if (animate) {
-            __weak typeof(self) weakSelf = self;
-            [UIView animateWithDuration:_animationDuration ? _animationDuration : .25f
-                                  delay:0.f
-                                options:0
-                             animations:^{
-                                 weakSelf.contentScrollView.contentInset = insets;
-                                 weakSelf.contentScrollView.scrollIndicatorInsets = insets;
-                             } completion:nil];
-        }
-        else {
-            self.contentScrollView.contentInset = insets;
-            self.contentScrollView.scrollIndicatorInsets = insets;
-        }
+        [self adjustTableContentInsetsWithAnimation:animate];
     }
 }
 
@@ -364,6 +346,39 @@
             break;
     }
     return viewableArea;
+}
+
+
+- (void)adjustTableContentInsetsWithAnimation:(BOOL)animate
+{
+    if (!self.shouldResizeScrollViewWhenKeyboardIsPresent) {
+        return;
+    }
+    
+    // store reference to our level view to determine global coordinates
+    UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
+    
+    CGRect globalScrollViewFrame = [self.contentScrollView convertRect:self.contentScrollView.bounds toView:window];
+    
+    CGRect globalKeyboardFrame = [[GDIKeyboardObserver sharedObserver] keyboardFrame];
+    CGRect keyboardOverlapRect = CGRectIntersection(globalScrollViewFrame, globalKeyboardFrame);
+    UIEdgeInsets insets = _originalContentInset;
+    insets.bottom += CGRectGetHeight(keyboardOverlapRect);
+    
+    if (animate) {
+        __weak typeof(self) weakSelf = self;
+        [UIView animateWithDuration:_animationDuration ? _animationDuration : .25f
+                              delay:0.f
+                            options:0
+                         animations:^{
+                             weakSelf.contentScrollView.contentInset = insets;
+                             weakSelf.contentScrollView.scrollIndicatorInsets = insets;
+                         } completion:nil];
+    }
+    else {
+        self.contentScrollView.contentInset = insets;
+        self.contentScrollView.scrollIndicatorInsets = insets;
+    }
 }
 
 
