@@ -20,6 +20,6 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'CoreData' do |ss|
-   ss.dependency 'GDICoreDataKit', '~> 0.1.1'
+   ss.dependency 'GDICoreDataKit', '~> 0.2.2'
   end
 end
