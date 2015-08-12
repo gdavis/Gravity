@@ -386,6 +386,7 @@
 {
     if (self.shouldResizeScrollViewWhenKeyboardIsPresent) {
         self.contentScrollView.contentInset = _originalContentInset;
+        self.contentScrollView.scrollIndicatorInsets = _originalScrollInset;
     }
 }
 
