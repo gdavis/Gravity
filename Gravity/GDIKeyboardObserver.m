@@ -45,7 +45,9 @@ NSString * const GDIKeyboardDidUndockNotification = @"GDIKeyboardDidUndockNotifi
 - (void)updateWithKeyboardFrame:(CGRect)endKeyboardFrame
 {
     UIView *rootView = [[[[UIApplication sharedApplication] keyWindow] rootViewController] view];
-    _keyboardFrame = endKeyboardFrame;
+    CGRect convertedRect = [rootView convertRect:endKeyboardFrame fromView:nil];
+    
+    _keyboardFrame = convertedRect;
     
     // first check to see if the keyboard intersects the main window.
     // if it does, we know the keyboard is visible and we can detect is position
