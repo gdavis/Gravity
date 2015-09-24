@@ -45,9 +45,15 @@ NSString * const GDIKeyboardDidUndockNotification = @"GDIKeyboardDidUndockNotifi
 - (void)updateWithKeyboardFrame:(CGRect)endKeyboardFrame
 {
     UIView *rootView = [[[[UIApplication sharedApplication] keyWindow] rootViewController] view];
-    CGRect convertedRect = [rootView convertRect:endKeyboardFrame fromView:nil];
     
-    _keyboardFrame = convertedRect;
+    // this fixes erroneous frames returned from the system under iOS7 and possibly other versions.
+    // the frame can be jacked up like { 0, -216, 320, 696 }, and this code fixes that shit. ugh.
+    if (endKeyboardFrame.size.height > rootView.frame.size.height && endKeyboardFrame.origin.y < 0) {
+        endKeyboardFrame.size.height = fabs(endKeyboardFrame.origin.y);
+        endKeyboardFrame.origin.y = rootView.frame.size.height - endKeyboardFrame.size.height;
+    }
+    
+    _keyboardFrame = [rootView convertRect:endKeyboardFrame fromView:nil];
     
     // first check to see if the keyboard intersects the main window.
     // if it does, we know the keyboard is visible and we can detect is position
