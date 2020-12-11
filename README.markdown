@@ -29,7 +29,7 @@ And much
 
 ### Using Gravity
 
-Gravity can be easily installed using [Cocoapods](http://cocoapods.org)
+Gravity can be easily installed using [CocoaPods](http://cocoapods.org)
 by adding the following line to you project's Podfile:
 
 > pod 'Gravity'
